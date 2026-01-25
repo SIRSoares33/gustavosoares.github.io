@@ -261,3 +261,95 @@ body {
 .nav a:hover::after {
   width: 100%;
 }
+
+/* MOBILE — Ajustes sem alterar o visual */
+
+@media (max-width: 900px) {
+  .story-section {
+    padding: 60px 18px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+    padding-left: 40px;
+  }
+
+  .timeline-line {
+    left: 12px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    transform: none;
+  }
+
+  .timeline-item {
+    text-align: left;
+    width: 100%;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 0;
+  }
+
+  .timeline-card {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 14px;
+  }
+
+  .timeline-item:hover .timeline-card {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-card {
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  .timeline-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-photo {
+    height: 150px;
+  }
+
+  .header .container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav a {
+    margin-left: 0;
+  }
+}

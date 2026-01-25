@@ -263,3 +263,104 @@ body {
     box-shadow 0.2s ease,
     border-color 0.2s ease;
 }
+
+/* ============================= */
+/* RESPONSIVIDADE EXTRA - LOGOS */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-text p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .image-box {
+    margin: 0 auto;
+  }
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero {
+    padding: 70px 0 50px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn, .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-box {
+    width: 200px;
+    height: 200px;
+    font-size: 1.6rem;
+  }
+
+  .features-grid,
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header h3 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .image-box {
+    width: 170px;
+    height: 170px;
+  }
+
+  .feature-card,
+  .stack-card {
+    padding: 18px;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+    padding: 22px;
+  }
+}

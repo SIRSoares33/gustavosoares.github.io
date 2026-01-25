@@ -579,3 +579,149 @@ button:hover, .btn:hover {
 .experience-title h4 {
   margin-bottom: 4px;
 }
+
+/* ========================= */
+/* RESPONSIVO MOBILE ONLY   */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+  /* HEADER */
+  .header .container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+
+  .lang-btn {
+    margin-left: 0;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1.15rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .photo-carousel {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* EXPERIENCE */
+  .experience-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-title {
+    text-align: center;
+  }
+
+  /* SKILLS */
+  .skills-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-group {
+    text-align: center;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    text-align: center;
+  }
+
+  .contact-card a {
+    justify-content: center;
+  }
+
+  /* SECTION SPACING */
+  .section {
+    padding: 60px 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ========================= */
+/* EXTRA SMALL DEVICES       */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .hero-text h2 {
+    font-size: 1.95rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .photo-carousel {
+    width: 170px;
+    height: 170px;
+  }
+
+  .btn, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
