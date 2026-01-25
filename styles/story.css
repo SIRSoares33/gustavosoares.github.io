@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0c0c0f;
+  color: #e5e5e5;
+}
+
+/* SECTION */
+.story-section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 24px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #7c7cff;
+}
+
+.section-subtitle {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 70px;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+}
+
+/* LINHA */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(124,124,255,0.3), rgba(124,124,255,0.05));
+}
+
+/* ITEM */
+.timeline-item {
+  position: relative;
+  text-align: center;
+}
+
+/* BOLINHA */
+.timeline-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: none;
+  background: #555;
+  border: 2px solid #777;
+  transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.timeline-dot.completed {
+  background: #2ecc71;
+  border-color: #2ecc71;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+  transform: scale(1.15);
+}
+
+
+.timeline-dot:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 30px rgba(124,124,255,0.9);
+  cursor: none;
+}
+
+/* CARD OCULTO */
+.timeline-card {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: linear-gradient(180deg, #141414, #101010);
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 16px 18px;
+  width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+/* TÍTULO */
+.timeline-card h4 {
+  color: #7c7cff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+/* TEXTO */
+.timeline-card p {
+  font-size: 0.7rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* MOSTRAR AO PASSAR O MOUSE */
+.timeline-item:hover .timeline-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .timeline-line {
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-card {
+    top: -120px;
+  }
+}
+.timeline-photo {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  filter: brightness(0.9) contrast(1.05);
+}
+
+.timeline-card:hover {
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-line {
+    left: 2px;
+  }
+
+  .timeline-item {
+    padding-left: 24px;
+  }
+
+  .timeline-dot {
+    left: -22px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+
+  .timeline-photo {
+    width: 100%;
+    height: 160px;
+    border-radius: 14px;
+  }
+}
+
+.lang-btn:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.45);
+  box-shadow: 0 0 12px rgba(255,255,255,0.12);
+  transform: translateY(-1px);
+}
+
+.lang-btn:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HEADER */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.lang-btn {
+  margin-left: 16px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+  color: white;
+  cursor: pointer;
+  transition: 
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #cfcfcf;
+  font-size: 0.95rem;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.nav a:hover {
+  color: #7c7cff;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #7c7cff;
+  left: 0;
+  bottom: -4px;
+  transition: 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
