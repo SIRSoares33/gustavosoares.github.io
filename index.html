@@ -191,6 +191,7 @@ Aprendo rápido, sou disciplinado e tenho facilidade para entender o contexto do
                 <span>Design Patterns</span> 
                 <span>Clean Code</span> 
                 <span>Clean Architecture</span> 
+                <span>CQRS</span>
                 <span>DDD</span> 
                 <span>SOLID</span> 
             </div> 
@@ -224,30 +225,12 @@ Aprendo rápido, sou disciplinado e tenho facilidade para entender o contexto do
   </header>
 
 <div class="projects-grid reveal"> 
-    <article class="project-card reveal" onclick="goToPageLogos()"> 
-        <h4 data-pt="Logos — Sistema de Gestão Comercial" data-en="Logos — Commercial Management System">Logos — Sistema de Gestão Comercial</h4> 
-        <p data-pt="Sistema para controle de estoque, PDV, dashboard administrativo e API REST em .NET." data-en="System for inventory control, POS, administrative dashboard and REST API in .NET.">
-            Sistema para controle de estoque, PDV, dashboard administrativo e API REST em .NET.</p> 
-        <span>.NET • Blazor • PostgreSql • EF Core • Docker</span> 
+    <article class="project-card reveal" onclick="window.location.href='ToDo.html'"> 
+        <h4 data-pt="ToDo API" data-en="ToDo API">ToDo API</h4> 
+        <p data-pt="Sistema de tarefas em .NET."data-en="System for tasks in .NET.">
+            Sistema de tarefas em .NET.</p> 
+        <span>AspNetCore • PostgreSql • EF Core • Docker • MediatR • CQRS • Clean Architecture • XUnit</span> 
     </article> 
-    
-    <article class="project-card reveal" onclick="goToPageChalenge()"> 
-        <h4>Desafio Itaú</h4> 
-        <p data-pt="Essa aplicação é um desafio no qual me propus a fazer. Do banco Itaú."
-        data-en="This application is a challenge I set myself. From Itaú bank.">
-            Essa aplicação é um desafio no qual me propus a fazer. Do banco Itaú.</p> 
-        <span
-        data-pt="C# • AspNet • Desafio" data-en="C# • AspNet • Challenge">C# • AspNet • Desafio</span> 
-    </article> 
-    
-    <article class="project-card reveal" onclick="goToPagePsalms()">
-        <h4>Psalms — GitHub Organization</h4> 
-        <p data-pt="Libraries para reduzir boilerplate em microservices, autenticação JWT e automação."
-        data-en="Libraries for reducing boilerplate in microservices, JWT authentication, and automation.">
-            Libraries para reduzir boilerplate em microservices, autenticação JWT e automação.</p> 
-        <span>.NET • Microservices • Arquitetura • ClassLib</span>
-    </article> 
-
 </div>
 </section>
 
@@ -298,19 +281,5 @@ Aprendo rápido, sou disciplinado e tenho facilidade para entender o contexto do
 </footer>
 
 <script src="scripts/script.js"></script>
-
-<script>
-  function goToPageLogos() {
-    window.location.href = "Logos.html";
-  }
-
-  function goToPagePsalms() {
-    window.location.href = "psalms.html";
-  }
-
-  function goToPageChalenge() {
-    window.location.href = "Itau.html";
-  }
-</script>
 </body>
 </html>

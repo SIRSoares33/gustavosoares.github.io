@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ToDo API — Projeto de Portfólio</title>
+<link rel="stylesheet" href="styles/ToDo.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <h1 class="logo">ToDo API</h1>
+
+    <nav class="nav">
+      <a href="index.html" data-pt="Voltar ao Portfólio" data-en="Back to Portfolio">Voltar ao Portfólio</a>
+      <a href="#overview" data-pt="Visão Geral" data-en="Overview">Visão Geral</a>
+      <a href="#features" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a>
+      <a href="#stack" data-pt="Tecnologia" data-en="Technology">Tecnologia</a>
+      <a href="#vision" data-pt="Visão" data-en="Vision">Visão</a>
+    </nav>
+
+    <button id="langBtn" class="lang-btn">EN</button>   
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+
+    <div class="hero-text">
+      <h2>ToDo API</h2>
+
+      <h3 
+        data-pt="API REST para Gerenciamento de Tarefas" 
+        data-en="REST API for Task Management">
+        API REST para Gerenciamento de Tarefas
+      </h3>
+
+      <p 
+        data-pt="A ToDo API é uma aplicação backend desenvolvida em ASP.NET Core, com foco em boas práticas, segurança e arquitetura limpa, simulando um cenário real de produção."
+        data-en="ToDo API is a backend application built with ASP.NET Core, focused on best practices, security, and clean architecture, simulating a real-world production scenario.">
+        A ToDo API é uma aplicação backend desenvolvida em ASP.NET Core, 
+        com foco em boas práticas, segurança e arquitetura limpa, 
+        simulando um cenário real de produção.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://github.com/SIRSoares33/ToDoApi" class="btn"
+           data-pt="Ver no GitHub"
+           data-en="View on GitHub">
+          Ver no GitHub
+        </a>
+
+        <a href="#stack" class="btn-outline"
+           data-pt="Ver Stack"
+           data-en="View Tech Stack">
+          Ver Stack
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <div class="image-box">
+        <span>API</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="section container reveal">
+  <header class="section-header">
+    <h3 data-pt="Visão Geral" data-en="Overview">Visão Geral</h3>
+  </header>
+
+  <p class="text-block"
+     data-pt="Este projeto foi desenvolvido com objetivo educacional e de portfólio, visando consolidar conhecimentos em desenvolvimento de APIs REST com ASP.NET Core, aplicando Clean Architecture, separação de responsabilidades e padrões modernos de projeto."
+     data-en="This project was developed for educational and portfolio purposes, aiming to consolidate knowledge in REST API development with ASP.NET Core, applying Clean Architecture, separation of concerns, and modern design patterns.">
+    Este projeto foi desenvolvido com objetivo educacional e de portfólio, 
+    visando consolidar conhecimentos em desenvolvimento de APIs REST com ASP.NET Core, 
+    aplicando Clean Architecture, separação de responsabilidades e padrões modernos de projeto.
+  </p>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section container reveal">
+  <header class="section-header">
+    <h3 data-pt="Funcionalidades Principais" data-en="Key Features">Funcionalidades Principais</h3>
+  </header>
+
+  <div class="features-grid">
+
+    <div class="feature-card reveal">
+      <h4 data-pt="🔐 Autenticação JWT" data-en="🔐 JWT Authentication">🔐 Autenticação JWT</h4>
+      <p data-pt="Autenticação segura utilizando JWT, com geração de tokens e validação baseada em claims."
+         data-en="Secure authentication using JWT, with token generation and claim-based validation.">
+        Autenticação segura utilizando JWT, com geração de tokens e validação baseada em claims.
+      </p>
+    </div>
+
+    <div class="feature-card reveal">
+      <h4 data-pt="👥 Controle de Usuários" data-en="👥 User Management">👥 Controle de Usuários</h4>
+      <p data-pt="Gerenciamento de usuários com permissões e controle de acesso baseado em roles."
+         data-en="User management with permissions and role-based access control.">
+        Gerenciamento de usuários com permissões e controle de acesso baseado em roles.
+      </p>
+    </div>
+
+    <div class="feature-card reveal">
+      <h4 data-pt="✅ Gerenciamento de Tarefas" data-en="✅ Task Management">✅ Gerenciamento de Tarefas</h4>
+      <p data-pt="Criação, edição, listagem e exclusão de tarefas vinculadas ao usuário autenticado."
+         data-en="Creation, update, listing, and deletion of tasks linked to the authenticated user.">
+        Criação, edição, listagem e exclusão de tarefas vinculadas ao usuário autenticado.
+      </p>
+    </div>
+
+    <div class="feature-card reveal">
+      <h4 data-pt="🛡️ Autorização por Roles" data-en="🛡️ Role-based Authorization">🛡️ Autorização por Roles</h4>
+      <p data-pt="Proteção de endpoints com autorização baseada em perfis como Admin e User."
+         data-en="Endpoint protection using role-based authorization such as Admin and User.">
+        Proteção de endpoints com autorização baseada em perfis como Admin e User.
+      </p>
+    </div>
+
+    <div class="feature-card reveal">
+      <h4 data-pt="📦 Clean Architecture" data-en="📦 Clean Architecture">📦 Clean Architecture</h4>
+      <p data-pt="Separação clara de camadas para facilitar manutenção, testes e escalabilidade."
+         data-en="Clear layer separation to improve maintainability, testing, and scalability.">
+        Separação clara de camadas para facilitar manutenção, testes e escalabilidade.
+      </p>
+    </div>
+
+    <div class="feature-card reveal">
+      <h4 data-pt="🔌 API REST" data-en="🔌 REST API">🔌 API REST</h4>
+      <p data-pt="Endpoints RESTful seguindo boas práticas de design e padronização."
+         data-en="RESTful endpoints following best practices and standardization.">
+        Endpoints RESTful seguindo boas práticas de design e padronização.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" class="section container reveal">
+  <header class="section-header">
+    <h3 data-pt="Stack Tecnológica" data-en="Tech Stack">Stack Tecnológica</h3>
+  </header>
+
+  <div class="stack-grid">
+
+    <div class="stack-card reveal">
+      <h4>Backend</h4>
+      <span>.NET</span>
+      <span>ASP.NET Core</span>
+      <span>Web API</span>
+      <span>EF Core</span>
+      <span>PostgreSQL</span>
+    </div>
+
+    <div class="stack-card reveal">
+      <h4 data-pt="Arquitetura" data-en="Architecture">Arquitetura</h4>
+      <span>Clean Architecture</span>
+      <span>SOLID</span>
+      <span>CQRS</span>
+      <span>MediatR</span>
+    </div>
+
+    <div class="stack-card reveal">
+      <h4 data-pt="Segurança" data-en="Security">Segurança</h4>
+      <span>JWT</span>
+      <span>Authorization</span>
+      <span>Claims</span>
+    </div>
+
+    <div class="stack-card reveal">
+      <h4 data-pt="Infraestrutura" data-en="Infrastructure">Infraestrutura</h4>
+      <span>Docker</span>
+      <span>Docker Compose</span>
+      <span>Swagger</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision" class="section container reveal">
+  <header class="section-header">
+    <h3 data-pt="Visão de Futuro" data-en="Future Vision">Visão de Futuro</h3>
+  </header>
+
+  <p class="text-block"
+     data-pt="A ToDo API foi pensada como uma base sólida para evolução contínua, permitindo a adição de testes automatizados, observabilidade, melhorias de performance e novos casos de uso, sempre mantendo qualidade de código e boas práticas de arquitetura."
+     data-en="ToDo API was designed as a solid foundation for continuous evolution, enabling automated tests, observability, performance improvements, and new use cases, while maintaining code quality and architectural best practices.">
+    A ToDo API foi pensada como uma base sólida para evolução contínua, 
+    permitindo a adição de testes automatizados, observabilidade, melhorias de performance 
+    e novos casos de uso, sempre mantendo qualidade de código e boas práticas de arquitetura.
+  </p>
+</section>
+
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto ToDo API" data-en="© 2026 Gustavo Soares — ToDo API Project">
+  © 2026 Gustavo Soares — Projeto ToDo API
+</footer>
+
+</body>
+
+<script src="scripts/script.js"></script>
+</html>
