@@ -2,7 +2,7 @@
 
 Este repositório contém o código-fonte do meu **portfólio pessoal**, publicado via **GitHub Pages**.
 
-O objetivo deste projeto é apresentar meus **projetos**, **habilidades técnicas** e minha **evolução como desenvolvedor**, de forma clara, organizada e profissional.
+O objetivo deste projeto é apresentar meus **projetos**, **competências técnicas** e minha **evolução profissional em TI**, de forma clara, organizada e profissional.
 
 ---
 
@@ -13,7 +13,7 @@ Este portfólio funciona como uma **vitrine técnica**, onde concentro:
 - Projetos pessoais e de estudo
 - Aplicações com foco em boas práticas e arquitetura
 - Experimentos técnicos relevantes
-- Evolução contínua ao longo da minha jornada como desenvolvedor
+- Evolução contínua entre desenvolvimento, suporte, infraestrutura e cloud
 
 Mais do que quantidade, o foco aqui é **qualidade**, **clareza** e **maturidade técnica**.
 
@@ -46,6 +46,8 @@ Este portfólio foi criado com foco em:
 - Consolidação de aprendizados
 - Demonstração de boas práticas
 - Registro da minha evolução técnica
+
+Minha base está no desenvolvimento .NET, e meu objetivo é construir um perfil de TI mais completo, combinando desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA sem deixar de indicar com clareza o que já pratico e o que ainda está em estudo.
 
 ---
 

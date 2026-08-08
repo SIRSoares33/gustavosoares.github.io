@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Psalms: biblioteca .NET reutilizável para multi-tenancy, autenticação JWT e componentização entre projetos.">
+  <title>Psalms — Biblioteca Reutilizável para .NET</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">Psalms</p>
+    <nav class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
+      <a href="#stack">Stack</a>
+      <a href="#status">Status</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge status-evolution" data-pt="Biblioteca em evolução" data-en="Evolving library">Biblioteca em evolução</p>
+        <h1>Psalms</h1>
+        <h2 data-pt="Infraestrutura Reutilizável para Projetos .NET" data-en="Reusable Infrastructure for .NET Projects">Infraestrutura Reutilizável para Projetos .NET</h2>
+        <p
+          data-pt="Biblioteca própria voltada para multi-tenancy, autenticação JWT e componentização de código. O objetivo é criar uma base consistente que possa ser reutilizada entre projetos, em vez de repetir a mesma infraestrutura em cada aplicação."
+          data-en="A custom library focused on multi-tenancy, JWT authentication, and code componentization. Its goal is to create a consistent foundation that can be reused across projects instead of repeating the same infrastructure in every application."
+        >Biblioteca própria voltada para multi-tenancy, autenticação JWT e componentização de código. O objetivo é criar uma base consistente que possa ser reutilizada entre projetos, em vez de repetir a mesma infraestrutura em cada aplicação.</p>
+        <div class="hero-buttons">
+          <a href="#operation" class="btn" data-pt="Ver funcionamento" data-en="See how it works">Ver funcionamento</a>
+          <a href="#stack" class="btn-outline" data-pt="Ver stack" data-en="View stack">Ver stack</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual">
+          <div class="visual-core">PSALMS</div>
+          <div class="visual-grid">
+            <span>.NET</span>
+            <span>JWT</span>
+            <span>Multi-tenancy</span>
+            <span data-pt="Componentes" data-en="Components">Componentes</span>
+            <span data-pt="Reuso" data-en="Reuse">Reuso</span>
+            <span data-pt="Projetos" data-en="Projects">Projetos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
+      <h2 data-pt="O que é e qual problema resolve" data-en="What it is and what it solves">O que é e qual problema resolve</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
+        <p
+          data-pt="Recursos como identificação de tenant e autenticação JWT aparecem em diferentes sistemas. Reimplementar essa infraestrutura em cada projeto aumenta boilerplate, cria variações de comportamento e torna a manutenção mais difícil."
+          data-en="Features such as tenant identification and JWT authentication appear in different systems. Reimplementing this infrastructure in every project increases boilerplate, creates behavioral variations, and makes maintenance harder."
+        >Recursos como identificação de tenant e autenticação JWT aparecem em diferentes sistemas. Reimplementar essa infraestrutura em cada projeto aumenta boilerplate, cria variações de comportamento e torna a manutenção mais difícil.</p>
+      </article>
+
+      <article class="overview-card">
+        <h3 data-pt="A proposta" data-en="The approach">A proposta</h3>
+        <p
+          data-pt="A Psalms extrai essas responsabilidades para componentes reutilizáveis em .NET. Assim, outros projetos podem partir de uma base mais consistente e concentrar o desenvolvimento nas regras específicas de cada aplicação."
+          data-en="Psalms extracts these responsibilities into reusable .NET components. This allows other projects to start from a more consistent foundation and focus development on each application's specific rules."
+        >A Psalms extrai essas responsabilidades para componentes reutilizáveis em .NET. Assim, outros projetos podem partir de uma base mais consistente e concentrar o desenvolvimento nas regras específicas de cada aplicação.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="operation" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Visão técnica" data-en="Technical overview">Visão técnica</p>
+      <h2 data-pt="Como a biblioteca é organizada" data-en="How the library is organized">Como a biblioteca é organizada</h2>
+      <p class="section-description" data-pt="O projeto trata recursos recorrentes como infraestrutura compartilhada, não como lógica presa a um único aplicativo." data-en="The project treats recurring features as shared infrastructure, not as logic tied to a single application.">O projeto trata recursos recorrentes como infraestrutura compartilhada, não como lógica presa a um único aplicativo.</p>
+    </header>
+
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-number">01</span>
+        <h3>Multi-tenancy</h3>
+        <p data-pt="Organiza componentes ligados à identificação e separação de contexto entre tenants." data-en="Organizes components related to identifying and separating context between tenants.">Organiza componentes ligados à identificação e separação de contexto entre tenants.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">02</span>
+        <h3 data-pt="Autenticação JWT" data-en="JWT authentication">Autenticação JWT</h3>
+        <p data-pt="Centraliza recursos de autenticação baseada em tokens para reduzir repetição e divergência entre projetos." data-en="Centralizes token-based authentication features to reduce repetition and divergence across projects.">Centraliza recursos de autenticação baseada em tokens para reduzir repetição e divergência entre projetos.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">03</span>
+        <h3 data-pt="Componentização" data-en="Componentization">Componentização</h3>
+        <p data-pt="Separa funcionalidades recorrentes em unidades que podem ser integradas sem copiar a implementação inteira." data-en="Separates recurring features into units that can be integrated without copying the entire implementation.">Separa funcionalidades recorrentes em unidades que podem ser integradas sem copiar a implementação inteira.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">04</span>
+        <h3 data-pt="Reuso entre projetos" data-en="Reuse across projects">Reuso entre projetos</h3>
+        <p data-pt="Permite que diferentes aplicações compartilhem uma fundação técnica e evoluam a partir das mesmas decisões." data-en="Allows different applications to share a technical foundation and evolve from the same decisions.">Permite que diferentes aplicações compartilhem uma fundação técnica e evoluam a partir das mesmas decisões.</p>
+      </article>
+    </div>
+
+    <div class="architecture-note">
+      <strong data-pt="Infraestrutura, não aplicativo final" data-en="Infrastructure, not an end-user app">Infraestrutura, não aplicativo final</strong>
+      <p
+        data-pt="A Psalms não busca resolver um fluxo de negócio visível ao usuário final. Seu valor está em padronizar capacidades técnicas que outros sistemas consomem, mostrando uma preocupação de engenharia com arquitetura e manutenção de longo prazo."
+        data-en="Psalms is not meant to solve a business flow visible to an end user. Its value lies in standardizing technical capabilities consumed by other systems, demonstrating an engineering focus on architecture and long-term maintenance."
+      >A Psalms não busca resolver um fluxo de negócio visível ao usuário final. Seu valor está em padronizar capacidades técnicas que outros sistemas consomem, mostrando uma preocupação de engenharia com arquitetura e manutenção de longo prazo.</p>
+    </div>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Base técnica da biblioteca" data-en="Library technical foundation">Base técnica da biblioteca</h2>
+    </header>
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Plataforma" data-en="Platform">Plataforma</h3>
+        <span>.NET</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Identidade" data-en="Identity">Identidade</h3>
+        <span>JWT Auth</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Contexto" data-en="Context">Contexto</h3>
+        <span>Multi-tenancy</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Engenharia" data-en="Engineering">Engenharia</h3>
+        <span data-pt="Componentização" data-en="Componentization">Componentização</span>
+        <span data-pt="Reuso de código" data-en="Code reuse">Reuso de código</span>
+        <span data-pt="Infraestrutura compartilhada" data-en="Shared infrastructure">Infraestrutura compartilhada</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="status" class="section container reveal">
+    <div class="status-panel status-continuous">
+      <div>
+        <p class="section-kicker" data-pt="Status real" data-en="Actual status">Status real</p>
+        <h2 data-pt="Biblioteca em evolução" data-en="Evolving library">Biblioteca em evolução</h2>
+        <p data-pt="A Psalms é uma infraestrutura reutilizável que evolui conforme novos projetos exigem componentes compartilhados. Ela não é apresentada como um aplicativo finalizado para usuários finais." data-en="Psalms is reusable infrastructure that evolves as new projects require shared components. It is not presented as a finished application for end users.">A Psalms é uma infraestrutura reutilizável que evolui conforme novos projetos exigem componentes compartilhados. Ela não é apresentada como um aplicativo finalizado para usuários finais.</p>
+      </div>
+      <ul class="status-facts">
+        <li data-pt="Biblioteca própria para o ecossistema .NET" data-en="Custom library for the .NET ecosystem">Biblioteca própria para o ecossistema .NET</li>
+        <li data-pt="Evolução orientada pelo reuso" data-en="Evolution guided by reuse">Evolução orientada pelo reuso</li>
+        <li data-pt="Não é um aplicativo final" data-en="Not an end-user application">Não é um aplicativo final</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Psalms" data-en="© 2026 Gustavo Soares — Psalms Project">© 2026 Gustavo Soares — Projeto Psalms</footer>
+<script src="scripts/script.js"></script>
+</body>
+</html>

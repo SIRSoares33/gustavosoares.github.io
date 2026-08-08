@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Logos: sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs administrativas.">
+  <title>Logos — Sistema de Gestão Comercial</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">Logos</p>
+    <nav class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
+      <a href="#stack">Stack</a>
+      <a href="#status">Status</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+        <h1>Logos</h1>
+        <h2 data-pt="Sistema de Gestão Comercial" data-en="Business Management System">Sistema de Gestão Comercial</h2>
+        <p
+          data-pt="Projeto de portfólio e aprendizado em .NET que reúne estoque, vendas, PDV, dashboards e APIs administrativas em uma base pensada para evoluir de forma extensível e escalável."
+          data-en="A .NET portfolio and learning project that brings together inventory, sales, POS, dashboards, and administration APIs in a foundation designed to evolve with extensibility and scalability."
+        >Projeto de portfólio e aprendizado em .NET que reúne estoque, vendas, PDV, dashboards e APIs administrativas em uma base pensada para evoluir de forma extensível e escalável.</p>
+        <div class="hero-buttons">
+          <a href="#operation" class="btn" data-pt="Ver funcionamento" data-en="See how it works">Ver funcionamento</a>
+          <a href="#stack" class="btn-outline" data-pt="Ver stack" data-en="View stack">Ver stack</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual">
+          <div class="visual-core">LOGOS</div>
+          <div class="visual-grid">
+            <span data-pt="Estoque" data-en="Inventory">Estoque</span>
+            <span data-pt="Vendas" data-en="Sales">Vendas</span>
+            <span>PDV</span>
+            <span>Dashboards</span>
+            <span>APIs</span>
+            <span data-pt="Gestão" data-en="Management">Gestão</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
+      <h2 data-pt="O que é e qual problema resolve" data-en="What it is and what it solves">O que é e qual problema resolve</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
+        <p
+          data-pt="Operações comerciais dependem de informações conectadas: posição de estoque, registro de vendas, atendimento no ponto de venda e indicadores de gestão. Quando esses dados ficam separados, acompanhar a operação e tomar decisões se torna mais difícil."
+          data-en="Business operations depend on connected information: inventory position, sales records, point-of-sale service, and management indicators. When this data is separated, monitoring the operation and making decisions becomes harder."
+        >Operações comerciais dependem de informações conectadas: posição de estoque, registro de vendas, atendimento no ponto de venda e indicadores de gestão. Quando esses dados ficam separados, acompanhar a operação e tomar decisões se torna mais difícil.</p>
+      </article>
+
+      <article class="overview-card">
+        <h3 data-pt="A proposta" data-en="The approach">A proposta</h3>
+        <p
+          data-pt="O Logos concentra essas frentes em um sistema de gestão comercial modular. O projeto serve como ambiente prático para desenvolver um produto completo, conectar domínios diferentes e preparar a base para novas funcionalidades."
+          data-en="Logos brings these areas together in a modular business management system. The project serves as a practical environment for developing a complete product, connecting different domains, and preparing the foundation for new features."
+        >O Logos concentra essas frentes em um sistema de gestão comercial modular. O projeto serve como ambiente prático para desenvolver um produto completo, conectar domínios diferentes e preparar a base para novas funcionalidades.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="operation" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Visão técnica" data-en="Technical overview">Visão técnica</p>
+      <h2 data-pt="Como o sistema é organizado" data-en="How the system is organized">Como o sistema é organizado</h2>
+      <p class="section-description"
+        data-pt="Cada área representa uma responsabilidade do domínio comercial e pode evoluir sem transformar o projeto em um bloco único."
+        data-en="Each area represents a business domain responsibility and can evolve without turning the project into a single monolithic block."
+      >Cada área representa uma responsabilidade do domínio comercial e pode evoluir sem transformar o projeto em um bloco único.</p>
+    </header>
+
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-number">01</span>
+        <h3 data-pt="Estoque" data-en="Inventory">Estoque</h3>
+        <p data-pt="Centraliza o controle de itens e a visão das movimentações necessárias à operação comercial." data-en="Centralizes item control and the view of movements required by the business operation.">Centraliza o controle de itens e a visão das movimentações necessárias à operação comercial.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">02</span>
+        <h3 data-pt="Vendas e PDV" data-en="Sales and POS">Vendas e PDV</h3>
+        <p data-pt="Reúne o registro das vendas e o fluxo de ponto de venda como parte do mesmo contexto operacional." data-en="Brings sales records and the point-of-sale flow together within the same operational context.">Reúne o registro das vendas e o fluxo de ponto de venda como parte do mesmo contexto operacional.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">03</span>
+        <h3>Dashboards</h3>
+        <p data-pt="Organiza indicadores para acompanhar a operação e transformar dados dos módulos em uma visão gerencial." data-en="Organizes indicators to monitor operations and turn module data into a management view.">Organiza indicadores para acompanhar a operação e transformar dados dos módulos em uma visão gerencial.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">04</span>
+        <h3 data-pt="APIs administrativas" data-en="Administration APIs">APIs administrativas</h3>
+        <p data-pt="Expõem operações administrativas e criam pontos de integração para a evolução do sistema." data-en="Expose administration operations and create integration points for the system's evolution.">Expõem operações administrativas e criam pontos de integração para a evolução do sistema.</p>
+      </article>
+    </div>
+
+    <div class="architecture-note">
+      <strong data-pt="Decisão de arquitetura" data-en="Architecture decision">Decisão de arquitetura</strong>
+      <p
+        data-pt="O foco não é apenas entregar telas isoladas, mas estruturar módulos que possam receber novas regras e integrações. Extensibilidade e escalabilidade são objetivos de engenharia do projeto, que ainda está em desenvolvimento."
+        data-en="The focus is not only to deliver isolated screens, but to structure modules that can receive new rules and integrations. Extensibility and scalability are engineering goals of the project, which is still under development."
+      >O foco não é apenas entregar telas isoladas, mas estruturar módulos que possam receber novas regras e integrações. Extensibilidade e escalabilidade são objetivos de engenharia do projeto, que ainda está em desenvolvimento.</p>
+    </div>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Base técnica confirmada" data-en="Confirmed technical foundation">Base técnica confirmada</h2>
+      <p class="section-description" data-pt="A página lista somente tecnologias e decisões confirmadas para o Logos." data-en="This page lists only technologies and decisions confirmed for Logos.">A página lista somente tecnologias e decisões confirmadas para o Logos.</p>
+    </header>
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Tecnologia" data-en="Technology">Tecnologia</h3>
+        <span>.NET</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Domínios" data-en="Domains">Domínios</h3>
+        <span data-pt="Estoque" data-en="Inventory">Estoque</span>
+        <span data-pt="Vendas" data-en="Sales">Vendas</span>
+        <span>PDV</span>
+        <span>Dashboards</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Integração" data-en="Integration">Integração</h3>
+        <span data-pt="APIs administrativas" data-en="Administration APIs">APIs administrativas</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Engenharia" data-en="Engineering">Engenharia</h3>
+        <span data-pt="Extensibilidade" data-en="Extensibility">Extensibilidade</span>
+        <span data-pt="Escalabilidade" data-en="Scalability">Escalabilidade</span>
+        <span data-pt="Organização modular" data-en="Modular organization">Organização modular</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="status" class="section container reveal">
+    <div class="status-panel">
+      <div>
+        <p class="section-kicker" data-pt="Status real" data-en="Actual status">Status real</p>
+        <h2 data-pt="Projeto em desenvolvimento" data-en="Project in development">Projeto em desenvolvimento</h2>
+        <p data-pt="O Logos é um projeto de portfólio e aprendizado. A estrutura e os módulos continuam evoluindo; esta página não o apresenta como produto finalizado." data-en="Logos is a portfolio and learning project. Its structure and modules continue to evolve; this page does not present it as a finished product.">O Logos é um projeto de portfólio e aprendizado. A estrutura e os módulos continuam evoluindo; esta página não o apresenta como produto finalizado.</p>
+      </div>
+      <ul class="status-facts">
+        <li data-pt="Sistema comercial em construção" data-en="Business system under construction">Sistema comercial em construção</li>
+        <li data-pt="Módulos sujeitos a evolução" data-en="Modules subject to evolution">Módulos sujeitos a evolução</li>
+        <li data-pt="Foco em aprendizado e arquitetura" data-en="Focus on learning and architecture">Foco em aprendizado e arquitetura</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Logos" data-en="© 2026 Gustavo Soares — Logos Project">© 2026 Gustavo Soares — Projeto Logos</footer>
+<script src="scripts/script.js"></script>
+</body>
+</html>

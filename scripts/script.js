@@ -1,42 +1,55 @@
 const photos = document.querySelectorAll(".photo-carousel img");
-let index = 0;
 
-setInterval(() => {
-  photos[index].classList.remove("active");
-  index = (index + 1) % photos.length;
-  photos[index].classList.add("active");
-}, 6000);
+if (photos.length > 1) {
+  let currentPhoto = 0;
 
-
-const revealElements = document.querySelectorAll('.reveal');
-
-function revealOnScroll() {
-  revealElements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    const triggerPoint = window.innerHeight - 80;
-
-    if (top < triggerPoint) {
-      el.classList.add('active');
-    }
-  });
+  window.setInterval(() => {
+    photos[currentPhoto].classList.remove("active");
+    currentPhoto = (currentPhoto + 1) % photos.length;
+    photos[currentPhoto].classList.add("active");
+  }, 6000);
 }
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+const revealElements = document.querySelectorAll(".reveal");
 
-let lang = "pt";
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -70px", threshold: 0.08 }
+  );
 
-const button = document.getElementById("langBtn");
-const elements = document.querySelectorAll("[data-pt][data-en]");
+  revealElements.forEach((element) => revealObserver.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("active"));
+}
 
-button.addEventListener("click", () => {
-  lang = lang === "pt" ? "en" : "pt";
+let language = "pt";
+const languageButton = document.getElementById("langBtn");
+const translatedElements = document.querySelectorAll("[data-pt][data-en]");
 
-  elements.forEach(el => {
-    el.textContent = el.dataset[lang];
+languageButton.addEventListener("click", () => {
+  language = language === "pt" ? "en" : "pt";
+
+  translatedElements.forEach((element) => {
+    element.textContent = element.dataset[language];
   });
 
-  button.textContent = lang === "pt" ? "EN" : "PT";
+  const isPortuguese = language === "pt";
+  document.documentElement.lang = isPortuguese ? "pt-BR" : "en";
+  languageButton.textContent = isPortuguese ? "EN" : "PT";
+  languageButton.setAttribute(
+    "aria-label",
+    isPortuguese ? "Mudar idioma para inglês" : "Switch language to Portuguese"
+  );
 });
 
-lucide.createIcons();
+if (window.lucide) {
+  window.lucide.createIcons();
+}
