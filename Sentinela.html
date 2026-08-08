@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sentinela: projeto em desenvolvimento para monitoramento de containers e diagnóstico de incidentes com IA.">
+  <title>Sentinela — Monitoramento de Infraestrutura com IA</title>
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/Sentinela.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">Sentinela</p>
+    <nav class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#architecture" data-pt="Arquitetura" data-en="Architecture">Arquitetura</a>
+      <a href="#mvp">MVP</a>
+      <a href="#stack">Stack</a>
+      <a href="#status">Status</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+        <h1>Sentinela</h1>
+        <h2
+          data-pt="Monitoramento de Infraestrutura com Diagnóstico por IA"
+          data-en="Infrastructure Monitoring with AI-assisted Diagnostics"
+        >Monitoramento de Infraestrutura com Diagnóstico por IA</h2>
+        <p
+          data-pt="Projeto em construção para monitorar containers Docker, registrar incidentes e usar IA para transformar logs em diagnósticos e sugestões de correção. A proposta combina desenvolvimento, observabilidade e operação de servidor — sem executar ações destrutivas sem aprovação humana."
+          data-en="A project under construction to monitor Docker containers, record incidents, and use AI to turn logs into diagnostics and suggested fixes. The approach combines development, observability, and server operations — without executing destructive actions without human approval."
+        >Projeto em construção para monitorar containers Docker, registrar incidentes e usar IA para transformar logs em diagnósticos e sugestões de correção. A proposta combina desenvolvimento, observabilidade e operação de servidor — sem executar ações destrutivas sem aprovação humana.</p>
+        <div class="hero-buttons">
+          <a href="#architecture" class="btn" data-pt="Ver arquitetura" data-en="View architecture">Ver arquitetura</a>
+          <a href="#mvp" class="btn-outline" data-pt="Ver roteiro MVP" data-en="View MVP roadmap">Ver roteiro MVP</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual sentinela-visual">
+          <div class="visual-core">SENTINELA</div>
+          <div class="visual-grid">
+            <span>Docker</span>
+            <span data-pt="Coletor .NET" data-en=".NET collector">Coletor .NET</span>
+            <span data-pt="Diagnóstico IA" data-en="AI diagnostics">Diagnóstico IA</span>
+            <span>Web API</span>
+            <span>Blazor</span>
+            <span>Telegram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
+      <h2 data-pt="O problema e a proposta" data-en="The problem and the approach">O problema e a proposta</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
+        <p
+          data-pt="Pequenas empresas e projetos pessoais raramente possuem monitoramento estruturado. Quando um container ou serviço falha, o problema costuma ser percebido apenas depois da indisponibilidade, e o diagnóstico depende de procurar manualmente a causa nos logs."
+          data-en="Small businesses and personal projects rarely have structured monitoring. When a container or service fails, the problem is often noticed only after downtime, and diagnosis depends on manually searching the logs for the cause."
+        >Pequenas empresas e projetos pessoais raramente possuem monitoramento estruturado. Quando um container ou serviço falha, o problema costuma ser percebido apenas depois da indisponibilidade, e o diagnóstico depende de procurar manualmente a causa nos logs.</p>
+      </article>
+
+      <article class="overview-card">
+        <h3 data-pt="A proposta" data-en="The approach">A proposta</h3>
+        <p
+          data-pt="O Sentinela está sendo planejado para coletar estado e logs dos containers, detectar anomalias, organizar um histórico de incidentes e apresentar um diagnóstico em linguagem natural. A IA atuará como apoio à análise; a decisão operacional continuará humana."
+          data-en="Sentinela is being planned to collect container state and logs, detect anomalies, organize an incident history, and present diagnostics in natural language. AI will support the analysis; operational decisions will remain human."
+        >O Sentinela está sendo planejado para coletar estado e logs dos containers, detectar anomalias, organizar um histórico de incidentes e apresentar um diagnóstico em linguagem natural. A IA atuará como apoio à análise; a decisão operacional continuará humana.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="architecture" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Arquitetura planejada" data-en="Planned architecture">Arquitetura planejada</p>
+      <h2 data-pt="Do Docker Engine ao diagnóstico" data-en="From Docker Engine to diagnosis">Do Docker Engine ao diagnóstico</h2>
+      <p class="section-description"
+        data-pt="Os componentes abaixo representam o desenho previsto para o projeto; não indicam implantação concluída."
+        data-en="The components below represent the planned design; they do not indicate a completed deployment."
+      >Os componentes abaixo representam o desenho previsto para o projeto; não indicam implantação concluída.</p>
+    </header>
+
+    <div class="sentinel-pipeline" role="img" aria-label="Docker Engine, coletor .NET, API e motor de IA, dashboard e alertas">
+      <div class="pipeline-node">
+        <span>01</span>
+        <strong>Docker Engine</strong>
+      </div>
+      <b aria-hidden="true">→</b>
+      <div class="pipeline-node">
+        <span>02</span>
+        <strong data-pt="Coletor .NET" data-en=".NET collector">Coletor .NET</strong>
+      </div>
+      <b aria-hidden="true">→</b>
+      <div class="pipeline-node pipeline-node-split">
+        <span>03</span>
+        <strong data-pt="API + diagnóstico IA" data-en="API + AI diagnostics">API + diagnóstico IA</strong>
+      </div>
+      <b aria-hidden="true">→</b>
+      <div class="pipeline-node">
+        <span>04</span>
+        <strong data-pt="Dashboard + alertas" data-en="Dashboard + alerts">Dashboard + alertas</strong>
+      </div>
+    </div>
+
+    <div class="detail-grid architecture-details">
+      <article class="detail-card reveal">
+        <span class="detail-number">01</span>
+        <h3 data-pt="Coletor" data-en="Collector">Coletor</h3>
+        <p
+          data-pt="Um Worker Service em .NET deverá consultar a Docker Engine API por meio da biblioteca Docker.DotNet para obter estado, saúde e logs dos containers."
+          data-en="A .NET Worker Service will query the Docker Engine API through Docker.DotNet to obtain container state, health, and logs."
+        >Um Worker Service em .NET deverá consultar a Docker Engine API por meio da biblioteca Docker.DotNet para obter estado, saúde e logs dos containers.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-number">02</span>
+        <h3 data-pt="Motor de diagnóstico" data-en="Diagnostic engine">Motor de diagnóstico</h3>
+        <p
+          data-pt="Quando uma anomalia for detectada, os logs e o erro relevante serão enviados a uma LLM para produzir um diagnóstico legível e uma sugestão de correção."
+          data-en="When an anomaly is detected, the relevant logs and error will be sent to an LLM to produce a readable diagnosis and a suggested fix."
+        >Quando uma anomalia for detectada, os logs e o erro relevante serão enviados a uma LLM para produzir um diagnóstico legível e uma sugestão de correção.</p>
+        <p class="sentinel-pending" data-pt="[LLM a confirmar: Claude ou OpenAI]" data-en="[LLM to confirm: Claude or OpenAI]">[LLM a confirmar: Claude ou OpenAI]</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-number">03</span>
+        <h3>ASP.NET Core Web API</h3>
+        <p
+          data-pt="A API deverá expor o status dos containers, o histórico de incidentes e as ações sugeridas para consumo pelo dashboard."
+          data-en="The API will expose container status, incident history, and suggested actions for the dashboard to consume."
+        >A API deverá expor o status dos containers, o histórico de incidentes e as ações sugeridas para consumo pelo dashboard.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-number">04</span>
+        <h3 data-pt="Dashboard em tempo real" data-en="Real-time dashboard">Dashboard em tempo real</h3>
+        <p
+          data-pt="Uma interface em Blazor deverá usar SignalR para apresentar estados em tempo real, incidentes registrados e diagnósticos produzidos pela IA."
+          data-en="A Blazor interface will use SignalR to present real-time state, recorded incidents, and AI-generated diagnostics."
+        >Uma interface em Blazor deverá usar SignalR para apresentar estados em tempo real, incidentes registrados e diagnósticos produzidos pela IA.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-number">05</span>
+        <h3 data-pt="Identidade e histórico" data-en="Identity and history">Identidade e histórico</h3>
+        <p
+          data-pt="A autenticação deverá reutilizar a biblioteca Psalms para JWT e multi-tenancy. PostgreSQL ou SQLite armazenará o histórico de incidentes; a escolha ainda será definida."
+          data-en="Authentication will reuse the Psalms library for JWT and multi-tenancy. PostgreSQL or SQLite will store incident history; the choice is still to be defined."
+        >A autenticação deverá reutilizar a biblioteca Psalms para JWT e multi-tenancy. PostgreSQL ou SQLite armazenará o histórico de incidentes; a escolha ainda será definida.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="detail-number">06</span>
+        <h3 data-pt="Alertas e acesso" data-en="Alerts and access">Alertas e acesso</h3>
+        <p
+          data-pt="Incidentes deverão gerar alertas pela Telegram Bot API. O deploy está planejado em Docker Compose no servidor on-premise, com o dashboard administrativo acessível pela rede Tailscale."
+          data-en="Incidents will generate alerts through the Telegram Bot API. Deployment is planned through Docker Compose on the on-premise server, with the administration dashboard accessible through the Tailscale network."
+        >Incidentes deverão gerar alertas pela Telegram Bot API. O deploy está planejado em Docker Compose no servidor on-premise, com o dashboard administrativo acessível pela rede Tailscale.</p>
+      </article>
+    </div>
+
+    <div class="safety-panel">
+      <div class="safety-mark" aria-hidden="true">!</div>
+      <div>
+        <h3 data-pt="Sugestão não é execução automática" data-en="A suggestion is not automatic execution">Sugestão não é execução automática</h3>
+        <p
+          data-pt="A IA poderá recomendar uma ação, como reiniciar um container, mas o projeto prevê uma etapa obrigatória de confirmação manual. Nenhuma ação destrutiva será aplicada automaticamente."
+          data-en="AI may recommend an action, such as restarting a container, but the project includes a mandatory manual confirmation step. No destructive action will be applied automatically."
+        >A IA poderá recomendar uma ação, como reiniciar um container, mas o projeto prevê uma etapa obrigatória de confirmação manual. Nenhuma ação destrutiva será aplicada automaticamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mvp" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Roteiro MVP" data-en="MVP roadmap">Roteiro MVP</p>
+      <h2 data-pt="Cinco fases planejadas" data-en="Five planned phases">Cinco fases planejadas</h2>
+      <p class="section-description"
+        data-pt="Nenhuma fase está marcada como concluída porque o andamento real ainda não foi confirmado."
+        data-en="No phase is marked as completed because actual progress has not yet been confirmed."
+      >Nenhuma fase está marcada como concluída porque o andamento real ainda não foi confirmado.</p>
+    </header>
+
+    <ol class="mvp-roadmap">
+      <li class="mvp-item">
+        <div class="mvp-marker">01</div>
+        <article>
+          <span class="mvp-state" data-pt="Planejado" data-en="Planned">Planejado</span>
+          <h3 data-pt="Coletor básico" data-en="Basic collector">Coletor básico</h3>
+          <p data-pt="Worker Service consultando a Docker Engine API e listando status e logs dos containers, ainda sem IA." data-en="Worker Service querying the Docker Engine API and listing container status and logs, without AI at this stage.">Worker Service consultando a Docker Engine API e listando status e logs dos containers, ainda sem IA.</p>
+        </article>
+      </li>
+      <li class="mvp-item">
+        <div class="mvp-marker">02</div>
+        <article>
+          <span class="mvp-state" data-pt="Planejado" data-en="Planned">Planejado</span>
+          <h3 data-pt="Dashboard simples" data-en="Simple dashboard">Dashboard simples</h3>
+          <p data-pt="API e interface Blazor apresentando o status dos containers em tempo real por SignalR." data-en="API and Blazor interface presenting real-time container status through SignalR.">API e interface Blazor apresentando o status dos containers em tempo real por SignalR.</p>
+        </article>
+      </li>
+      <li class="mvp-item">
+        <div class="mvp-marker">03</div>
+        <article>
+          <span class="mvp-state" data-pt="Planejado" data-en="Planned">Planejado</span>
+          <h3 data-pt="Diagnóstico com IA" data-en="AI diagnostics">Diagnóstico com IA</h3>
+          <p data-pt="Envio do log de um container unhealthy para a LLM e exibição do diagnóstico no dashboard." data-en="Sending the log from an unhealthy container to the LLM and displaying the diagnosis on the dashboard.">Envio do log de um container unhealthy para a LLM e exibição do diagnóstico no dashboard.</p>
+        </article>
+      </li>
+      <li class="mvp-item">
+        <div class="mvp-marker">04</div>
+        <article>
+          <span class="mvp-state" data-pt="Planejado" data-en="Planned">Planejado</span>
+          <h3 data-pt="Alertas" data-en="Alerts">Alertas</h3>
+          <p data-pt="Notificação pela Telegram Bot API com o incidente e o diagnóstico incluído." data-en="Notification through the Telegram Bot API including the incident and diagnosis.">Notificação pela Telegram Bot API com o incidente e o diagnóstico incluído.</p>
+        </article>
+      </li>
+      <li class="mvp-item">
+        <div class="mvp-marker">05</div>
+        <article>
+          <span class="mvp-state" data-pt="Planejado" data-en="Planned">Planejado</span>
+          <h3 data-pt="Ação sugerida com aprovação" data-en="Suggested action with approval">Ação sugerida com aprovação</h3>
+          <p data-pt="Botão para aplicar a correção sugerida somente depois de uma confirmação manual explícita." data-en="A button to apply the suggested fix only after explicit manual confirmation.">Botão para aplicar a correção sugerida somente depois de uma confirmação manual explícita.</p>
+        </article>
+      </li>
+    </ol>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Tecnologias planejadas" data-en="Planned technologies">Tecnologias planejadas</h2>
+    </header>
+
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Backend" data-en="Backend">Backend</h3>
+        <span>.NET</span>
+        <span>Worker Service</span>
+        <span>ASP.NET Core Web API</span>
+        <span>SignalR</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Interface" data-en="Interface">Interface</h3>
+        <span>Blazor</span>
+        <span data-pt="Tempo real" data-en="Real time">Tempo real</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Containers" data-en="Containers">Containers</h3>
+        <span>Docker</span>
+        <span>Docker.DotNet</span>
+        <span>Docker Compose</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Dados e identidade" data-en="Data and identity">Dados e identidade</h3>
+        <span data-pt="PostgreSQL ou SQLite • a definir" data-en="PostgreSQL or SQLite • to be decided">PostgreSQL ou SQLite • a definir</span>
+        <span data-pt="Psalms • JWT e multi-tenancy" data-en="Psalms • JWT and multi-tenancy">Psalms • JWT e multi-tenancy</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Integrações" data-en="Integrations">Integrações</h3>
+        <span data-pt="LLM • a confirmar" data-en="LLM • to be confirmed">LLM • a confirmar</span>
+        <span>Telegram Bot API</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Deploy e acesso" data-en="Deployment and access">Deploy e acesso</h3>
+        <span data-pt="Servidor on-premise" data-en="On-premise server">Servidor on-premise</span>
+        <span>Tailscale</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="status" class="section container reveal">
+    <div class="status-panel sentinel-status-panel">
+      <div>
+        <p class="section-kicker" data-pt="Status real" data-en="Actual status">Status real</p>
+        <h2 data-pt="Projeto em desenvolvimento" data-en="Project in development">Projeto em desenvolvimento</h2>
+        <p
+          data-pt="O Sentinela ainda não está implantado, não monitora servidores reais e não possui fases do MVP marcadas como concluídas. Esta página documenta a arquitetura e o plano de construção."
+          data-en="Sentinela has not been deployed, does not monitor real servers, and has no MVP phase marked as completed. This page documents the architecture and build plan."
+        >O Sentinela ainda não está implantado, não monitora servidores reais e não possui fases do MVP marcadas como concluídas. Esta página documenta a arquitetura e o plano de construção.</p>
+      </div>
+      <ul class="status-facts">
+        <li data-pt="Arquitetura planejada" data-en="Planned architecture">Arquitetura planejada</li>
+        <li data-pt="Nenhuma fase declarada como concluída" data-en="No phase declared complete">Nenhuma fase declarada como concluída</li>
+        <li data-pt="LLM ainda será escolhida" data-en="LLM still to be selected">LLM ainda será escolhida</li>
+        <li data-pt="Repositório público ainda não confirmado" data-en="Public repository not yet confirmed">Repositório público ainda não confirmado</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Sentinela" data-en="© 2026 Gustavo Soares — Sentinela Project">© 2026 Gustavo Soares — Projeto Sentinela</footer>
+<script src="scripts/script.js"></script>
+</body>
+</html>

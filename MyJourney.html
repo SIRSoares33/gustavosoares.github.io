@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha História</title>
+  <meta name="description" content="A trajetória de Gustavo Soares do desenvolvimento de software à atuação em suporte, infraestrutura e cloud.">
+  <title>Minha Trajetória | Gustavo Soares</title>
   <link rel="stylesheet" href="styles/story.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
-    <h1 class="logo" data-pt="Gustavo Soares" data-en="Gustavo Soares">Gustavo Soares</h1>
+    <a class="logo" href="index.html" data-pt="Gustavo Soares" data-en="Gustavo Soares">Gustavo Soares</a>
 
     <nav class="nav">
       <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
@@ -21,17 +22,18 @@
       <a href="index.html" data-pt="Meu portfólio" data-en="My portfolio">Meu portfólio</a>
     </nav>
 
-    <button id="langBtn" class="lang-btn">EN</button>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
   </div>
 </header>
 
 <section class="story-section">
-
-  <h2 class="section-title reveal" data-pt="Minha História" data-en="My journey">Minha História</h2>
-  <p class="section-subtitle reveal"
-  data-pt="Cada ponto representa uma fase importante da minha jornada." data-en="Each point represents an important phase of my journey.">
-    Cada ponto representa uma fase importante da minha jornada.
-  </p>
+  <header class="story-intro reveal">
+    <h1 class="section-title" data-pt="Minha trajetória" data-en="My journey">Minha trajetória</h1>
+    <p class="section-subtitle"
+      data-pt="Cada ponto representa uma fase importante da minha jornada."
+      data-en="Each point represents an important phase of my journey."
+    >Cada ponto representa uma fase importante da minha jornada.</p>
+  </header>
 
   <div class="timeline">
 
@@ -57,8 +59,10 @@ of student registration at the administration office.">
       de cadastro de alunos da diretoria.
     </p>
     
-    <img src="img/pythonAp.jpg" alt="Primeiro projeto" class="timeline-photo">
-    <img src="img/pythonProject.jpg" class="timeline-photo">
+    <div class="timeline-gallery">
+      <img src="img/pythonAp.jpg" alt="Apresentação do primeiro projeto em Python" class="timeline-photo">
+      <img src="img/pythonProject.jpg" alt="Interface do primeiro projeto em Python" class="timeline-photo">
+    </div>
   </div>
 
 </div>
@@ -77,8 +81,10 @@ What I learned in Python I passed on to my classmates. In this way, knowledge wa
         nos tempos vagos da escola.
           Aquilo que eu aprendia em Python passava adiante para meus colegas. Assim, o conhecimento era distibuido para todos de uma forma boa.
         </p>
-        <img src="img/SaladeInfo.jpg" alt="Primeiro projeto" class="timeline-photo">
-        <img src="img/Aulas.png" class="timeline-photo">
+        <div class="timeline-gallery">
+          <img src="img/SaladeInfo.jpg" alt="Sala de informática onde as aulas aconteciam" class="timeline-photo">
+          <img src="img/Aulas.png" alt="Registro das aulas de desenvolvimento" class="timeline-photo">
+        </div>
       </div>
     </div>
 
@@ -98,7 +104,9 @@ Migrei para o .NET, onde desenvolvi meus primeiros projetos reais, aprendi POO, 
 Também subi meus primeiros servidores com ASP.NET e Docker, dando meus primeiros passos em produção e infraestrutura real.
         </p>
 
-        <img src="img/Code.jpg" class="timeline-photo">
+        <div class="timeline-gallery">
+          <img src="img/Code.jpg" alt="Código de um dos primeiros projetos em .NET" class="timeline-photo">
+        </div>
       </div>
     </div>
 
@@ -117,24 +125,48 @@ Na Máxima Inventários, trabalhei com sistemas reais em produção, lidando com
 
 Em paralelo, criei a Psalms, uma organização no GitHub focada em desenvolver bibliotecas para o ecossistema .NET, reduzindo boilerplate, automatizando autenticação e aplicando boas práticas em microservices.
         </p>
-        <img src="img/Psalms.png" class="timeline-photo">
+        <div class="timeline-gallery">
+          <img src="img/Psalms.png" alt="Logotipo do projeto Psalms" class="timeline-photo">
+        </div>
       </div>
     </div>
 
     <!-- FASE 5 -->
-    <div class="timeline-item">
+    <div class="timeline-item timeline-item-current">
       <span class="timeline-dot"></span>
       <div class="timeline-card">
-        <h4 data-pt="Futuro" data-en="Future">Futuro</h4>
-        <p data-pt="Meu objetivo é voltar ao mercado, enfrentando desafios maiores e evoluindo como desenvolvedor. Busco contribuir em projetos com impacto, aprender com profissionais experientes e entregar soluções de alto nível.
-Paralelamente, desenvolvo a Logos, um sistema de gestão comercial em .NET focado em estoque, vendas, PDV, dashboards e APIs, aplicando na prática princípios de arquitetura, escalabilidade e qualidade de software."
-data-en="My goal is to return to the market, facing greater challenges and evolving as a developer. I seek to contribute to impactful projects, learn from experienced professionals, and deliver high-level solutions.
-In parallel, I am developing Logos, a commercial management system in .NET focused on inventory, sales, POS, dashboards, and APIs, practically applying principles of architecture, scalability, and software quality.">
-          Meu objetivo é voltar ao mercado, enfrentando desafios maiores e evoluindo como desenvolvedor. Busco contribuir em projetos com impacto, aprender com profissionais experientes e entregar soluções de alto nível.
-Paralelamente, desenvolvo a Logos, um sistema de gestão comercial em .NET focado em estoque, vendas, PDV, dashboards e APIs, aplicando na prática princípios de arquitetura, escalabilidade e qualidade de software.
-        </p>
+        <h4 data-pt="SuporteMI & expansão para TI" data-en="SuporteMI & broader IT experience">SuporteMI & expansão para TI</h4>
+        <p data-pt="Como Consultor de TI Junior na SuporteMI, atuo diretamente com suporte a usuários, troubleshooting, manutenção, hardware e documentação. Minha atuação também inclui infraestrutura, administração de ambientes Windows e Linux, virtualização, backup, AWS, Google Workspace, hospedagem, DNS e marketing digital.
 
-        <img src="img/logos.png" class="timeline-photo">
+Nesse período, participei do Projeto Jarvis, um agente interno de IA integrado ao Google Drive da empresa para organizar documentos, responder perguntas e apoiar processos. Essa experiência ampliou minha visão para além do desenvolvimento de software."
+data-en="As a Junior IT Consultant at SuporteMI, I work directly with user support, troubleshooting, maintenance, hardware, and documentation. My work also includes infrastructure, Windows and Linux environment administration, virtualization, backup, AWS, Google Workspace, hosting, DNS, and digital marketing.
+
+During this period, I contributed to Project Jarvis, an internal AI agent connected to the company's Google Drive to organize documents, answer questions, and support processes. This experience broadened my perspective beyond software development.">
+          Como Consultor de TI Junior na SuporteMI, atuo diretamente com suporte a usuários, troubleshooting, manutenção, hardware e documentação. Minha atuação também inclui infraestrutura, administração de ambientes Windows e Linux, virtualização, backup, AWS, Google Workspace, hospedagem, DNS e marketing digital.
+
+Nesse período, participei do Projeto Jarvis, um agente interno de IA integrado ao Google Drive da empresa para organizar documentos, responder perguntas e apoiar processos. Essa experiência ampliou minha visão para além do desenvolvimento de software.
+        </p>
+      </div>
+    </div>
+
+    <!-- FASE 6 -->
+    <div class="timeline-item timeline-item-next">
+      <span class="timeline-dot"></span>
+      <div class="timeline-card">
+        <h4 data-pt="Próximos passos" data-en="Next steps">Próximos passos</h4>
+        <p data-pt="Meu objetivo é consolidar um perfil híbrido, unindo desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA. Atualmente aprofundo fundamentos de suporte, Windows, Microsoft 365, redes e Active Directory, além de me preparar para a AWS Certified Cloud Practitioner (CLF-C02), com o plano de seguir depois para a Solutions Architect – Associate.
+
+Em paralelo, continuo desenvolvendo a Logos, um sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs."
+data-en="My goal is to build a hybrid profile that combines development, infrastructure, cloud, security, consulting, and AI. I am currently strengthening my foundations in support, Windows, Microsoft 365, networking, and Active Directory while preparing for the AWS Certified Cloud Practitioner (CLF-C02), with plans to pursue the Solutions Architect – Associate afterward.
+
+In parallel, I continue developing Logos, a .NET business management system with inventory, sales, POS, dashboards, and APIs.">
+          Meu objetivo é consolidar um perfil híbrido, unindo desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA. Atualmente aprofundo fundamentos de suporte, Windows, Microsoft 365, redes e Active Directory, além de me preparar para a AWS Certified Cloud Practitioner (CLF-C02), com o plano de seguir depois para a Solutions Architect – Associate.
+
+Em paralelo, continuo desenvolvendo a Logos, um sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs.
+        </p>
+        <div class="timeline-gallery">
+          <img src="img/logos.png" alt="Logotipo do projeto Logos" class="timeline-photo">
+        </div>
       </div>
     </div>
 

@@ -1,281 +1,459 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Gustavo Soares | .NET Developer</title>
-<link rel="stylesheet" href="styles/style.css" />
-<script src="https://unpkg.com/lucide@latest"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Gustavo Soares: desenvolvimento, IA, suporte técnico, infraestrutura, sistemas, redes e cloud.">
+  <title>Gustavo Soares | TI Full Stack</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <header class="header">
   <div class="container">
-    <h1 class="logo" data-pt="Gustavo Soares" data-en="Gustavo Soares">Gustavo Soares</h1>
+    <a class="logo" href="#top" aria-label="Ir para o início">Gustavo Soares</a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegação principal">
       <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
       <a href="#experience" data-pt="Experiência" data-en="Experience">Experiência</a>
-      <a href="#skills" data-pt="Skills" data-en="Skills">Skills</a>
+      <a href="#skills" data-pt="Competências" data-en="Skills">Competências</a>
       <a href="#projects" data-pt="Projetos" data-en="Projects">Projetos</a>
       <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
       <a href="MyJourney.html" data-pt="Minha trajetória" data-en="My journey">Minha trajetória</a>
     </nav>
 
-    <button id="langBtn" class="lang-btn">EN</button>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
   </div>
 </header>
 
-<main>
+<main id="top">
+  <section class="hero">
+    <div class="hero-content container">
+      <div class="hero-text">
+        <p class="hero-kicker" data-pt="Tecnologia de ponta a ponta" data-en="End-to-end technology">Tecnologia de ponta a ponta</p>
+        <h1>Gustavo Soares</h1>
+        <h2
+          data-pt="TI Full Stack: Desenvolvimento, Suporte, Infraestrutura & Cloud"
+          data-en="IT Full Stack: Development, Support, Infrastructure & Cloud"
+        >TI Full Stack: Desenvolvimento, Suporte, Infraestrutura & Cloud</h2>
 
-<section class="hero">
-  <div class="hero-content container">
+        <p
+          data-pt="Atuo do código à infraestrutura: desenvolvimento .NET, automação com IA, suporte técnico, hardware, redes, administração Windows e Linux, virtualização, backup e AWS. Conecto essas frentes para resolver problemas de TI de ponta a ponta."
+          data-en="I work from code to infrastructure: .NET development, AI automation, technical support, hardware, networking, Windows and Linux administration, virtualization, backup, and AWS. I connect these areas to solve end-to-end IT problems."
+        >Atuo do código à infraestrutura: desenvolvimento .NET, automação com IA, suporte técnico, hardware, redes, administração Windows e Linux, virtualização, backup e AWS. Conecto essas frentes para resolver problemas de TI de ponta a ponta.</p>
 
-    <div class="hero-text">
-      <h2 data-pt="Gustavo Soares" data-en="Gustavo Soares">Gustavo Soares</h2>
-      <h3 data-pt="Desenvolvedor .NET" data-en=".NET Developer">Desenvolvedor .NET</h3>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn" data-pt="Ver projetos" data-en="View projects">Ver projetos</a>
+          <a href="https://github.com/SIRSoares33" class="btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
 
-      <p 
-        data-pt="Crio sistemas modernos, APIs escaláveis e aplicações web eficientes com foco em performance e arquitetura limpa."
-        data-en="I build modern systems, scalable APIs, and efficient web applications focused on performance and clean architecture."
-      >
-        Crio sistemas modernos, APIs escaláveis e aplicações web eficientes com foco em performance e arquitetura limpa.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#projects" class="btn" data-pt="Ver Projetos" data-en="View Projects">Ver Projetos</a>
-        <a href="https://github.com/SIRSoares33" class="btn-outline" target="_blank">GitHub</a>
+      <div class="hero-photo">
+        <div class="photo-carousel">
+          <img src="img/FotoMinha.jpeg" class="active" alt="Retrato de Gustavo Soares">
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="hero-photo">
-      <div class="photo-carousel">
-        <img src="img/FotoMinha.jpeg" class="active" alt="Foto Gustavo 1">
+  <section id="about" class="section container about">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Perfil" data-en="Profile">Perfil</p>
+      <h2 data-pt="Sobre mim" data-en="About me">Sobre mim</h2>
+      <p class="section-subtitle"
+        data-pt="Desenvolvimento como base, visão de TI como direção."
+        data-en="Development as my foundation, a broader IT perspective as my direction."
+      >Desenvolvimento como base, visão de TI como direção.</p>
+    </header>
+
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p
+          data-pt="Tenho 18 anos, moro no Brasil e construí minha base técnica com .NET, APIs e arquitetura de software. Hoje, Consultor de TI JR, amplio essa experiência com suporte, infraestrutura, cloud e contato direto com as necessidades de usuários e empresas."
+          data-en="I am 18 years old, based in Brazil, and built my technical foundation with .NET, APIs, and software architecture. Today, as an IT intern, I am expanding that experience through support, infrastructure, cloud, and direct contact with the needs of users and businesses."
+        >Tenho 18 anos, moro no Brasil e construí minha base técnica com .NET, APIs e arquitetura de software. Hoje, como Consultor de TI JR, amplio essa experiência com suporte, infraestrutura, cloud e contato direto com as necessidades de usuários e empresas.</p>
+
+        <p
+          data-pt="No trabalho, atuo com troubleshooting, manutenção, hardware, documentação, administração básica de AWS e Google Workspace, hospedagem e DNS. Também participo do Projeto Jarvis, um agente interno de IA integrado aos documentos da empresa para organizar informação e apoiar processos."
+          data-en="At work, I handle troubleshooting, maintenance, hardware, documentation, basic AWS and Google Workspace administration, hosting, and DNS. I also contribute to Project Jarvis, an internal AI agent connected to company documents to organize information and support internal processes."
+        >No trabalho, atuo com troubleshooting, manutenção, hardware, documentação, administração básica de AWS e Google Workspace, hospedagem e DNS. Também participo do Projeto Jarvis, um agente interno de IA integrado aos documentos da empresa para organizar informação e apoiar processos.</p>
+
+        <p
+          data-pt="Quero me tornar um profissional de TI completo, capaz de transitar entre desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA. Neste momento, aprofundo fundamentos de suporte, Windows, Microsoft 365, redes e Active Directory enquanto me preparo para a AWS Certified Cloud Practitioner (CLF-C02)."
+          data-en="I aim to become a well-rounded IT professional who can work across development, infrastructure, cloud, security, consulting, and AI. Right now, I am strengthening my foundations in support, Windows, Microsoft 365, networking, and Active Directory while preparing for the AWS Certified Cloud Practitioner (CLF-C02)."
+        >Quero me tornar um profissional de TI completo, capaz de transitar entre desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA. Neste momento, aprofundo fundamentos de suporte, Windows, Microsoft 365, redes e Active Directory enquanto me preparo para a AWS Certified Cloud Practitioner (CLF-C02).</p>
       </div>
+
+      <aside class="about-focus" aria-label="Foco atual">
+        <p class="focus-title" data-pt="Foco atual" data-en="Current focus">Foco atual</p>
+        <ul>
+          <li data-pt="Suporte e administração de sistemas" data-en="Support and systems administration">Suporte e administração de sistemas</li>
+          <li data-pt="Redes, servidores e infraestrutura" data-en="Networking, servers and infrastructure">Redes, servidores e infraestrutura</li>
+          <li data-pt="AWS Cloud" data-en="AWS Cloud">AWS Cloud</li>
+          <li data-pt="Desenvolvimento .NET" data-en=".NET development">Desenvolvimento .NET</li>
+        </ul>
+      </aside>
     </div>
 
-  </div>
-</section>
+    <a href="MyJourney.html" class="btn reveal" data-pt="Conheça minha trajetória" data-en="Explore my journey">Conheça minha trajetória</a>
+  </section>
 
-<section id="about" class="section container about">
-  <header class="section-header reveal">
-    <h3 data-pt="Sobre mim" data-en="About Me">Sobre mim</h3>
-    <h4 class="section-subtitle" 
-        data-pt="Quem eu sou, como trabalho e no que acredito"
-        data-en="Who I am, how I work, and what I believe in">
-        Quem eu sou, como trabalho e no que acredito
-    </h4>
-  </header>
+  <section id="experience" class="section container">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Experiência" data-en="Experience">Experiência</p>
+      <h2 data-pt="Experiência profissional" data-en="Professional experience">Experiência profissional</h2>
+    </header>
 
-  <div class="about-grid reveal">
-    <div class="about-text reveal">
-      <p data-pt="Tenho 18 anos e sou desenvolvedor focado em .NET, APIs, Blazor e arquitetura de software. Gosto de construir sistemas reais, resolver problemas complexos e escrever código limpo, escalável e bem estruturado."
-         data-en="I am 18 years old and a developer focused on .NET, APIs, Blazor, and software architecture. I enjoy building real systems, solving complex problems, and writing clean, scalable, and well-structured code.">
+    <div class="experience-listing">
+      <article class="experience-card reveal">
+        <div class="experience-header">
+          <img src="img/LogoSuporteMI.png" class="company-logo company-logo-suportemi" alt="Logo da SuporteMI">
+          <div class="experience-title">
+            <h3 data-pt="Consultor de TI Junior" data-en="Junior IT Consultant">Consultor de TI Junior</h3>
+            <span class="experience-meta"
+              data-pt="Atual • SuporteMI • Brasil"
+              data-en="Current • SuporteMI • Brazil"
+            >Atual • SuporteMI • Brasil</span>
+          </div>
+        </div>
 
-         Tenho 18 anos e sou desenvolvedor focado em .NET, APIs, Blazor e arquitetura de software. Gosto de construir sistemas reais, resolver problemas complexos e escrever código limpo, escalável e bem estruturado.
+        <ul class="experience-list">
+          <li
+            data-pt="Atendimento a usuários, troubleshooting, manutenção, diagnóstico técnico e documentação de soluções."
+            data-en="User support, troubleshooting, maintenance, technical diagnostics, and solution documentation."
+          >Atendimento a usuários, troubleshooting, manutenção, diagnóstico técnico e documentação de soluções.</li>
+          <li
+            data-pt="Diagnóstico de equipamentos, inventário de hardware e apoio em rotinas de manutenção."
+            data-en="Equipment diagnostics, hardware inventory, and support with maintenance routines."
+          >Diagnóstico de equipamentos, inventário de hardware e apoio em rotinas de manutenção.</li>
+          <li
+            data-pt="Administração de ambientes Windows e Linux, IIS, virtualização, redes e rotinas de backup."
+            data-en="Administration of Windows and Linux environments, IIS, virtualization, networking, and backup routines."
+          >Administração de ambientes Windows e Linux, IIS, virtualização, redes e rotinas de backup.</li>
+          <li
+            data-pt="Administração básica de AWS e Google Workspace, além de hospedagem e DNS pela Locaweb."
+            data-en="Basic AWS and Google Workspace administration, plus hosting and DNS management through Locaweb."
+          >Administração básica de AWS e Google Workspace, além de hospedagem e DNS pela Locaweb.</li>
+          <li
+            data-pt="Participação no Projeto Jarvis, agente interno de IA integrado ao Google Drive para organizar documentos e apoiar processos."
+            data-en="Contribution to Project Jarvis, an internal AI agent connected to Google Drive to organize documents and support processes."
+          >Participação no Projeto Jarvis, agente interno de IA integrado ao Google Drive para organizar documentos e apoiar processos.</li>
+          <li
+            data-pt="Apoio à presença digital da empresa e de clientes em canais como Instagram, LinkedIn, Google Business e Google Ads."
+            data-en="Support for the company and its clients' digital presence across channels such as Instagram, LinkedIn, Google Business, and Google Ads."
+          >Apoio à presença digital da empresa e de clientes em canais como Instagram, LinkedIn, Google Business e Google Ads.</li>
+        </ul>
+      </article>
 
-Já desenvolvi projetos como sistemas de gestão comercial, simuladores com lógica avançada e bibliotecas para automação em microservices.
+      <article class="experience-card reveal">
+        <div class="experience-header">
+          <img src="img/iconMaxima.ico" class="company-logo" alt="Logo da Máxima Inventários">
+          <div class="experience-title">
+            <h3 data-pt="Desenvolvedor de Software .NET" data-en=".NET Software Developer">Desenvolvedor de Software .NET</h3>
+            <span class="experience-meta"
+              data-pt="11/2023 — 08/2025 • Máxima Inventários • Rio de Janeiro, RJ"
+              data-en="11/2023 — 08/2025 • Máxima Inventários • Rio de Janeiro, Brazil"
+            >11/2023 — 08/2025 • Máxima Inventários • Rio de Janeiro, RJ</span>
+          </div>
+        </div>
 
-Aprendo rápido, sou disciplinado e tenho facilidade para entender o contexto do problema antes de escrever a solução.
-      </p>
-
-      <p data-pt="Já desenvolvi projetos como sistemas de gestão comercial, simuladores com lógica avançada e bibliotecas para automação em microservices."
-         data-en="I have built projects such as commercial management systems, advanced logic simulators, and libraries for automation in microservices.">
-      </p>
-
-      <p data-pt="Aprendo rápido, sou disciplinado e tenho facilidade para entender o contexto do problema antes de escrever a solução."
-         data-en="I learn fast, I am disciplined, and I easily understand the problem context before writing the solution.">
-      </p>
+        <ul class="experience-list">
+          <li
+            data-pt="Manutenção de aplicações legadas, com correção de bugs e melhorias contínuas."
+            data-en="Maintenance of legacy applications, including bug fixes and continuous improvements."
+          >Manutenção de aplicações legadas, com correção de bugs e melhorias contínuas.</li>
+          <li
+            data-pt="Desenvolvimento de novas funcionalidades e soluções personalizadas em .NET para clientes."
+            data-en="Development of new features and custom .NET solutions for clients."
+          >Desenvolvimento de novas funcionalidades e soluções personalizadas em .NET para clientes.</li>
+          <li
+            data-pt="Criação de APIs REST para integração entre sistemas."
+            data-en="Development of REST APIs for system integration."
+          >Criação de APIs REST para integração entre sistemas.</li>
+          <li
+            data-pt="Uso de Git e aplicação de práticas como Clean Code e Design Patterns."
+            data-en="Use of Git and practices such as Clean Code and Design Patterns."
+          >Uso de Git e aplicação de práticas como Clean Code e Design Patterns.</li>
+        </ul>
+      </article>
     </div>
-  </div>
+  </section>
 
-  <a href="MyJourney.html" class="btn reveal" data-pt="Conheça minha trajetória" data-en="Learn about my journey">Conheça minha trajetória</a>
-</section>
+  <section id="skills" class="section container skills">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Competências" data-en="Skills">Competências</p>
+      <h2 data-pt="Competências por área" data-en="Skills by area">Competências por área</h2>
+      <p class="section-subtitle"
+        data-pt="Tecnologias e áreas que aplico em desenvolvimento, operação e suporte de TI."
+        data-en="Technologies and areas I apply across development, IT operations, and support."
+      >Tecnologias e áreas que aplico em desenvolvimento, operação e suporte de TI.</p>
+    </header>
 
-<!-- EXPERIÊNCIA -->
-<section id="experience" class="section container reveal">
-  <header class="section-header reveal">
-    <h3 data-pt="Experiência Profissional" data-en="Professional Experience">Experiência Profissional</h3>
-  </header>
+    <div class="skills-groups reveal">
+      <article class="skills-group skills-group-wide">
+        <h3 data-pt="Desenvolvimento" data-en="Development">Desenvolvimento</h3>
+        <div class="skills-grid">
+          <span>.NET</span>
+          <span>C#</span>
+          <span>ASP.NET Core</span>
+          <span>Web API</span>
+          <span>Blazor WebAssembly</span>
+          <span>Entity Framework Core</span>
+          <span>JWT Auth</span>
+          <span>SignalR</span>
+          <span>PostgreSQL</span>
+          <span>SQLite</span>
+          <span>SQL Server</span>
+          <span>Docker</span>
+          <span>Docker Compose</span>
+          <span>xUnit</span>
+          <span>Windows Forms</span>
+          <span>.NET MAUI</span>
+          <span>Design Patterns</span>
+          <span>Clean Code</span>
+          <span>Clean Architecture</span>
+          <span>CQRS</span>
+          <span>DDD</span>
+          <span>SOLID</span>
+        </div>
+      </article>
 
-  <article class="experience-card reveal">
+      <article class="skills-group">
+        <h3 data-pt="Infraestrutura & Sistemas" data-en="Infrastructure & Systems">Infraestrutura & Sistemas</h3>
+        <div class="skills-grid">
+          <span>Windows Server</span>
+          <span>IIS</span>
+          <span data-pt="Administração Windows" data-en="Windows administration">Administração Windows</span>
+          <span data-pt="Administração Linux" data-en="Linux administration">Administração Linux</span>
+          <span data-pt="Virtualização (VM)" data-en="Virtualization (VM)">Virtualização (VM)</span>
+          <span data-pt="Rotinas de backup" data-en="Backup routines">Rotinas de backup</span>
+          <span>DNS</span>
+          <span data-pt="Redes • fundamentos" data-en="Networking • foundations">Redes • fundamentos</span>
+        </div>
+      </article>
 
-  <div class="experience-header reveal">
-    <img src="img/iconMaxima.ico" class="company-logo" alt="Máxima Inventários Logo">
+      <article class="skills-group">
+        <h3>Cloud</h3>
+        <div class="skills-grid">
+          <span data-pt="AWS • administração básica" data-en="AWS • basic administration">AWS • administração básica</span>
+          <span data-pt="AWS Cloud Practitioner • em curso" data-en="AWS Cloud Practitioner • in progress">AWS Cloud Practitioner • em curso</span>
+          <span data-pt="Google Workspace • usuários, domínios e permissões" data-en="Google Workspace • users, domains, and permissions">Google Workspace • usuários, domínios e permissões</span>
+        </div>
+      </article>
 
-    <div class="experience-title">
-      <h4 data-pt="Desenvolvedor de Software .NET" data-en=".NET Software Developer">
-        Desenvolvedor de Software .NET
-      </h4>
+      <article class="skills-group">
+        <h3 data-pt="Automação & IA" data-en="Automation & AI">Automação & IA</h3>
+        <div class="skills-grid">
+          <span>n8n</span>
+          <span data-pt="Integração com LLMs • Claude/OpenAI" data-en="LLM integration • Claude/OpenAI">Integração com LLMs • Claude/OpenAI</span>
+          <span>Google Apps Script</span>
+          <span data-pt="Automação de processos" data-en="Process automation">Automação de processos</span>
+        </div>
+      </article>
 
-      <span class="experience-meta reveal"
-        data-pt="11/2023 — 08/2025 • Máxima Inventários — Rio de Janeiro, RJ"
-        data-en="11/2023 — 08/2025 • Máxima Inventários — Rio de Janeiro, Brazil">
+      <article class="skills-group">
+        <h3 data-pt="Suporte & Hardware" data-en="Support & Hardware">Suporte & Hardware</h3>
+        <div class="skills-grid">
+          <span data-pt="Suporte técnico / Service Desk" data-en="Technical support / Service Desk">Suporte técnico / Service Desk</span>
+          <span data-pt="Diagnóstico e manutenção de hardware" data-en="Hardware diagnostics and maintenance">Diagnóstico e manutenção de hardware</span>
+          <span>Troubleshooting</span>
+          <span data-pt="Documentação técnica" data-en="Technical documentation">Documentação técnica</span>
+        </div>
+      </article>
 
-        11/2023 — 08/2025 • Máxima Inventários — Rio de Janeiro, RJ
-      </span>
+      <article class="skills-group skills-group-wide">
+        <h3 data-pt="Outros" data-en="Other">Outros</h3>
+        <div class="skills-grid">
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>Unity</span>
+          <span>CI/CD</span>
+          <span>WordPress</span>
+          <span>Elementor</span>
+          <span data-pt="Marketing Digital" data-en="Digital Marketing">Marketing Digital</span>
+          <span>Meta Business</span>
+          <span>Google Ads</span>
+          <span>Google Business</span>
+        </div>
+      </article>
+
+      <article class="skills-group skills-group-languages">
+        <h3 data-pt="Idiomas" data-en="Languages">Idiomas</h3>
+        <div class="skills-grid">
+          <span data-pt="Português • C2" data-en="Portuguese • C2">Português • C2</span>
+          <span data-pt="Inglês • B1, em desenvolvimento" data-en="English • B1, in development">Inglês • B1, em desenvolvimento</span>
+        </div>
+      </article>
     </div>
-  </div>
+  </section>
 
-    <ul class="experience-list reveal">
-      <li data-pt="Manutenção de aplicativos legados, corrigindo bugs e implementando melhorias contínuas."
-          data-en="Maintained legacy applications, fixing bugs and implementing continuous improvements.">
-        Manutenção de aplicativos legados, corrigindo bugs e implementando melhorias contínuas.
-        </li>
+  <section id="projects" class="section container">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Projetos" data-en="Projects">Projetos</p>
+      <h2 data-pt="Soluções que mostram diferentes frentes" data-en="Solutions across different areas">Soluções que mostram diferentes frentes</h2>
+      <p class="section-subtitle"
+        data-pt="Sistema completo, biblioteca reutilizável, automação aplicada e API."
+        data-en="A complete system, a reusable library, applied automation, and an API."
+      >Sistema completo, biblioteca reutilizável, automação aplicada e API.</p>
+    </header>
 
-      <li data-pt="Criação e melhoria de sistemas existentes, adicionando novas funcionalidades."
-          data-en="Created and improved existing systems by adding new features.">
-        Criação e melhoria de sistemas existentes, adicionando novas funcionalidades.
-        </li>
+    <div class="projects-grid reveal">
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="panels-top-left"></i></span>
+          <p class="project-type" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+        </div>
+        <h3>Logos</h3>
+        <p
+          data-pt="Sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs administrativas."
+          data-en="A .NET business management system with inventory, sales, POS, dashboards, and administration APIs."
+        >Sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs administrativas.</p>
+        <div class="project-tags"><span>.NET</span><span>Estoque</span><span>PDV</span><span>APIs</span></div>
+        <a class="project-link" href="Logos.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
 
-      <li data-pt="Uso de Git para versionamento e organização do código-fonte."
-          data-en="Used Git for version control and source code organization.">
-        Uso de Git para versionamento e organização do código-fonte.
-        </li>
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="library"></i></span>
+          <p class="project-type" data-pt="Biblioteca reutilizável" data-en="Reusable library">Biblioteca reutilizável</p>
+        </div>
+        <h3>Psalms</h3>
+        <p
+          data-pt="Biblioteca .NET para multi-tenancy, autenticação JWT e reuso de componentes entre projetos."
+          data-en="A .NET library for multi-tenancy, JWT authentication, and component reuse across projects."
+        >Biblioteca .NET para multi-tenancy, autenticação JWT e reuso de componentes entre projetos.</p>
+        <div class="project-tags"><span>.NET</span><span>Multi-tenancy</span><span>JWT</span><span>Microservices</span></div>
+        <a class="project-link" href="Psalms.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
 
-      <li data-pt="Desenvolvimento de softwares personalizados para clientes."
-          data-en="Developed custom software solutions for clients.">
-        Desenvolvimento de softwares personalizados para clientes.
-        </li>
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="scan-search"></i></span>
+          <p class="project-type" data-pt="Em evolução contínua" data-en="Under continuous evolution">Em evolução contínua</p>
+        </div>
+        <h3>InventIA</h3>
+        <p
+          data-pt="Automação de inventário construída com Google Sheets e Apps Script para organizar informações e tornar o processo mais prático."
+          data-en="An inventory automation solution built with Google Sheets and Apps Script to organize information and make the process more practical."
+        >Automação de inventário construída com Google Sheets e Apps Script para organizar informações e tornar o processo mais prático.</p>
+        <div class="project-tags"><span>Google Sheets</span><span>Apps Script</span><span data-pt="Automação" data-en="Automation">Automação</span></div>
+        <a class="project-link" href="InventIA.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
 
-      <li data-pt="Aplicação de boas práticas como Design Patterns e Clean Code."
-          data-en="Applied best practices such as Design Patterns and Clean Code.">
-        Aplicação de boas práticas como Design Patterns e Clean Code.
-        </li>
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="list-checks"></i></span>
+          <p class="project-type">Backend API</p>
+        </div>
+        <h3>ToDo API</h3>
+        <p
+          data-pt="API de tarefas em .NET construída para praticar organização de domínio, persistência, testes e execução em contêineres."
+          data-en="A .NET task API built to practice domain organization, persistence, testing, and containerized execution."
+        >API de tarefas em .NET construída para praticar organização de domínio, persistência, testes e execução em contêineres.</p>
+        <div class="project-tags"><span>ASP.NET Core</span><span>PostgreSQL</span><span>CQRS</span><span>xUnit</span></div>
+        <a class="project-link" href="ToDo.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
 
-      <li data-pt="Desenvolvimento de APIs RESTful para integração entre sistemas."
-          data-en="Developed RESTful APIs for system integration.">
-        Desenvolvimento de APIs RESTful para integração entre sistemas.
-        </li>
-    </ul>
-  </article>
-</section>
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="workflow"></i></span>
+          <p class="project-type" data-pt="Automação em produção" data-en="Production automation">Automação em produção</p>
+        </div>
+        <h3>AutoPost IA</h3>
+        <p
+          data-pt="Automação de posts em produção para meus clientes de marketing, com OpenAI e aprovação por WhatsApp ou email."
+          data-en="A production post automation for my marketing clients, using OpenAI and approval through WhatsApp or email."
+        >Automação de posts em produção para meus clientes de marketing, com OpenAI e aprovação por WhatsApp ou email.</p>
+        <div class="project-tags"><span>n8n</span><span>Docker</span><span>OpenAI</span><span>Meta API</span><span>LinkedIn API</span></div>
+        <a class="project-link" href="AutoPost.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
 
-<!-- SKILLS --> 
-<section id="skills" class="section container skills reveal"> 
-    <header class="section-header reveal"> 
-        <h3>Skills</h3> 
-        <h4 class="section-subtitle reveal" data-pt="Tecnologias, ferramentas e áreas que domino" data-en="Technologies, tools, and areas of expertise.">Tecnologias, ferramentas e áreas que domino</p> 
-    </header> 
-    <div class="skills-groups reveal"> 
-        <!-- BACKEND -->
-        <div class="skills-group reveal"> 
-            <h4>Backend</h4> <div class="skills-grid reveal">
-                <span>.NET</span> 
-                <span>ASP.NET Core</span> 
-                <span>Web API</span> 
-                <span>EF Core</span>
-                <span>SQL Server</span> 
-                <span>PostgreSQL</span>
-                <span>Docker</span> 
-                <span>XUnit</span> 
-            </div> 
-        </div> 
-        <!-- FRONTEND --> 
-        <div class="skills-group reveal"> 
-            <h4>Frontend</h4> 
-            <div class="skills-grid reveal"> 
-                <span>Blazor</span> <span>HTML</span> 
-                <span>CSS</span> <span>JavaScript</span> 
-                <span>Windows Forms</span> 
-                <span>.NET Maui</span> 
-            </div> 
-        </div> 
-        <!-- ARQUITETURA --> 
-        <div class="skills-group reveal"> 
-            <h4 data-pt="Arquitetura & Boas Práticas" data-en="Architecture and Best Practices">Arquitetura & Boas Práticas</h4> 
-            <div class="skills-grid reveal"> 
-                <span>Design Patterns</span> 
-                <span>Clean Code</span> 
-                <span>Clean Architecture</span> 
-                <span>CQRS</span>
-                <span>DDD</span> 
-                <span>SOLID</span> 
-            </div> 
-        </div> 
-        <!-- OUTROS --> 
-        <div class="skills-group reveal"> 
-            <h4 data-en="Others" data-pt="Outros">Outros</h4> 
-            <div class="skills-grid reveal"> 
-                <span>Git</span> 
-                <span>GitHub</span> 
-                <span>Unity</span> 
-                <span>CI/CD</span> 
-                <span data-pt="Comunicação e disciplina" data-en="Communication and discipline">Comunicação e disciplina</span> 
-            </div> 
-        </div> 
-        <div class="skills-group reveal"> 
-            <h4 data-en="Languages" data-pt="Línguas">Línguas</h4> 
-            <div class="skills-grid reveal"> 
-                <span data-en="English (B1)" data-pt="Inglês (B1)">Inglês (B1)</span> 
-                <span data-en="Portuguese (C2)" data-pt="Português (C2)">Português (C2)</span> 
-            </div> 
-        </div> 
-    </div> 
-</section>
+      <article class="project-card">
+        <div class="project-heading">
+          <span class="project-icon"><i data-lucide="radar"></i></span>
+          <p class="project-type" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+        </div>
+        <h3>Sentinela</h3>
+        <p
+          data-pt="Monitoramento de infraestrutura com diagnóstico de incidentes por IA e aprovação manual de ações."
+          data-en="Infrastructure monitoring with AI-assisted incident diagnostics and manual action approval."
+        >Monitoramento de infraestrutura com diagnóstico de incidentes por IA e aprovação manual de ações.</p>
+        <div class="project-tags"><span>.NET</span><span>Docker</span><span>IA</span><span>Blazor</span></div>
+        <a class="project-link" href="Sentinela.html">
+          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
+          <i data-lucide="arrow-up-right"></i>
+        </a>
+      </article>
+    </div>
+  </section>
 
-<!-- PROJETOS -->
-<section id="projects" class="section container reveal">
-  <header class="section-header reveal">
-    <h3 data-pt="Projetos" data-en="Projects">Projetos</h3>
-    <h4 data-pt="Escolha um e clique para saber mais." data-en="Choose one and click to learn more.">Escolha um e clique para saber mais.</h4>
-  </header>
+  <section id="contact" class="section container contact">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Contato" data-en="Contact">Contato</p>
+      <h2 data-pt="Vamos conversar" data-en="Let's talk">Vamos conversar</h2>
+      <p class="section-subtitle"
+        data-pt="Para oportunidades, projetos ou uma boa conversa sobre tecnologia."
+        data-en="For opportunities, projects, or a good conversation about technology."
+      >Para oportunidades, projetos ou uma boa conversa sobre tecnologia.</p>
+    </header>
 
-<div class="projects-grid reveal"> 
-    <article class="project-card reveal" onclick="window.location.href='ToDo.html'"> 
-        <h4 data-pt="ToDo API" data-en="ToDo API">ToDo API</h4> 
-        <p data-pt="Sistema de tarefas em .NET."data-en="System for tasks in .NET.">
-            Sistema de tarefas em .NET.</p> 
-        <span>AspNetCore • PostgreSql • EF Core • Docker • MediatR • CQRS • Clean Architecture • XUnit</span> 
-    </article> 
-</div>
-</section>
+    <div class="contact-grid reveal">
+      <article class="contact-card">
+        <h3>Email</h3>
+        <a href="mailto:sirgustavo4@gmail.com">
+          <span class="contact-icon" aria-hidden="true"><i data-lucide="mail"></i></span>
+          sirgustavo4@gmail.com
+        </a>
+      </article>
 
-<!-- CONTATO -->
-<section id="contact" class="section container contact reveal">
-  <header class="section-header">
-    <h3 data-pt="Contato" data-en="Contact">Contato</h3>
-    <p class="section-subtitle"
-       data-pt="Vamos conversar ou trabalhar juntos."
-       data-en="Let's talk or work together.">
+      <article class="contact-card">
+        <h3>GitHub</h3>
+        <a href="https://github.com/SIRSoares33" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false" fill="currentColor">
+              <path d="M12 .297a12 12 0 0 0-3.79 23.4c.6.113.82-.26.82-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.237 1.84 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.775.418-1.305.762-1.605-2.665-.303-5.466-1.332-5.466-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23A11.5 11.5 0 0 1 12 6.111c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.654.242 2.874.118 3.177.77.84 1.235 1.911 1.235 3.222 0 4.61-2.806 5.624-5.478 5.921.43.372.814 1.103.814 2.222v3.293c0 .32.216.694.825.576A12 12 0 0 0 12 .297Z"/>
+            </svg>
+          </span>
+          github.com/SIRSoares33
+        </a>
+      </article>
 
-       Vamos conversar ou trabalhar juntos.
-    </p>
-  </header>
-
-
-    <div class="contact-grid reveal"> 
-        <div class="contact-card reveal"> 
-            <h4>Email</h4> 
-            <a href="sirgustavo4@gmail.com">
-                <i data-lucide="mail"></i>
-                sirgustavo4@gmail.com</a> 
-        </div> 
-        
-        <div class="contact-card reveal"> 
-            <h4>GitHub</h4> 
-            <a href="https://github.com/SIRSoares33" target="_blank">
-                <i data-lucide="github"></i>
-                github.com/SIRSoares33</a>
-            
-        </div> 
-        
-        <div class="contact-card reveal">
-            <h4>LinkedIn</h4> 
-            <a href="https://www.linkedin.com/in/ogustavosoares/" target="_blank">
-                <i data-lucide="linkedin"></i>
-                https://www.linkedin.com/in/ogustavosoares/</a> 
-        </div> 
-    </div> 
-</section>
-
+      <article class="contact-card">
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/ogustavosoares/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.94v5.666H9.351V9h3.414v1.561h.047c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.371 4.267 5.456v6.285ZM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/>
+            </svg>
+          </span>
+          linkedin.com/in/ogustavosoares
+        </a>
+      </article>
+    </div>
+  </section>
 </main>
 
 <footer class="footer reveal">
-  <span data-pt="© 2026 Gustavo Soares — Todos os direitos reservados"
-        data-en="© 2026 Gustavo Soares — All rights reserved">
-  </span>
+  <span
+    data-pt="© 2026 Gustavo Soares — Todos os direitos reservados"
+    data-en="© 2026 Gustavo Soares — All rights reserved"
+  >© 2026 Gustavo Soares — Todos os direitos reservados</span>
 </footer>
 
 <script src="scripts/script.js"></script>

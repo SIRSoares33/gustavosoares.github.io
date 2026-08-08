@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="InventIA: agente de automação com IA para organizar e consultar informações administrativas e de inventário.">
+  <title>InventIA — Automação Administrativa com IA</title>
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">InventIA</p>
+    <nav class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
+      <a href="#stack">Stack</a>
+      <a href="#status">Status</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge status-evolution" data-pt="Em evolução contínua" data-en="Under continuous evolution">Em evolução contínua</p>
+        <h1>InventIA</h1>
+        <h2 data-pt="Automação Administrativa e de Inventário com IA" data-en="AI-powered Administrative and Inventory Automation">Automação Administrativa e de Inventário com IA</h2>
+        <p
+          data-pt="Agente de automação que combina Google Sheets, Google Apps Script e integrações de API com IA para organizar e consultar informações internas ligadas a processos administrativos e de inventário."
+          data-en="An automation agent that combines Google Sheets, Google Apps Script, and AI API integrations to organize and query internal information related to administrative and inventory processes."
+        >Agente de automação que combina Google Sheets, Google Apps Script e integrações de API com IA para organizar e consultar informações internas ligadas a processos administrativos e de inventário.</p>
+        <div class="hero-buttons">
+          <a href="#operation" class="btn" data-pt="Ver funcionamento" data-en="See how it works">Ver funcionamento</a>
+          <a href="#stack" class="btn-outline" data-pt="Ver stack" data-en="View stack">Ver stack</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual">
+          <div class="visual-core">INVENTIA</div>
+          <div class="visual-grid">
+            <span>Google Sheets</span>
+            <span>Apps Script</span>
+            <span data-pt="API de IA" data-en="AI API">API de IA</span>
+            <span data-pt="Inventário" data-en="Inventory">Inventário</span>
+            <span data-pt="Organização" data-en="Organization">Organização</span>
+            <span data-pt="Consulta" data-en="Query">Consulta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
+      <h2 data-pt="O que é e qual problema resolve" data-en="What it is and what it solves">O que é e qual problema resolve</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
+        <p
+          data-pt="Informações administrativas e de inventário podem ficar distribuídas em planilhas e depender de consultas ou atualizações manuais. Isso torna a organização mais lenta e dificulta encontrar o dado certo quando ele é necessário."
+          data-en="Administrative and inventory information can be distributed across spreadsheets and depend on manual queries or updates. This slows organization and makes it harder to find the right data when needed."
+        >Informações administrativas e de inventário podem ficar distribuídas em planilhas e depender de consultas ou atualizações manuais. Isso torna a organização mais lenta e dificulta encontrar o dado certo quando ele é necessário.</p>
+      </article>
+
+      <article class="overview-card">
+        <h3 data-pt="A proposta" data-en="The approach">A proposta</h3>
+        <p
+          data-pt="O InventIA usa automação e IA para apoiar a organização e a consulta dessas informações. A planilha continua como uma base acessível, enquanto scripts e integrações automatizam etapas e acrescentam uma camada de assistência inteligente."
+          data-en="InventIA uses automation and AI to support the organization and querying of this information. The spreadsheet remains an accessible foundation, while scripts and integrations automate steps and add an intelligent assistance layer."
+        >O InventIA usa automação e IA para apoiar a organização e a consulta dessas informações. A planilha continua como uma base acessível, enquanto scripts e integrações automatizam etapas e acrescentam uma camada de assistência inteligente.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="operation" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Visão técnica" data-en="Technical overview">Visão técnica</p>
+      <h2 data-pt="Como o agente funciona" data-en="How the agent works">Como o agente funciona</h2>
+      <p class="section-description" data-pt="A solução conecta uma base operacional simples a automações e consultas assistidas por IA." data-en="The solution connects a simple operational foundation to automation and AI-assisted queries.">A solução conecta uma base operacional simples a automações e consultas assistidas por IA.</p>
+    </header>
+
+    <div class="detail-grid">
+      <article class="detail-card reveal">
+        <span class="detail-number">01</span>
+        <h3>Google Sheets</h3>
+        <p data-pt="Concentra as informações administrativas e de inventário em uma estrutura familiar e fácil de manter." data-en="Centralizes administrative and inventory information in a familiar and easy-to-maintain structure.">Concentra as informações administrativas e de inventário em uma estrutura familiar e fácil de manter.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">02</span>
+        <h3>Google Apps Script</h3>
+        <p data-pt="Executa regras e automações ligadas às planilhas, reduzindo etapas manuais do processo." data-en="Runs rules and automation connected to the spreadsheets, reducing manual process steps.">Executa regras e automações ligadas às planilhas, reduzindo etapas manuais do processo.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">03</span>
+        <h3 data-pt="Integração com IA" data-en="AI integration">Integração com IA</h3>
+        <p data-pt="APIs de IA acrescentam interpretação e assistência ao fluxo sem substituir a fonte organizada dos dados." data-en="AI APIs add interpretation and assistance to the flow without replacing the organized data source.">APIs de IA acrescentam interpretação e assistência ao fluxo sem substituir a fonte organizada dos dados.</p>
+      </article>
+      <article class="detail-card reveal">
+        <span class="detail-number">04</span>
+        <h3 data-pt="Organização e consulta" data-en="Organization and querying">Organização e consulta</h3>
+        <p data-pt="O agente ajuda a localizar, estruturar e consultar informação interna com menos trabalho repetitivo." data-en="The agent helps locate, structure, and query internal information with less repetitive work.">O agente ajuda a localizar, estruturar e consultar informação interna com menos trabalho repetitivo.</p>
+      </article>
+    </div>
+
+    <div class="architecture-note">
+      <strong data-pt="Separação de responsabilidades" data-en="Separation of responsibilities">Separação de responsabilidades</strong>
+      <p
+        data-pt="Google Sheets mantém os dados acessíveis, Apps Script executa a automação e a API de IA apoia interpretação e consulta. Cada parte resolve uma responsabilidade específica do fluxo."
+        data-en="Google Sheets keeps the data accessible, Apps Script runs the automation, and the AI API supports interpretation and querying. Each part handles a specific responsibility in the flow."
+      >Google Sheets mantém os dados acessíveis, Apps Script executa a automação e a API de IA apoia interpretação e consulta. Cada parte resolve uma responsabilidade específica do fluxo.</p>
+    </div>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Tecnologias do projeto" data-en="Project technologies">Tecnologias do projeto</h2>
+    </header>
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Dados" data-en="Data">Dados</h3>
+        <span>Google Sheets</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Automação" data-en="Automation">Automação</h3>
+        <span>Google Apps Script</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Integração" data-en="Integration">Integração</h3>
+        <span data-pt="Integrações de API" data-en="API integrations">Integrações de API</span>
+        <span data-pt="API de IA" data-en="AI API">API de IA</span>
+      </article>
+      <article class="stack-card reveal">
+        <h3 data-pt="Aplicação" data-en="Application">Aplicação</h3>
+        <span data-pt="Processos administrativos" data-en="Administrative processes">Processos administrativos</span>
+        <span data-pt="Inventário" data-en="Inventory">Inventário</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="status" class="section container reveal">
+    <div class="status-panel status-continuous">
+      <div>
+        <p class="section-kicker" data-pt="Status real" data-en="Actual status">Status real</p>
+        <h2 data-pt="Projeto em evolução contínua" data-en="Project under continuous evolution">Projeto em evolução contínua</h2>
+        <p data-pt="O InventIA acompanha os processos que busca apoiar. Automações, organização dos dados e formas de consulta continuam sendo refinadas conforme surgem novas necessidades." data-en="InventIA evolves alongside the processes it supports. Automation, data organization, and query methods continue to be refined as new needs emerge.">O InventIA acompanha os processos que busca apoiar. Automações, organização dos dados e formas de consulta continuam sendo refinadas conforme surgem novas necessidades.</p>
+      </div>
+      <ul class="status-facts">
+        <li data-pt="Evolução orientada por processos reais" data-en="Evolution guided by real processes">Evolução orientada por processos reais</li>
+        <li data-pt="Automações sujeitas a refinamento" data-en="Automation subject to refinement">Automações sujeitas a refinamento</li>
+        <li data-pt="Não apresentado como produto finalizado" data-en="Not presented as a finished product">Não apresentado como produto finalizado</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto InventIA" data-en="© 2026 Gustavo Soares — InventIA Project">© 2026 Gustavo Soares — Projeto InventIA</footer>
+<script src="scripts/script.js"></script>
+</body>
+</html>

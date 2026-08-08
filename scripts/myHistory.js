@@ -32,5 +32,11 @@ button.addEventListener("click", () => {
     el.textContent = el.dataset[lang];
   });
 
-  button.textContent = lang === "pt" ? "EN" : "PT";
+  const isPortuguese = lang === "pt";
+  document.documentElement.lang = isPortuguese ? "pt-BR" : "en";
+  button.textContent = isPortuguese ? "EN" : "PT";
+  button.setAttribute(
+    "aria-label",
+    isPortuguese ? "Mudar idioma para inglês" : "Switch language to Portuguese"
+  );
 });

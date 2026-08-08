@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AutoPost IA: automação em produção criada por Gustavo Soares para gerar, aprovar e publicar posts dos seus clientes de marketing.">
+  <title>AutoPost IA — Automação de Conteúdo para Redes Sociais</title>
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/AutoPost.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">AutoPost IA</p>
+
+    <nav class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#flow" data-pt="Fluxo" data-en="Workflow">Fluxo</a>
+      <a href="#security" data-pt="Segurança" data-en="Security">Segurança</a>
+      <a href="#stack">Stack</a>
+      <a href="#status" data-pt="Produção" data-en="Production">Produção</a>
+    </nav>
+
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero autopost-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-status"
+          data-pt="Em produção • clientes de marketing"
+          data-en="In production • marketing clients"
+        >Em produção • clientes de marketing</p>
+
+        <h1>AutoPost IA</h1>
+        <h2
+          data-pt="Automação de Conteúdo para Redes Sociais"
+          data-en="Social Media Content Automation"
+        >Automação de Conteúdo para Redes Sociais</h2>
+
+        <p
+          data-pt="Automação que desenvolvi para meus clientes de marketing: o n8n usa a OpenAI para criar artes, legendas e hashtags, coleta a aprovação por WhatsApp ou email e publica no Instagram, Facebook e LinkedIn."
+          data-en="An automation I developed for my marketing clients: n8n uses OpenAI to create artwork, captions, and hashtags, collects approval through WhatsApp or email, and publishes to Instagram, Facebook, and LinkedIn."
+        >Automação que desenvolvi para meus clientes de marketing: o n8n usa a OpenAI para criar artes, legendas e hashtags, coleta a aprovação por WhatsApp ou email e publica no Instagram, Facebook e LinkedIn.</p>
+
+        <div class="hero-buttons">
+          <a href="#flow" class="btn" data-pt="Ver o fluxo" data-en="View workflow">Ver o fluxo</a>
+          <a href="#security" class="btn-outline" data-pt="Ver arquitetura" data-en="View architecture">Ver arquitetura</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="automation-visual">
+          <div class="automation-node node-schedule">n8n</div>
+          <span class="automation-link"></span>
+          <div class="automation-node node-ai">IA</div>
+          <span class="automation-link"></span>
+          <div class="automation-node node-approval">OK?</div>
+          <span class="automation-link"></span>
+          <div class="automation-node node-publish">API</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
+      <h2 data-pt="Visão geral" data-en="Overview">Visão geral</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card problem-card">
+        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
+        <p
+          data-pt="Meus clientes de marketing precisam manter publicações regulares no Instagram, Facebook e LinkedIn. Criar arte, legenda, hashtags, solicitar aprovação e postar toda semana formava uma sequência manual repetitiva, sujeita a atrasos e perda de contexto."
+          data-en="My marketing clients need to maintain regular publishing on Instagram, Facebook, and LinkedIn. Creating artwork, captions, hashtags, requesting approval, and publishing every week formed a repetitive manual sequence prone to delays and lost context."
+        >Meus clientes de marketing precisam manter publicações regulares no Instagram, Facebook e LinkedIn. Criar arte, legenda, hashtags, solicitar aprovação e postar toda semana formava uma sequência manual repetitiva, sujeita a atrasos e perda de contexto.</p>
+      </article>
+
+      <article class="overview-card solution-card">
+        <h3 data-pt="A solução" data-en="The solution">A solução</h3>
+        <p
+          data-pt="Criei o AutoPost IA para centralizar esse processo em um workflow agendado. Em produção, ele usa a OpenAI para criar o conteúdo a partir do briefing semanal, espera a decisão do cliente, publica somente após a aprovação e registra o resultado."
+          data-en="I created AutoPost IA to centralize this process in a scheduled workflow. In production, it uses OpenAI to create content from the weekly brief, waits for the client's decision, publishes only after approval, and records the result."
+        >Criei o AutoPost IA para centralizar esse processo em um workflow agendado. Em produção, ele usa a OpenAI para criar o conteúdo a partir do briefing semanal, espera a decisão do cliente, publica somente após a aprovação e registra o resultado.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="flow" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Workflow" data-en="Workflow">Workflow</p>
+      <h2 data-pt="Do agendamento ao histórico de execução" data-en="From scheduling to execution history">Do agendamento ao histórico de execução</h2>
+      <p class="section-description"
+        data-pt="O fluxo só avança para as APIs das redes sociais depois de receber uma aprovação explícita."
+        data-en="The workflow only proceeds to the social media APIs after receiving explicit approval."
+      >O fluxo só avança para as APIs das redes sociais depois de receber uma aprovação explícita.</p>
+    </header>
+
+    <div class="flow-diagram" role="img" aria-label="Agendamento, geração de conteúdo com IA, aprovação do cliente, publicação e log">
+      <div class="flow-step">
+        <span class="flow-number">01</span>
+        <strong data-pt="Agendamento" data-en="Schedule">Agendamento</strong>
+        <small>n8n</small>
+      </div>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <div class="flow-step">
+        <span class="flow-number">02</span>
+        <strong data-pt="Conteúdo com IA" data-en="AI content">Conteúdo com IA</strong>
+        <small data-pt="Legenda + hashtags" data-en="Caption + hashtags">Legenda + hashtags</small>
+      </div>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <div class="flow-step flow-decision">
+        <span class="flow-number">03</span>
+        <strong data-pt="Aprovação" data-en="Approval">Aprovação</strong>
+        <small data-pt="Cliente decide" data-en="Client decides">Cliente decide</small>
+      </div>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <div class="flow-step">
+        <span class="flow-number">04</span>
+        <strong data-pt="Publicação" data-en="Publishing">Publicação</strong>
+        <small>Meta + LinkedIn</small>
+      </div>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <div class="flow-step">
+        <span class="flow-number">05</span>
+        <strong>Log</strong>
+        <small data-pt="Registro + alerta" data-en="Record + alert">Registro + alerta</small>
+      </div>
+    </div>
+
+    <div class="rejection-path">
+      <span class="rejection-label" data-pt="Se rejeitado" data-en="If rejected">Se rejeitado</span>
+      <span data-pt="Feedback do cliente" data-en="Client feedback">Feedback do cliente</span>
+      <span aria-hidden="true">→</span>
+      <span data-pt="Ajuste ou regeneração" data-en="Edit or regenerate">Ajuste ou regeneração</span>
+      <span aria-hidden="true">→</span>
+      <span data-pt="Nova aprovação" data-en="New approval">Nova aprovação</span>
+    </div>
+
+    <div class="features-grid flow-details">
+      <article class="feature-card reveal">
+        <span class="card-index">01</span>
+        <h3 data-pt="Disparo agendado" data-en="Scheduled trigger">Disparo agendado</h3>
+        <p
+          data-pt="O n8n inicia o workflow nos dias configurados para cada cliente e carrega o tema ou briefing definido para a semana."
+          data-en="n8n starts the workflow on the days configured for each client and loads the topic or brief defined for that week."
+        >O n8n inicia o workflow nos dias configurados para cada cliente e carrega o tema ou briefing definido para a semana.</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <span class="card-index">02</span>
+        <h3 data-pt="Geração com IA" data-en="AI generation">Geração com IA</h3>
+        <p
+          data-pt="A API da OpenAI cria a arte, a legenda e as hashtags relevantes de acordo com o briefing e o contexto preparado para cada cliente."
+          data-en="The OpenAI API creates the artwork, caption, and relevant hashtags according to the brief and context prepared for each client."
+        >A API da OpenAI cria a arte, a legenda e as hashtags relevantes de acordo com o briefing e o contexto preparado para cada cliente.</p>
+        <p class="inline-confirmed"
+          data-pt="OpenAI • artes • legendas • hashtags"
+          data-en="OpenAI • artwork • captions • hashtags"
+        >OpenAI • artes • legendas • hashtags</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <span class="card-index">03</span>
+        <h3 data-pt="Aprovação assíncrona" data-en="Asynchronous approval">Aprovação assíncrona</h3>
+        <p
+          data-pt="A prévia da arte e do texto é enviada por WhatsApp ou email. O recurso Wait for Webhook mantém a execução em espera até o cliente aprovar ou solicitar um ajuste."
+          data-en="The artwork and text preview is sent through WhatsApp or email. Wait for Webhook keeps the execution paused until the client approves it or requests an adjustment."
+        >A prévia da arte e do texto é enviada por WhatsApp ou email. O recurso Wait for Webhook mantém a execução em espera até o cliente aprovar ou solicitar um ajuste.</p>
+        <p class="inline-confirmed"
+          data-pt="Aprovação • WhatsApp e email"
+          data-en="Approval • WhatsApp and email"
+        >Aprovação • WhatsApp e email</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <span class="card-index">04</span>
+        <h3 data-pt="Publicação controlada" data-en="Controlled publishing">Publicação controlada</h3>
+        <p
+          data-pt="Com a aprovação registrada, o workflow envia o conteúdo para Instagram e Facebook pela Meta Graph API e para o LinkedIn pela API oficial."
+          data-en="Once approval is recorded, the workflow sends the content to Instagram and Facebook through the Meta Graph API and to LinkedIn through its official API."
+        >Com a aprovação registrada, o workflow envia o conteúdo para Instagram e Facebook pela Meta Graph API e para o LinkedIn pela API oficial.</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <span class="card-index">05</span>
+        <h3 data-pt="Ciclo de ajuste" data-en="Revision cycle">Ciclo de ajuste</h3>
+        <p
+          data-pt="Quando o conteúdo é rejeitado, o feedback retorna ao fluxo para regeneração orientada ou edição manual antes de uma nova solicitação de aprovação."
+          data-en="When content is rejected, feedback returns to the workflow for guided regeneration or manual editing before a new approval request."
+        >Quando o conteúdo é rejeitado, o feedback retorna ao fluxo para regeneração orientada ou edição manual antes de uma nova solicitação de aprovação.</p>
+      </article>
+
+      <article class="feature-card reveal">
+        <span class="card-index">06</span>
+        <h3 data-pt="Log e notificação" data-en="Logging and notification">Log e notificação</h3>
+        <p
+          data-pt="Cada execução registra sucesso ou falha e notifica a equipe quando a publicação é concluída, formando um histórico auditável."
+          data-en="Each execution records success or failure and notifies the team when publishing is complete, creating an auditable history."
+        >Cada execução registra sucesso ou falha e notifica a equipe quando a publicação é concluída, formando um histórico auditável.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="security" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Infraestrutura" data-en="Infrastructure">Infraestrutura</p>
+      <h2 data-pt="Dois públicos, duas rotas de acesso" data-en="Two audiences, two access routes">Dois públicos, duas rotas de acesso</h2>
+      <p class="section-description"
+        data-pt="O n8n roda em Docker no meu servidor on-premise. Eu administro os workflows pela rede privada Tailscale; meus clientes aprovam posts por um webhook específico publicado pelo Cloudflare Tunnel, sem entrar na minha rede."
+        data-en="n8n runs in Docker on my on-premise server. I manage workflows through the private Tailscale network; my clients approve posts through a specific webhook published by Cloudflare Tunnel, without entering my network."
+      >O n8n roda em Docker no meu servidor on-premise. Eu administro os workflows pela rede privada Tailscale; meus clientes aprovam posts por um webhook específico publicado pelo Cloudflare Tunnel, sem entrar na minha rede.</p>
+    </header>
+
+    <div class="architecture-callout">
+      <strong
+        data-pt="Não é uma única camada de acesso."
+        data-en="This is not a single access layer."
+      >Não é uma única camada de acesso.</strong>
+      <p
+        data-pt="Administração = somente Gustavo via Tailscale. Aprovação = somente o webhook necessário via Cloudflare Tunnel. O cliente não instala VPN e não recebe acesso ao painel ou a qualquer outra parte do servidor."
+        data-en="Administration = Gustavo only through Tailscale. Approval = only the required webhook through Cloudflare Tunnel. The client installs no VPN and receives no access to the panel or any other part of the server."
+      >Administração = somente Gustavo via Tailscale. Aprovação = somente o webhook necessário via Cloudflare Tunnel. O cliente não instala VPN e não recebe acesso ao painel ou a qualquer outra parte do servidor.</p>
+    </div>
+
+    <div class="security-architecture">
+      <article class="security-lane private-lane">
+        <div class="lane-header">
+          <span class="lane-status"></span>
+          <p data-pt="Acesso administrativo • privado" data-en="Administrative access • private">Acesso administrativo • privado</p>
+        </div>
+        <div class="lane-flow">
+          <span>Gustavo</span>
+          <b aria-hidden="true">→</b>
+          <span>Tailscale</span>
+          <b aria-hidden="true">→</b>
+          <span data-pt="Painel do n8n" data-en="n8n panel">Painel do n8n</span>
+        </div>
+        <p
+          data-pt="O Tailscale, uma VPN mesh baseada em WireGuard, mantém a interface administrativa fora da internet pública. Somente meus dispositivos autenticados na tailnet conseguem acessar, criar ou editar workflows; nenhuma porta administrativa fica exposta."
+          data-en="Tailscale, a WireGuard-based mesh VPN, keeps the administration interface off the public internet. Only my authenticated devices on the tailnet can access, create, or edit workflows; no administration port is exposed."
+        >O Tailscale, uma VPN mesh baseada em WireGuard, mantém a interface administrativa fora da internet pública. Somente meus dispositivos autenticados na tailnet conseguem acessar, criar ou editar workflows; nenhuma porta administrativa fica exposta.</p>
+      </article>
+
+      <article class="security-lane public-lane">
+        <div class="lane-header">
+          <span class="lane-status"></span>
+          <p data-pt="Acesso do cliente • público restrito" data-en="Client access • restricted public">Acesso do cliente • público restrito</p>
+        </div>
+        <div class="lane-flow">
+          <span data-pt="Cliente • link normal" data-en="Client • regular link">Cliente • link normal</span>
+          <b aria-hidden="true">→</b>
+          <span>Cloudflare Tunnel</span>
+          <b aria-hidden="true">→</b>
+          <span data-pt="Webhook de aprovação" data-en="Approval webhook">Webhook de aprovação</span>
+        </div>
+        <p
+          data-pt="O cliente abre normalmente o link recebido por WhatsApp ou email, sem instalar VPN. Um container cloudflared no mesmo Docker Compose do n8n cria uma conexão de saída até a Cloudflare e publica somente a rota do webhook, sem abrir portas no roteador nem expor o IP da rede doméstica."
+          data-en="The client opens the link received through WhatsApp or email normally, without installing a VPN. A cloudflared container in the same Docker Compose stack as n8n creates an outbound connection to Cloudflare and publishes only the webhook route, without opening router ports or exposing the home network IP."
+        >O cliente abre normalmente o link recebido por WhatsApp ou email, sem instalar VPN. Um container cloudflared no mesmo Docker Compose do n8n cria uma conexão de saída até a Cloudflare e publica somente a rota do webhook, sem abrir portas no roteador nem expor o IP da rede doméstica.</p>
+      </article>
+    </div>
+
+    <div class="security-principles">
+      <article>
+        <span>01</span>
+        <div>
+          <h3 data-pt="Menor superfície de exposição" data-en="Smallest possible exposure">Menor superfície de exposição</h3>
+          <p
+            data-pt="Somente o endpoint que precisa receber a decisão do cliente fica público; o painel e os serviços internos permanecem invisíveis."
+            data-en="Only the endpoint that needs to receive the client's decision is public; the panel and internal services remain invisible."
+          >Somente o endpoint que precisa receber a decisão do cliente fica público; o painel e os serviços internos permanecem invisíveis.</p>
+        </div>
+      </article>
+      <article>
+        <span>02</span>
+        <div>
+          <h3 data-pt="Cada público usa o acesso adequado" data-en="Each audience uses the right access">Cada público usa o acesso adequado</h3>
+          <p
+            data-pt="Eu uso a VPN para administrar; o cliente usa um link comum para aprovar. Ele não precisa instalar software nem entrar na minha rede."
+            data-en="I use the VPN to administer; the client uses a regular link to approve. They do not need to install software or enter my network."
+          >Eu uso a VPN para administrar; o cliente usa um link comum para aprovar. Ele não precisa instalar software nem entrar na minha rede.</p>
+        </div>
+      </article>
+      <article>
+        <span>03</span>
+        <div>
+          <h3 data-pt="Túnel outbound, sem abrir portas" data-en="Outbound tunnel, no open ports">Túnel outbound, sem abrir portas</h3>
+          <p
+            data-pt="O cloudflared inicia a conexão de dentro para fora. Não há port forwarding nem divulgação do IP da rede doméstica."
+            data-en="cloudflared initiates the connection from the inside out. There is no port forwarding and no disclosure of the home network IP."
+          >O cloudflared inicia a conexão de dentro para fora. Não há port forwarding nem divulgação do IP da rede doméstica.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Tecnologias do projeto" data-en="Project technologies">Tecnologias do projeto</h2>
+    </header>
+
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Automação" data-en="Automation">Automação</h3>
+        <span>n8n</span>
+        <span>Wait for Webhook</span>
+        <span data-pt="Agendamento" data-en="Scheduling">Agendamento</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Execução" data-en="Runtime">Execução</h3>
+        <span>Docker</span>
+        <span>Docker Compose</span>
+        <span data-pt="Servidor on-premise" data-en="On-premise server">Servidor on-premise</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Integrações" data-en="Integrations">Integrações</h3>
+        <span>OpenAI API</span>
+        <span data-pt="Geração de artes" data-en="Artwork generation">Geração de artes</span>
+        <span>Meta Graph API</span>
+        <span>LinkedIn API</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Rede e acesso" data-en="Network and access">Rede e acesso</h3>
+        <span data-pt="Tailscale • administração" data-en="Tailscale • administration">Tailscale • administração</span>
+        <span data-pt="Cloudflare Tunnel • webhook público" data-en="Cloudflare Tunnel • public webhook">Cloudflare Tunnel • webhook público</span>
+        <span>cloudflared • outbound</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="status" class="section container reveal">
+    <div class="status-panel production-panel">
+      <div>
+        <p class="section-kicker" data-pt="Em produção" data-en="In production">Em produção</p>
+        <h2 data-pt="Automação criada para meus clientes de marketing" data-en="Automation built for my marketing clients">Automação criada para meus clientes de marketing</h2>
+        <p
+          data-pt="O AutoPost IA está em uso real para automatizar o ciclo de posts dos meus clientes: criação com OpenAI, aprovação humana e publicação nas redes sociais."
+          data-en="AutoPost IA is in real use to automate my clients' posting cycle: creation with OpenAI, human approval, and publishing to social networks."
+        >O AutoPost IA está em uso real para automatizar o ciclo de posts dos meus clientes: criação com OpenAI, aprovação humana e publicação nas redes sociais.</p>
+      </div>
+
+      <ul class="production-list">
+        <li data-pt="Uso real com clientes de marketing" data-en="Real use with marketing clients">Uso real com clientes de marketing</li>
+        <li data-pt="Artes, legendas e hashtags via OpenAI" data-en="Artwork, captions, and hashtags through OpenAI">Artes, legendas e hashtags via OpenAI</li>
+        <li data-pt="Aprovação por WhatsApp e email" data-en="Approval through WhatsApp and email">Aprovação por WhatsApp e email</li>
+        <li data-pt="Publicação pela Meta Graph API e LinkedIn API" data-en="Publishing through Meta Graph API and LinkedIn API">Publicação pela Meta Graph API e LinkedIn API</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"
+  data-pt="© 2026 Gustavo Soares — Projeto AutoPost IA"
+  data-en="© 2026 Gustavo Soares — AutoPost IA Project"
+>© 2026 Gustavo Soares — Projeto AutoPost IA</footer>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>
