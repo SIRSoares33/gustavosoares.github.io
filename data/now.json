@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-08-21",
+  "sourceNote": {
+    "pt": "Snapshot público curado a partir das frentes técnicas revisadas em 21 de agosto de 2026.",
+    "en": "Public snapshot curated from the technical initiatives reviewed on August 21, 2026."
+  },
+  "workItems": [
+    {
+      "id": "logos-infrastructure-base",
+      "group": "focus",
+      "projectId": "logos-server",
+      "project": "Logos Server",
+      "publicTitle": {
+        "pt": "Evolução da infraestrutura base do Logos Server",
+        "en": "Evolution of the Logos Server foundation"
+      },
+      "category": {
+        "pt": "Infraestrutura pessoal · DevOps · Self-hosting",
+        "en": "Personal infrastructure · DevOps · Self-hosting"
+      },
+      "summary": {
+        "pt": "Estou consolidando a infraestrutura inicial do Logos Server, meu ambiente pessoal para hospedar aplicações, bancos de dados, automações, backups e futuros serviços.",
+        "en": "I am consolidating the initial Logos Server infrastructure, my personal environment for hosting applications, databases, automations, backups, and future services."
+      },
+      "status": "in-progress",
+      "horizon": "now",
+      "future": false,
+      "problem": {
+        "pt": "Transformar um host pessoal em uma infraestrutura organizada, persistente e recuperável, sem misturar aplicações, dados, administração e rotinas operacionais.",
+        "en": "Turn a personal host into organized, persistent, recoverable infrastructure without mixing applications, data, administration, and operational routines."
+      },
+      "currentMoment": {
+        "pt": "A infraestrutura base já está funcional, mas continua sendo organizada, documentada e preparada para receber novas aplicações com segurança e previsibilidade.",
+        "en": "The foundation is already functional, but it is still being organized, documented, and prepared to receive new applications safely and predictably."
+      },
+      "milestones": [
+        { "id": "ubuntu", "title": { "pt": "Ubuntu Server configurado", "en": "Ubuntu Server configured" }, "completed": true },
+        { "id": "docker", "title": { "pt": "Docker e Docker Compose instalados", "en": "Docker and Docker Compose installed" }, "completed": true },
+        { "id": "containers", "title": { "pt": "Estrutura inicial de containers organizada", "en": "Initial container structure organized" }, "completed": true },
+        { "id": "responsibilities", "title": { "pt": "Volumes, scripts, secrets, storage e backups separados", "en": "Volumes, scripts, secrets, storage, and backups separated" }, "completed": true },
+        { "id": "sophia", "title": { "pt": "PostgreSQL executado pelo serviço Sophia", "en": "PostgreSQL running through Sophia" }, "completed": true },
+        { "id": "hermes", "title": { "pt": "n8n executado pelo serviço Hermes", "en": "n8n running through Hermes" }, "completed": true },
+        { "id": "pgadmin", "title": { "pt": "pgAdmin disponibilizado pelo serviço seeingSophia", "en": "pgAdmin provided through seeingSophia" }, "completed": true },
+        { "id": "starlink", "title": { "pt": "Rede Docker Starlink criada", "en": "Starlink Docker network created" }, "completed": true },
+        { "id": "remote-access", "title": { "pt": "Tailscale e SSH configurados", "en": "Tailscale and SSH configured" }, "completed": true },
+        { "id": "wake-on-lan", "title": { "pt": "Wake on LAN configurado", "en": "Wake on LAN configured" }, "completed": true },
+        { "id": "backup-foundation", "title": { "pt": "Estratégia inicial de backup com rclone e Restic", "en": "Initial backup strategy with rclone and Restic" }, "completed": true },
+        { "id": "linux-host", "title": { "pt": "Servidor Linux preparado para aplicações e automações", "en": "Linux server prepared for applications and automations" }, "completed": true }
+      ],
+      "nextSteps": [
+        { "pt": "Finalizar a organização da infraestrutura inicial", "en": "Finish organizing the initial infrastructure" },
+        { "pt": "Automatizar rotinas de backup", "en": "Automate backup routines" },
+        { "pt": "Definir política de retenção", "en": "Define a retention policy" },
+        { "pt": "Centralizar logs", "en": "Centralize logs" },
+        { "pt": "Estruturar monitoramento e observabilidade", "en": "Structure monitoring and observability" },
+        { "pt": "Preparar o ambiente para o Janus", "en": "Prepare the environment for Janus" },
+        { "pt": "Documentar procedimentos de restauração", "en": "Document restoration procedures" }
+      ],
+      "nextMilestone": {
+        "pt": "Automatizar backups e documentar a restauração.",
+        "en": "Automate backups and document restoration."
+      },
+      "technologies": ["Ubuntu Server", "Docker", "Docker Compose", "PostgreSQL", "n8n", "pgAdmin", "Tailscale", "Restic", "rclone", "Bash", "Self-hosting"],
+      "technologiesAreCandidates": false,
+      "related": {
+        "pt": "É a base operacional para Sophia, Hermes, Starlink e o futuro Janus.",
+        "en": "It is the operational foundation for Sophia, Hermes, Starlink, and the future Janus."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Ver Logos Server", "en": "View Logos Server" }, "url": "LogosServer.html" }
+      ]
+    },
+    {
+      "id": "logos-thermal-stability",
+      "group": "focus",
+      "projectId": "logos-server",
+      "project": "Logos Server",
+      "publicTitle": {
+        "pt": "Melhorar a estabilidade térmica do host",
+        "en": "Improve the host's thermal stability"
+      },
+      "category": {
+        "pt": "Hardware · Infraestrutura · Confiabilidade",
+        "en": "Hardware · Infrastructure · Reliability"
+      },
+      "summary": {
+        "pt": "Durante o funcionamento do host, foi identificado aquecimento acima do esperado. A próxima melhoria física será reorganizar o fluxo de ar e instalar novas ventoinhas.",
+        "en": "Higher-than-expected heat was identified while the host was running. The next physical improvement will reorganize airflow and install additional fans."
+      },
+      "status": "next",
+      "horizon": "now",
+      "future": true,
+      "problem": {
+        "pt": "Um servidor precisa funcionar por longos períodos. Temperaturas elevadas podem reduzir a estabilidade, causar throttling e diminuir a vida útil dos componentes.",
+        "en": "A server needs to operate for long periods. High temperatures can reduce stability, cause throttling, and shorten component lifespan."
+      },
+      "currentMoment": {
+        "pt": "A necessidade foi identificada, mas a alteração física e as medições comparativas ainda não foram realizadas.",
+        "en": "The need has been identified, but the physical change and comparative measurements have not yet been performed."
+      },
+      "considerations": [
+        { "pt": "Criar entrada de ar frio e saída adequada para o ar quente", "en": "Create a cold-air intake and adequate hot-air exhaust" },
+        { "pt": "Melhorar a circulação interna e organizar cabos", "en": "Improve internal circulation and organize cables" },
+        { "pt": "Avaliar temperaturas antes e depois da alteração", "en": "Evaluate temperatures before and after the change" },
+        { "pt": "Verificar a capacidade elétrica da fonte", "en": "Verify the power supply's electrical capacity" },
+        { "pt": "Monitorar o comportamento do host sob carga", "en": "Monitor host behavior under load" }
+      ],
+      "milestones": [],
+      "nextSteps": [
+        { "pt": "Instalar as ventoinhas", "en": "Install the fans" },
+        { "pt": "Confirmar o sentido correto do fluxo de ar", "en": "Confirm the correct airflow direction" },
+        { "pt": "Organizar cabos que prejudiquem a circulação", "en": "Organize cables that restrict circulation" },
+        { "pt": "Medir temperaturas em idle e sob carga", "en": "Measure temperatures at idle and under load" },
+        { "pt": "Registrar o resultado na documentação do Logos", "en": "Record the result in the Logos documentation" }
+      ],
+      "nextMilestone": {
+        "pt": "Instalar as ventoinhas e registrar medições comparativas.",
+        "en": "Install the fans and record comparative measurements."
+      },
+      "technologies": ["Hardware", "Airflow", "Linux", "Monitoramento"],
+      "technologiesAreCandidates": false,
+      "related": {
+        "pt": "Melhora a confiabilidade física do host que sustenta todo o Logos Server.",
+        "en": "Improves the physical reliability of the host supporting the entire Logos Server."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Conhecer a infraestrutura", "en": "Explore the infrastructure" }, "url": "LogosServer.html" }
+      ]
+    },
+    {
+      "id": "janus-architecture",
+      "group": "focus",
+      "projectId": "janus",
+      "project": "Janus",
+      "publicTitle": {
+        "pt": "Arquitetar o Janus",
+        "en": "Architect Janus"
+      },
+      "category": {
+        "pt": "Gateway · APIs · Webhooks · Integrações",
+        "en": "Gateway · APIs · Webhooks · Integrations"
+      },
+      "summary": {
+        "pt": "O Janus está sendo planejado como o gateway do Logos Server: uma camada central para receber, validar, observar e encaminhar integrações, eventos e webhooks.",
+        "en": "Janus is being planned as the Logos Server gateway: a central layer for receiving, validating, observing, and routing integrations, events, and webhooks."
+      },
+      "status": "planning",
+      "horizon": "now",
+      "future": true,
+      "problem": {
+        "pt": "Criar uma fronteira pública controlada sem expor diretamente serviços internos ou duplicar as responsabilidades de automação do Hermes.",
+        "en": "Create a controlled public boundary without directly exposing internal services or duplicating Hermes's automation responsibilities."
+      },
+      "currentMoment": {
+        "pt": "O projeto está na fase de arquitetura e definição de responsabilidades. Não está implementado, publicado ou em produção.",
+        "en": "The project is in the architecture and responsibility-definition stage. It is not implemented, published, or in production."
+      },
+      "considerations": [
+        { "pt": "Definir limites entre Janus e n8n", "en": "Define boundaries between Janus and n8n" },
+        { "pt": "Estudar autenticação, validação de webhooks e rate limiting", "en": "Study authentication, webhook validation, and rate limiting" },
+        { "pt": "Definir encaminhamento, logs e correlação de requisições", "en": "Define routing, logs, and request correlation" },
+        { "pt": "Planejar monitoramento de falhas e proteção dos serviços internos", "en": "Plan failure monitoring and internal-service protection" },
+        { "pt": "Estudar integrações futuras com portfólio e inteligência artificial", "en": "Study future portfolio and artificial-intelligence integrations" }
+      ],
+      "milestones": [],
+      "nextSteps": [
+        { "pt": "Definir as responsabilidades mínimas do gateway", "en": "Define the gateway's minimum responsibilities" },
+        { "pt": "Separar validação e entrada pública da orquestração do Hermes", "en": "Separate validation and public entry from Hermes orchestration" },
+        { "pt": "Documentar os fluxos de eventos e falhas", "en": "Document event and failure flows" },
+        { "pt": "Projetar autenticação, observabilidade e proteção contra abuso", "en": "Design authentication, observability, and abuse protection" }
+      ],
+      "nextMilestone": {
+        "pt": "Definir o escopo mínimo e os limites entre Janus, Hermes e os demais serviços do Logos.",
+        "en": "Define the minimum scope and boundaries between Janus, Hermes, and the other Logos services."
+      },
+      "technologies": ["ASP.NET Core", "C#", "Web APIs", "Webhooks", "Docker", "Reverse proxy", "Rate limiting", "OpenTelemetry", "n8n"],
+      "technologiesAreCandidates": true,
+      "related": {
+        "pt": "Janus deverá proteger a entrada; Hermes continuará responsável por processar e orquestrar automações.",
+        "en": "Janus should protect the entry point; Hermes will remain responsible for processing and orchestrating automations."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Ver a visão futura do Janus", "en": "View the future Janus vision" }, "url": "LogosServer.html#janus" }
+      ]
+    },
+    {
+      "id": "hermes-marketing-workflow",
+      "group": "focus",
+      "projectId": "hermes",
+      "project": "Hermes · Logos Server",
+      "publicTitle": {
+        "pt": "Criar o workflow de marketing no n8n",
+        "en": "Build the n8n marketing workflow"
+      },
+      "category": {
+        "pt": "Automação · n8n · Inteligência artificial",
+        "en": "Automation · n8n · Artificial intelligence"
+      },
+      "summary": {
+        "pt": "A próxima automação do Hermes será um workflow de produção e organização de conteúdo para meu marketing pessoal, executado na infraestrutura do Logos Server.",
+        "en": "Hermes's next automation will be a content-production and organization workflow for my personal marketing, running on the Logos Server infrastructure."
+      },
+      "status": "planning",
+      "horizon": "now",
+      "future": true,
+      "problem": {
+        "pt": "Organizar ideias, conteúdo, aprovação e publicação em um fluxo confiável, mantendo supervisão humana e credenciais protegidas.",
+        "en": "Organize ideas, content, approval, and publication into a reliable flow while keeping human supervision and credentials protected."
+      },
+      "currentMoment": {
+        "pt": "O workflow pessoal ainda não foi construído. Um estudo prático anterior com n8n on-premise, IA e Meta Business servirá como base técnica.",
+        "en": "The personal workflow has not been built yet. A previous hands-on study with on-premise n8n, AI, and Meta Business will serve as a technical foundation."
+      },
+      "considerations": [
+        { "pt": "Recebimento de ideias e organização de calendário", "en": "Idea intake and calendar organization" },
+        { "pt": "Geração assistida de conteúdo, legendas e hashtags", "en": "Assisted generation of content, captions, and hashtags" },
+        { "pt": "Aprovação humana antes de qualquer publicação", "en": "Human approval before any publication" },
+        { "pt": "Agendamento, publicação e registro do resultado somente após validação", "en": "Scheduling, publication, and result logging only after validation" }
+      ],
+      "milestones": [
+        { "id": "prior-study", "title": { "pt": "Estudo prático anterior com n8n on-premise, IA e Meta Business", "en": "Previous hands-on study with on-premise n8n, AI, and Meta Business" }, "completed": true }
+      ],
+      "nextSteps": [
+        { "pt": "Definir o fluxo mínimo, entradas e saídas", "en": "Define the minimum flow, inputs, and outputs" },
+        { "pt": "Definir pontos de aprovação e armazenamento", "en": "Define approval points and storage" },
+        { "pt": "Preparar credenciais de forma segura", "en": "Prepare credentials securely" },
+        { "pt": "Construir o workflow no Hermes", "en": "Build the workflow in Hermes" },
+        { "pt": "Testar falhas, reexecuções e documentar o processo", "en": "Test failures, reruns, and document the process" }
+      ],
+      "nextMilestone": {
+        "pt": "Definir o fluxo mínimo e os pontos obrigatórios de aprovação humana.",
+        "en": "Define the minimum flow and mandatory human-approval points."
+      },
+      "technologies": ["n8n", "Docker", "Inteligência artificial", "Webhooks", "Meta Business"],
+      "technologiesAreCandidates": true,
+      "related": {
+        "pt": "O Hermes executará o fluxo no Logos Server; futuras entradas públicas poderão ser protegidas pelo Janus.",
+        "en": "Hermes will run the flow on Logos Server; future public inputs may be protected by Janus."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Conhecer o Hermes", "en": "Explore Hermes" }, "url": "LogosServer.html#architecture" }
+      ]
+    },
+    {
+      "id": "logos-future-scope",
+      "group": "focus",
+      "projectId": "logos-ecosystem",
+      "project": "Logos",
+      "publicTitle": {
+        "pt": "Definir o escopo futuro do Logos",
+        "en": "Define the future scope of Logos"
+      },
+      "category": {
+        "pt": "Produto · Arquitetura · Identidade",
+        "en": "Product · Architecture · Identity"
+      },
+      "summary": {
+        "pt": "Além de ser meu servidor pessoal, o Logos está começando a ser pensado como um ecossistema com identidade própria, capaz de reunir infraestrutura, aplicações, automações e produtos.",
+        "en": "Beyond being my personal server, Logos is beginning to be considered as an ecosystem with its own identity, bringing together infrastructure, applications, automations, and products."
+      },
+      "status": "definition",
+      "horizon": "now",
+      "future": true,
+      "problem": {
+        "pt": "Definir uma identidade coerente para o ecossistema sem apresentar como empresa, produto ou serviço algo que ainda está apenas no campo da visão futura.",
+        "en": "Define a coherent identity for the ecosystem without presenting something that is still only a future vision as an existing company, product, or service."
+      },
+      "currentMoment": {
+        "pt": "O escopo está em definição. O domínio welogos.com.br foi reservado, mas não é apresentado como produto ou empresa existente.",
+        "en": "The scope is being defined. The welogos.com.br domain has been reserved, but it is not presented as an existing product or company."
+      },
+      "considerations": [
+        { "pt": "Definir se Logos continuará apenas como infraestrutura pessoal", "en": "Define whether Logos will remain only personal infrastructure" },
+        { "pt": "Estudar uma possível identidade técnica ou evolução futura", "en": "Study a possible technical identity or future evolution" },
+        { "pt": "Explicar a relação entre Logos, Janus, Hermes e Sophia", "en": "Explain the relationship between Logos, Janus, Hermes, and Sophia" },
+        { "pt": "Separar claramente o que deve ser público do que deve permanecer privado", "en": "Clearly separate what should be public from what should remain private" }
+      ],
+      "milestones": [
+        { "id": "domain-reserved", "title": { "pt": "Domínio welogos.com.br reservado", "en": "welogos.com.br domain reserved" }, "completed": true }
+      ],
+      "nextSteps": [
+        { "pt": "Escrever uma declaração de propósito", "en": "Write a purpose statement" },
+        { "pt": "Definir o escopo atual", "en": "Define the current scope" },
+        { "pt": "Registrar uma visão de longo prazo sem promessas prematuras", "en": "Record a long-term vision without premature promises" },
+        { "pt": "Mapear responsabilidades e fronteiras públicas", "en": "Map responsibilities and public boundaries" }
+      ],
+      "nextMilestone": {
+        "pt": "Definir uma declaração de propósito, o escopo atual e uma visão de longo prazo para o Logos.",
+        "en": "Define a purpose statement, the current scope, and a long-term vision for Logos."
+      },
+      "technologies": ["Arquitetura", "Produto", "Identidade", "Self-hosting"],
+      "technologiesAreCandidates": true,
+      "related": {
+        "pt": "A visão organiza como a infraestrutura, os serviços internos e possíveis projetos futuros se relacionam.",
+        "en": "The vision organizes how infrastructure, internal services, and possible future projects relate."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Ver o Logos Server", "en": "View Logos Server" }, "url": "LogosServer.html" }
+      ]
+    },
+    {
+      "id": "psalms-evolution",
+      "group": "evolution",
+      "projectId": "psalms",
+      "project": "Psalms",
+      "publicTitle": {
+        "pt": "Evoluir o ecossistema Psalms",
+        "en": "Evolve the Psalms ecosystem"
+      },
+      "category": {
+        "pt": "Bibliotecas .NET · Arquitetura de software",
+        "en": ".NET libraries · Software architecture"
+      },
+      "summary": {
+        "pt": "Psalms é um ecossistema modular de bibliotecas para .NET e ASP.NET Core criado para reduzir boilerplate, estabelecer convenções limpas e encapsular problemas recorrentes no desenvolvimento de APIs.",
+        "en": "Psalms is a modular ecosystem of .NET and ASP.NET Core libraries created to reduce boilerplate, establish clean conventions, and encapsulate recurring API-development problems."
+      },
+      "status": "documenting",
+      "horizon": "now",
+      "future": false,
+      "problem": {
+        "pt": "Apresentar cada pacote com clareza, exemplos verificáveis e APIs públicas consistentes, sem perder a visão do ecossistema como um todo.",
+        "en": "Present each package clearly, with verifiable examples and consistent public APIs, without losing sight of the ecosystem as a whole."
+      },
+      "currentMoment": {
+        "pt": "A apresentação no portfólio e as READMEs estão sendo organizadas, com explicação individual dos pacotes e revisão gradual dos exemplos de utilização.",
+        "en": "The portfolio presentation and READMEs are being organized, with individual package explanations and a gradual review of usage examples."
+      },
+      "milestones": [
+        { "id": "email-sender", "title": { "pt": "Pacote Psalms.AspNetCore.EmailSender existente", "en": "Psalms.AspNetCore.EmailSender package available" }, "completed": true },
+        { "id": "jwt", "title": { "pt": "Pacote Psalms.AspNetCore.Jwt existente", "en": "Psalms.AspNetCore.Jwt package available" }, "completed": true },
+        { "id": "data-management", "title": { "pt": "Pacote Psalms.EFCore.DataManagement existente", "en": "Psalms.EFCore.DataManagement package available" }, "completed": true }
+      ],
+      "nextSteps": [
+        { "pt": "Melhorar a documentação e ampliar exemplos", "en": "Improve documentation and expand examples" },
+        { "pt": "Aprimorar testes", "en": "Improve tests" },
+        { "pt": "Revisar APIs públicas", "en": "Review public APIs" },
+        { "pt": "Melhorar o processo de publicação dos pacotes", "en": "Improve the package-publishing process" }
+      ],
+      "nextMilestone": {
+        "pt": "Consolidar documentação e exemplos dos três pacotes atuais.",
+        "en": "Consolidate documentation and examples for the three current packages."
+      },
+      "technologies": [".NET", "ASP.NET Core", "Entity Framework Core", "NuGet", "xUnit"],
+      "technologiesAreCandidates": false,
+      "related": {
+        "pt": "Os pacotes apoiam APIs e futuros serviços do ecossistema, mantendo responsabilidades reutilizáveis fora das aplicações.",
+        "en": "The packages support APIs and future ecosystem services by keeping reusable responsibilities outside applications."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Ver detalhes do Psalms", "en": "View Psalms details" }, "url": "Psalms.html" }
+      ]
+    },
+    {
+      "id": "portfolio-evolution",
+      "group": "evolution",
+      "projectId": "portfolio",
+      "project": "Portfólio",
+      "publicTitle": {
+        "pt": "Evolução do portfólio",
+        "en": "Portfolio evolution"
+      },
+      "category": {
+        "pt": "Web · Experiência interativa · Integrações",
+        "en": "Web · Interactive experience · Integrations"
+      },
+      "summary": {
+        "pt": "O próprio portfólio está se tornando um registro vivo dos projetos, estudos, decisões técnicas e próximos passos.",
+        "en": "The portfolio itself is becoming a living record of projects, studies, technical decisions, and next steps."
+      },
+      "status": "in-progress",
+      "horizon": "now",
+      "future": false,
+      "problem": {
+        "pt": "Mostrar evolução contínua sem transformar o site em uma lista de tarefas ou prometer integrações que ainda não existem.",
+        "en": "Show continuous evolution without turning the site into a task list or promising integrations that do not yet exist."
+      },
+      "currentMoment": {
+        "pt": "A página Agora está sendo criada, o Psalms recebe uma apresentação técnica melhor e a documentação do Logos continua sendo expandida.",
+        "en": "The Now page is being created, Psalms is receiving a stronger technical presentation, and Logos documentation continues to expand."
+      },
+      "considerations": [
+        { "pt": "Estudar a relação entre GitHub Pages, uma futura API ASP.NET Core e o Logos Server", "en": "Study the relationship between GitHub Pages, a future ASP.NET Core API, and Logos Server" },
+        { "pt": "Planejar o Janus como possível gateway dessas integrações", "en": "Plan Janus as a possible gateway for those integrations" },
+        { "pt": "Manter a primeira versão inteiramente estática e versionada", "en": "Keep the first version entirely static and versioned" }
+      ],
+      "milestones": [],
+      "nextSteps": [
+        { "pt": "Consolidar a página Agora", "en": "Consolidate the Now page" },
+        { "pt": "Continuar aprimorando as páginas técnicas", "en": "Continue improving technical project pages" },
+        { "pt": "Validar caminhos seguros para funcionalidades dinâmicas futuras", "en": "Validate safe paths for future dynamic features" }
+      ],
+      "nextMilestone": {
+        "pt": "Publicar uma visão curada e sustentável do trabalho atual.",
+        "en": "Publish a curated, sustainable view of current work."
+      },
+      "technologies": ["HTML", "CSS", "JavaScript", "GitHub Pages", "Acessibilidade"],
+      "technologiesAreCandidates": false,
+      "related": {
+        "pt": "A página Agora conecta o estado atual às páginas detalhadas que explicam cada projeto.",
+        "en": "The Now page connects the current state to the detailed pages that explain each project."
+      },
+      "lastUpdated": "2026-08-21",
+      "links": [
+        { "label": { "pt": "Explorar os projetos", "en": "Explore the projects" }, "url": "index.html#projects" }
+      ]
+    }
+  ],
+  "studyTracks": [
+    {
+      "id": "aws-cloud-practitioner",
+      "title": "AWS Cloud Practitioner",
+      "category": {
+        "pt": "Cloud computing · AWS · Certificação",
+        "en": "Cloud computing · AWS · Certification"
+      },
+      "status": "horizon",
+      "summary": {
+        "pt": "Estou estruturando minha trilha de estudos para aprofundar fundamentos de cloud computing e me preparar para a certificação AWS Certified Cloud Practitioner.",
+        "en": "I am structuring my study path to deepen cloud-computing fundamentals and prepare for the AWS Certified Cloud Practitioner certification."
+      },
+      "topics": [
+        { "pt": "Conceitos de nuvem", "en": "Cloud concepts" },
+        { "pt": "IaaS, PaaS e SaaS", "en": "IaaS, PaaS, and SaaS" },
+        { "pt": "Regiões e zonas de disponibilidade", "en": "Regions and availability zones" },
+        { "pt": "Responsabilidade compartilhada", "en": "Shared responsibility" },
+        { "pt": "Serviços fundamentais da AWS", "en": "Core AWS services" },
+        { "pt": "Segurança e IAM", "en": "Security and IAM" },
+        { "pt": "Custos e modelo de cobrança", "en": "Costs and billing model" },
+        { "pt": "Alta disponibilidade, backup e monitoramento", "en": "High availability, backup, and monitoring" }
+      ],
+      "practicalExperience": ["EC2 Linux", "Deploy .NET", "Docker", "Backup em S3"],
+      "lastUpdated": "2026-08-21"
+    }
+  ],
+  "recentMilestones": [
+    {
+      "id": "linux-server-ready",
+      "projectId": "logos-server",
+      "project": "Logos Server",
+      "title": {
+        "pt": "Servidor Linux preparado para aplicações e automações",
+        "en": "Linux server prepared for applications and automations"
+      },
+      "description": {
+        "pt": "A base do servidor Linux foi configurada para hospedar aplicações pessoais e automações, criando o ponto de partida para o Logos Server.",
+        "en": "The Linux server foundation was configured to host personal applications and automations, creating the starting point for Logos Server."
+      },
+      "status": "completed",
+      "date": null
+    },
+    {
+      "id": "first-on-premise-ai-flow",
+      "projectId": "automation-study",
+      "project": "Automação",
+      "title": {
+        "pt": "Primeiro fluxo on-premise de automação com n8n e IA",
+        "en": "First on-premise automation flow with n8n and AI"
+      },
+      "description": {
+        "pt": "Foi realizado um estudo prático de automação de postagens utilizando n8n on-premise, inteligência artificial e integração com Meta Business.",
+        "en": "A hands-on post-automation study was completed using on-premise n8n, artificial intelligence, and Meta Business integration."
+      },
+      "status": "completed",
+      "date": null
+    },
+    {
+      "id": "initial-n8n-study",
+      "projectId": "hermes",
+      "project": "Hermes",
+      "title": {
+        "pt": "Estudo inicial de n8n",
+        "en": "Initial n8n study"
+      },
+      "description": {
+        "pt": "A etapa inicial de aprendizado do n8n foi concluída e passou a ser aplicada na construção de automações reais e na arquitetura do Hermes.",
+        "en": "The initial n8n learning stage was completed and is now being applied to real automations and Hermes architecture."
+      },
+      "status": "completed",
+      "date": null
+    }
+  ],
+  "roadmap": {
+    "now": [
+      { "pt": "Continuar a configuração inicial do Logos Server", "en": "Continue the initial Logos Server configuration" },
+      { "pt": "Melhorar a estabilidade térmica do host", "en": "Improve the host's thermal stability" },
+      { "pt": "Definir a arquitetura inicial do Janus", "en": "Define the initial Janus architecture" },
+      { "pt": "Estruturar o workflow de marketing no n8n", "en": "Structure the n8n marketing workflow" },
+      { "pt": "Definir o escopo atual e futuro do Logos", "en": "Define the current and future scope of Logos" },
+      { "pt": "Consolidar a página Agora", "en": "Consolidate the Now page" },
+      { "pt": "Melhorar a apresentação do Psalms no portfólio", "en": "Improve the Psalms presentation in the portfolio" }
+    ],
+    "next": [
+      { "pt": "Automatizar backups", "en": "Automate backups" },
+      { "pt": "Criar política de retenção", "en": "Create a retention policy" },
+      { "pt": "Centralizar logs", "en": "Centralize logs" },
+      { "pt": "Estruturar monitoramento", "en": "Structure monitoring" },
+      { "pt": "Definir responsabilidades entre Janus e Hermes", "en": "Define responsibilities between Janus and Hermes" },
+      { "pt": "Implementar o primeiro fluxo pessoal no n8n", "en": "Implement the first personal n8n flow" },
+      { "pt": "Ampliar documentação e testes do Psalms", "en": "Expand Psalms documentation and tests" },
+      { "pt": "Documentar resultados da melhoria térmica", "en": "Document the thermal-improvement results" }
+    ],
+    "horizon": [
+      { "pt": "Preparar a certificação AWS Cloud Practitioner", "en": "Prepare for the AWS Cloud Practitioner certification" },
+      { "pt": "Criar um dashboard próprio para o Logos", "en": "Build a dedicated Logos dashboard" },
+      { "pt": "Criar uma API ASP.NET Core para funções dinâmicas do portfólio", "en": "Build an ASP.NET Core API for dynamic portfolio functions" },
+      { "pt": "Integrar o portfólio ao Logos de forma controlada", "en": "Integrate the portfolio with Logos in a controlled way" },
+      { "pt": "Evoluir o Janus para gateway de webhooks", "en": "Evolve Janus into a webhook gateway" },
+      { "pt": "Adicionar recursos de IA ao portfólio", "en": "Add AI features to the portfolio" },
+      { "pt": "Avaliar o Logos como marca, produto ou futuro ecossistema", "en": "Evaluate Logos as a brand, product, or future ecosystem" }
+    ]
+  },
+  "recentUpdates": [
+    {
+      "id": "now-page-created",
+      "date": "2026-08-21",
+      "projectId": "portfolio",
+      "project": "Portfólio",
+      "title": {
+        "pt": "Página Agora estruturada",
+        "en": "Now page structured"
+      },
+      "description": {
+        "pt": "A página foi estruturada a partir das frentes técnicas em andamento, separando estado real, marcos confirmados e visão futura.",
+        "en": "The page was structured from active technical initiatives, separating actual state, confirmed milestones, and future vision."
+      },
+      "type": "documentation",
+      "url": "agora.html"
+    }
+  ]
+}

@@ -3,171 +3,447 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Psalms: biblioteca .NET reutilizável para multi-tenancy, autenticação JWT e componentização entre projetos.">
-  <title>Psalms — Biblioteca Reutilizável para .NET</title>
+  <meta name="description" content="Psalms: ecossistema modular de bibliotecas NuGet para .NET e ASP.NET Core, com email, autenticação JWT e acesso a dados.">
+  <title>Psalms — Clean conventions. Powerful defaults.</title>
   <link rel="icon" href="img/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="styles/ToDo.css">
   <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/Psalms.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
     <p class="logo">Psalms</p>
-    <nav class="nav" aria-label="Navegação do projeto">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
       <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
-      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
-      <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
+      <a href="#overview" data-pt="Visão" data-en="Vision">Visão</a>
+      <a href="#packages" data-pt="Pacotes" data-en="Packages">Pacotes</a>
+      <a href="#integration" data-pt="Integração" data-en="Integration">Integração</a>
       <a href="#stack">Stack</a>
-      <a href="#status">Status</a>
     </nav>
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
 <main>
-  <section class="hero project-hero">
+  <section class="hero project-hero psalms-hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <p class="project-badge status-evolution" data-pt="Biblioteca em evolução" data-en="Evolving library">Biblioteca em evolução</p>
+        <p class="project-badge status-evolution" data-pt="Ecossistema open source em evolução" data-en="Evolving open-source ecosystem">Ecossistema open source em evolução</p>
         <h1>Psalms</h1>
-        <h2 data-pt="Infraestrutura Reutilizável para Projetos .NET" data-en="Reusable Infrastructure for .NET Projects">Infraestrutura Reutilizável para Projetos .NET</h2>
+        <h2>Clean conventions. Powerful defaults.</h2>
         <p
-          data-pt="Biblioteca própria voltada para multi-tenancy, autenticação JWT e componentização de código. O objetivo é criar uma base consistente que possa ser reutilizada entre projetos, em vez de repetir a mesma infraestrutura em cada aplicação."
-          data-en="A custom library focused on multi-tenancy, JWT authentication, and code componentization. Its goal is to create a consistent foundation that can be reused across projects instead of repeating the same infrastructure in every application."
-        >Biblioteca própria voltada para multi-tenancy, autenticação JWT e componentização de código. O objetivo é criar uma base consistente que possa ser reutilizada entre projetos, em vez de repetir a mesma infraestrutura em cada aplicação.</p>
+          data-pt="Uma coleção modular de bibliotecas para .NET que elimina código repetitivo, estabelece convenções seguras e acelera o desenvolvimento de APIs e microsserviços."
+          data-en="A modular collection of .NET libraries that removes repetitive code, establishes safe conventions, and speeds up API and microservice development."
+        >Uma coleção modular de bibliotecas para .NET que elimina código repetitivo, estabelece convenções seguras e acelera o desenvolvimento de APIs e microsserviços.</p>
         <div class="hero-buttons">
-          <a href="#operation" class="btn" data-pt="Ver funcionamento" data-en="See how it works">Ver funcionamento</a>
-          <a href="#stack" class="btn-outline" data-pt="Ver stack" data-en="View stack">Ver stack</a>
+          <a href="#packages" class="btn" data-pt="Explorar pacotes" data-en="Explore packages">Explorar pacotes</a>
+          <a href="https://github.com/PsalmsLibrary/Psalms" class="btn-outline" target="_blank" rel="noopener noreferrer" data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</a>
         </div>
       </div>
 
       <div class="hero-image" aria-hidden="true">
-        <div class="project-visual">
-          <div class="visual-core">PSALMS</div>
-          <div class="visual-grid">
-            <span>.NET</span>
-            <span>JWT</span>
-            <span>Multi-tenancy</span>
-            <span data-pt="Componentes" data-en="Components">Componentes</span>
-            <span data-pt="Reuso" data-en="Reuse">Reuso</span>
-            <span data-pt="Projetos" data-en="Projects">Projetos</span>
+        <div class="psalms-visual">
+          <div class="psalms-visual-core">
+            <span>PSALMS</span>
+            <small>.NET ecosystem</small>
           </div>
+          <span class="visual-connector"></span>
+          <div class="psalms-visual-modules">
+            <span>Email</span>
+            <span>JWT</span>
+            <span>EF Core</span>
+          </div>
+          <p>Independent packages · Shared conventions</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="overview" class="section container reveal">
-    <header class="section-header">
-      <p class="section-kicker" data-pt="Contexto" data-en="Context">Contexto</p>
-      <h2 data-pt="O que é e qual problema resolve" data-en="What it is and what it solves">O que é e qual problema resolve</h2>
+    <header class="section-header psalms-section-header">
+      <p class="section-kicker" data-pt="Visão do ecossistema" data-en="Ecosystem vision">Visão do ecossistema</p>
+      <h2 data-pt="Menos repetição. Mais intenção no código." data-en="Less repetition. More intent in code.">Menos repetição. Mais intenção no código.</h2>
+      <p class="section-description"
+        data-pt="O Psalms encapsula problemas recorrentes em pacotes independentes e extensíveis. Cada biblioteca pode ser adotada isoladamente, sem obrigar a aplicação a usar o restante do ecossistema."
+        data-en="Psalms encapsulates recurring problems in independent, extensible packages. Each library can be adopted on its own, without requiring the application to use the rest of the ecosystem."
+      >O Psalms encapsula problemas recorrentes em pacotes independentes e extensíveis. Cada biblioteca pode ser adotada isoladamente, sem obrigar a aplicação a usar o restante do ecossistema.</p>
     </header>
 
-    <div class="overview-grid">
-      <article class="overview-card">
-        <h3 data-pt="O problema" data-en="The problem">O problema</h3>
-        <p
-          data-pt="Recursos como identificação de tenant e autenticação JWT aparecem em diferentes sistemas. Reimplementar essa infraestrutura em cada projeto aumenta boilerplate, cria variações de comportamento e torna a manutenção mais difícil."
-          data-en="Features such as tenant identification and JWT authentication appear in different systems. Reimplementing this infrastructure in every project increases boilerplate, creates behavioral variations, and makes maintenance harder."
-        >Recursos como identificação de tenant e autenticação JWT aparecem em diferentes sistemas. Reimplementar essa infraestrutura em cada projeto aumenta boilerplate, cria variações de comportamento e torna a manutenção mais difícil.</p>
+    <div class="vision-grid">
+      <article class="vision-card">
+        <span class="vision-index">01</span>
+        <h3 data-pt="Convenções claras" data-en="Clear conventions">Convenções claras</h3>
+        <p data-pt="Padrões compreensíveis e bons valores padrão para reduzir decisões repetidas entre APIs." data-en="Understandable patterns and useful defaults that reduce repeated decisions across APIs.">Padrões compreensíveis e bons valores padrão para reduzir decisões repetidas entre APIs.</p>
+      </article>
+      <article class="vision-card">
+        <span class="vision-index">02</span>
+        <h3 data-pt="Extensão sem mistério" data-en="Extension without mystery">Extensão sem mistério</h3>
+        <p data-pt="Abstrações explícitas e pontos de substituição quando cache, persistência ou templates precisarem evoluir." data-en="Explicit abstractions and replacement points when cache, persistence, or templates need to evolve.">Abstrações explícitas e pontos de substituição quando cache, persistência ou templates precisarem evoluir.</p>
+      </article>
+      <article class="vision-card">
+        <span class="vision-index">03</span>
+        <h3 data-pt="Componentes independentes" data-en="Independent components">Componentes independentes</h3>
+        <p data-pt="Email, autenticação e dados resolvem responsabilidades separadas e podem ser combinados apenas quando fizer sentido." data-en="Email, authentication, and data solve separate responsibilities and can be combined only when useful.">Email, autenticação e dados resolvem responsabilidades separadas e podem ser combinados apenas quando fizer sentido.</p>
+      </article>
+    </div>
+
+    <blockquote class="philosophy-quote">
+      <p>“Psalms exists to bring grace to your code. No magic, no unnecessary complexity — just best practices distilled into powerful libraries.”</p>
+      <footer data-pt="A proposta não é esconder a aplicação, mas tornar recorrências explícitas, reutilizáveis e fáceis de adaptar." data-en="The goal is not to hide the application, but to make recurring concerns explicit, reusable, and easy to adapt.">A proposta não é esconder a aplicação, mas tornar recorrências explícitas, reutilizáveis e fáceis de adaptar.</footer>
+    </blockquote>
+  </section>
+
+  <section id="packages" class="section container reveal">
+    <header class="section-header psalms-section-header">
+      <p class="section-kicker" data-pt="Pacotes publicados" data-en="Published packages">Pacotes publicados</p>
+      <h2 data-pt="Três responsabilidades, uma mesma filosofia" data-en="Three responsibilities, one philosophy">Três responsabilidades, uma mesma filosofia</h2>
+      <p class="section-description" data-pt="Selecione um pacote para explorar o problema resolvido, as decisões arquiteturais e exemplos de integração." data-en="Select a package to explore the problem it solves, its architectural decisions, and integration examples.">Selecione um pacote para explorar o problema resolvido, as decisões arquiteturais e exemplos de integração.</p>
+    </header>
+
+    <div class="package-tabs" role="tablist" aria-label="Pacotes Psalms">
+      <button id="package-tab-email" class="package-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="package-email" tabindex="0">
+        <span class="package-category">Email workflows · MediatR</span>
+        <strong>Psalms.AspNetCore.<wbr>EmailSender</strong>
+        <span class="package-summary" data-pt="Executa comandos sensíveis somente depois da confirmação por email." data-en="Runs sensitive commands only after email confirmation.">Executa comandos sensíveis somente depois da confirmação por email.</span>
+        <span class="package-pain"><b data-pt="Resolve:" data-en="Solves:">Resolve:</b> <span data-pt="tokens, expiração, templates, envio e restauração do comando." data-en="tokens, expiration, templates, delivery, and command restoration.">tokens, expiração, templates, envio e restauração do comando.</span></span>
+        <span class="package-tags"><span>ASP.NET Core</span><span>MediatR</span><span>MailKit</span></span>
+        <code>dotnet add package Psalms.AspNetCore.EmailSender</code>
+        <span class="package-action" data-pt="Ver detalhes técnicos →" data-en="View technical details →">Ver detalhes técnicos →</span>
+      </button>
+
+      <button id="package-tab-jwt" class="package-tab" type="button" role="tab" aria-selected="false" aria-controls="package-jwt" tabindex="-1">
+        <span class="package-category" data-pt="Autenticação · Tokens" data-en="Authentication · Tokens">Autenticação · Tokens</span>
+        <strong>Psalms.AspNetCore.<wbr>Auth.Jwt</strong>
+        <span class="package-summary" data-pt="Gera access tokens e gerencia refresh tokens com persistência substituível." data-en="Generates access tokens and manages refresh tokens with replaceable persistence.">Gera access tokens e gerencia refresh tokens com persistência substituível.</span>
+        <span class="package-pain"><b data-pt="Resolve:" data-en="Solves:">Resolve:</b> <span data-pt="emissão, hash, validação, rotação e armazenamento." data-en="issuance, hashing, validation, rotation, and storage.">emissão, hash, validação, rotação e armazenamento.</span></span>
+        <span class="package-tags"><span>JWT Bearer</span><span>Identity</span><span>EF Core</span></span>
+        <code>dotnet add package Psalms.AspNetCore.Auth.Jwt</code>
+        <span class="package-action" data-pt="Ver detalhes técnicos →" data-en="View technical details →">Ver detalhes técnicos →</span>
+      </button>
+
+      <button id="package-tab-data" class="package-tab" type="button" role="tab" aria-selected="false" aria-controls="package-data" tabindex="-1">
+        <span class="package-category" data-pt="Persistência · Repository · UoW" data-en="Persistence · Repository · UoW">Persistência · Repository · UoW</span>
+        <strong>Psalms.EFCore.<wbr>DataManagement</strong>
+        <span class="package-summary" data-pt="Padroniza operações recorrentes de dados para projetos que adotam Repository e Unit of Work." data-en="Standardizes recurring data operations for projects that adopt Repository and Unit of Work.">Padroniza operações recorrentes de dados para projetos que adotam Repository e Unit of Work.</span>
+        <span class="package-pain"><b data-pt="Resolve:" data-en="Solves:">Resolve:</b> <span data-pt="CRUD repetitivo, acesso ao repositório e SaveChanges." data-en="repetitive CRUD, repository access, and SaveChanges.">CRUD repetitivo, acesso ao repositório e SaveChanges.</span></span>
+        <span class="package-tags"><span>EF Core</span><span>DI</span><span>InMemory</span></span>
+        <code>dotnet add package Psalms.EFCore.DataManagement</code>
+        <span class="package-action" data-pt="Ver detalhes técnicos →" data-en="View technical details →">Ver detalhes técnicos →</span>
+      </button>
+    </div>
+
+    <div class="package-stage">
+      <article id="package-email" class="package-panel" role="tabpanel" tabindex="0" aria-labelledby="package-tab-email">
+        <header class="package-panel-header">
+          <div>
+            <p class="section-kicker" data-pt="Email workflows e confirmação de comandos" data-en="Email workflows and command confirmation">Email workflows e confirmação de comandos</p>
+            <h3>Psalms.AspNetCore.EmailSender</h3>
+            <p data-pt="Uma biblioteca para operações que só devem ser executadas depois que o usuário confirma a ação por um link enviado por email." data-en="A library for operations that should only run after the user confirms the action through an emailed link.">Uma biblioteca para operações que só devem ser executadas depois que o usuário confirma a ação por um link enviado por email.</p>
+          </div>
+          <div class="external-actions">
+            <a href="https://github.com/PsalmsLibrary/Psalms.AspNetCore.EmailSender" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.nuget.org/packages/Psalms.AspNetCore.EmailSender/" target="_blank" rel="noopener noreferrer">NuGet ↗</a>
+            <a href="https://github.com/PsalmsLibrary/Psalms.AspNetCore.EmailSender#readme" target="_blank" rel="noopener noreferrer">README ↗</a>
+          </div>
+        </header>
+
+        <div class="problem-solution-grid">
+          <section class="content-card">
+            <p class="micro-label" data-pt="Dor recorrente" data-en="Recurring pain">Dor recorrente</p>
+            <h4 data-pt="O mesmo fluxo refeito em cada aplicação" data-en="The same flow rebuilt in every application">O mesmo fluxo refeito em cada aplicação</h4>
+            <p data-pt="Cadastro, reset de senha, alteração de email e aprovações exigem token, expiração, cache, template, envio, desserialização e invalidação após uso." data-en="Registration, password resets, email changes, and approvals require tokens, expiration, cache, templates, delivery, deserialization, and invalidation after use.">Cadastro, reset de senha, alteração de email e aprovações exigem token, expiração, cache, template, envio, desserialização e invalidação após uso.</p>
+          </section>
+          <section class="content-card accent-card">
+            <p class="micro-label" data-pt="Decisão arquitetural" data-en="Architectural decision">Decisão arquitetural</p>
+            <h4 data-pt="O comando vira a unidade do workflow" data-en="The command becomes the workflow unit">O comando vira a unidade do workflow</h4>
+            <p>O <code>IRequest</code> original fica armazenado temporariamente e retorna ao pipeline do MediatR somente após a confirmação.</p>
+          </section>
+        </div>
+
+        <section class="package-subsection">
+          <div class="subsection-heading">
+            <p class="micro-label" data-pt="Arquitetura" data-en="Architecture">Arquitetura</p>
+            <h4 data-pt="Do pedido à execução confirmada" data-en="From request to confirmed execution">Do pedido à execução confirmada</h4>
+          </div>
+          <ol class="flow-timeline email-flow">
+            <li><span>01</span><p data-pt="Usuário solicita uma operação sensível." data-en="The user requests a sensitive operation.">Usuário solicita uma operação sensível.</p></li>
+            <li><span>02</span><p data-pt="A API cria o comando original." data-en="The API creates the original command.">A API cria o comando original.</p></li>
+            <li><span>03</span><p>SendConfirmationEmailCommand</p></li>
+            <li><span>04</span><p data-pt="Um token único é gerado." data-en="A unique token is generated.">Um token único é gerado.</p></li>
+            <li><span>05</span><p>JSON + <code>IDistributedCache</code></p></li>
+            <li><span>06</span><p data-pt="O template é resolvido pelo tipo concreto do comando." data-en="The template is resolved from the command's concrete type.">O template é resolvido pelo tipo concreto do comando.</p></li>
+            <li><span>07</span><p data-pt="MailKit e MimeKit enviam o link." data-en="MailKit and MimeKit send the link.">MailKit e MimeKit enviam o link.</p></li>
+            <li><span>08</span><p data-pt="O usuário acessa o link." data-en="The user opens the link.">O usuário acessa o link.</p></li>
+            <li><span>09</span><p data-pt="O frontend envia o token à API." data-en="The frontend sends the token to the API.">O frontend envia o token à API.</p></li>
+            <li><span>10</span><p>ConfirmEmailCommand</p></li>
+            <li><span>11</span><p data-pt="O comando é recuperado e desserializado." data-en="The command is retrieved and deserialized.">O comando é recuperado e desserializado.</p></li>
+            <li><span>12</span><p data-pt="O MediatR executa o comando restaurado." data-en="MediatR executes the restored command.">O MediatR executa o comando restaurado.</p></li>
+            <li><span>13</span><p data-pt="A chave é removida e não pode ser reutilizada." data-en="The key is removed and cannot be reused.">A chave é removida e não pode ser reutilizada.</p></li>
+          </ol>
+        </section>
+
+        <section class="package-subsection split-section">
+          <div>
+            <div class="subsection-heading">
+              <p class="micro-label">Template resolver</p>
+              <h4 data-pt="Um template para cada tipo de comando" data-en="One template for each command type">Um template para cada tipo de comando</h4>
+            </div>
+            <p>Cada comando pode implementar <code>IEmailTemplate&lt;TCommand&gt;</code>. O resolver identifica o tipo concreto e procura a implementação correspondente no container de Dependency Injection.</p>
+            <div class="technology-chips" aria-label="Tecnologias do pacote EmailSender">
+              <span>ASP.NET Core</span><span>MediatR</span><span>IDistributedCache</span><span>MailKit</span><span>MimeKit</span><span>DI</span><span>HTML</span><span>JSON</span>
+            </div>
+          </div>
+          <div class="code-block">
+            <div class="code-toolbar"><span>RegisterUserEmailTemplate.cs</span><button type="button" class="copy-button" data-copy-target="email-template-code" data-pt="Copiar" data-en="Copy">Copiar</button></div>
+            <pre tabindex="0"><code id="email-template-code">public class RegisterUserEmailTemplate
+    : IEmailTemplate&lt;RegisterUserCommand&gt;
+{
+    public string TemplatePath =&gt; "Templates";
+    public string EmailType =&gt; "confirm-email";
+    public string Subject =&gt; "Confirm your account";
+    public string FrontEndPage =&gt; "confirm-email";
+}</code></pre>
+          </div>
+        </section>
+
+        <div class="code-grid">
+          <section class="code-block">
+            <div class="code-toolbar"><span data-pt="Registro do template" data-en="Template registration">Registro do template</span><button type="button" class="copy-button" data-copy-target="email-template-register" data-pt="Copiar" data-en="Copy">Copiar</button></div>
+            <pre tabindex="0"><code id="email-template-register">services.AddScoped&lt;
+    IEmailTemplate&lt;RegisterUserCommand&gt;,
+    RegisterUserEmailTemplate&gt;();</code></pre>
+          </section>
+          <section class="code-block">
+            <div class="code-toolbar"><span data-pt="Enviar para confirmação" data-en="Send for confirmation">Enviar para confirmação</span><button type="button" class="copy-button" data-copy-target="email-send-confirmation" data-pt="Copiar" data-en="Copy">Copiar</button></div>
+            <pre tabindex="0"><code id="email-send-confirmation">await mediator.Send(
+    new SendConfirmationEmailCommand(command, email)
+);</code></pre>
+          </section>
+          <section class="code-block">
+            <div class="code-toolbar"><span data-pt="Confirmar e executar" data-en="Confirm and execute">Confirmar e executar</span><button type="button" class="copy-button" data-copy-target="email-confirm" data-pt="Copiar" data-en="Copy">Copiar</button></div>
+            <pre tabindex="0"><code id="email-confirm">await mediator.Send(
+    new ConfirmEmailCommand(token)
+);</code></pre>
+          </section>
+          <section class="code-block">
+            <div class="code-toolbar"><span data-pt="Email a partir de HTML" data-en="Email from HTML">Email a partir de HTML</span><button type="button" class="copy-button" data-copy-target="email-html" data-pt="Copiar" data-en="Copy">Copiar</button></div>
+            <pre tabindex="0"><code id="email-html">await mediator.Send(
+    new SendEmailCommand(
+        to: "user@email.com",
+        subject: "Welcome",
+        htmlPath: "Templates",
+        emailType: "welcome"
+    )
+);</code></pre>
+          </section>
+        </div>
+
+        <div class="feature-columns">
+          <section class="content-card">
+            <p class="micro-label" data-pt="Tokens" data-en="Tokens">Tokens</p>
+            <h4 data-pt="Temporários e de uso único" data-en="Temporary and single-use">Temporários e de uso único</h4>
+            <ul class="check-list">
+              <li>GUID: <code>email-confirmation:{guid}</code></li>
+              <li>Armazenamento em <code>IDistributedCache</code></li>
+              <li data-pt="Expiração padrão de cinco minutos, configurável" data-en="Configurable five-minute default expiration">Expiração padrão de cinco minutos, configurável</li>
+              <li data-pt="Remoção antes de executar o comando restaurado" data-en="Removed before the restored command is executed">Remoção antes de executar o comando restaurado</li>
+            </ul>
+          </section>
+          <section class="content-card">
+            <p class="micro-label" data-pt="Templates HTML" data-en="HTML templates">Templates HTML</p>
+            <h4><code>Templates/welcome.html</code></h4>
+            <p>O gerador padrão lê arquivos do disco. <code>IEmailHtmlGenerator</code> pode ser substituído por banco de dados, cloud storage, embedded resources ou template engine; essas são extensões possíveis, não integrações incluídas.</p>
+          </section>
+        </div>
+
+        <section class="getting-started">
+          <div class="subsection-heading"><p class="micro-label" data-pt="Começar" data-en="Get started">Começar</p><h4 data-pt="Instalação e registro" data-en="Installation and registration">Instalação e registro</h4></div>
+          <div class="code-grid compact-code-grid">
+            <div class="code-block"><div class="code-toolbar"><span>Terminal</span><button type="button" class="copy-button" data-copy-target="email-install" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="email-install">dotnet add package Psalms.AspNetCore.EmailSender</code></pre></div>
+            <div class="code-block"><div class="code-toolbar"><span>Program.cs</span><button type="button" class="copy-button" data-copy-target="email-register" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="email-register">builder.Services.AddPsalmsEmailSender();</code></pre></div>
+          </div>
+        </section>
+
+        <section class="use-cases"><h4 data-pt="Onde faz sentido" data-en="Where it fits">Onde faz sentido</h4><div class="use-case-list"><span data-pt="Confirmação de cadastro" data-en="Registration confirmation">Confirmação de cadastro</span><span data-pt="Redefinição de senha" data-en="Password reset">Redefinição de senha</span><span data-pt="Alteração de email" data-en="Email change">Alteração de email</span><span data-pt="Aprovação de comandos" data-en="Command approval">Aprovação de comandos</span><span data-pt="Operações sensíveis" data-en="Sensitive operations">Operações sensíveis</span><span data-pt="Consentimento prévio" data-en="Prior consent">Consentimento prévio</span></div></section>
       </article>
 
-      <article class="overview-card">
-        <h3 data-pt="A proposta" data-en="The approach">A proposta</h3>
-        <p
-          data-pt="A Psalms extrai essas responsabilidades para componentes reutilizáveis em .NET. Assim, outros projetos podem partir de uma base mais consistente e concentrar o desenvolvimento nas regras específicas de cada aplicação."
-          data-en="Psalms extracts these responsibilities into reusable .NET components. This allows other projects to start from a more consistent foundation and focus development on each application's specific rules."
-        >A Psalms extrai essas responsabilidades para componentes reutilizáveis em .NET. Assim, outros projetos podem partir de uma base mais consistente e concentrar o desenvolvimento nas regras específicas de cada aplicação.</p>
+      <article id="package-jwt" class="package-panel" role="tabpanel" tabindex="0" aria-labelledby="package-tab-jwt" hidden>
+        <header class="package-panel-header">
+          <div>
+            <p class="section-kicker" data-pt="Autenticação, access tokens e refresh tokens" data-en="Authentication, access tokens, and refresh tokens">Autenticação, access tokens e refresh tokens</p>
+            <h3>Psalms.AspNetCore.Auth.Jwt</h3>
+            <p data-pt="Uma biblioteca leve para emissão de access tokens e gestão de refresh tokens com estratégias substituíveis de persistência." data-en="A lightweight library for access-token issuance and refresh-token management with replaceable persistence strategies.">Uma biblioteca leve para emissão de access tokens e gestão de refresh tokens com estratégias substituíveis de persistência.</p>
+            <p class="source-note">Nota: o README usa <code>Psalms.AspNetCore.Jwt</code> como nome de apresentação; o ID publicado no NuGet inclui <code>Auth</code>.</p>
+          </div>
+          <div class="external-actions"><a href="https://github.com/PsalmsLibrary/Psalms.AspNetCore.Auth.Jwt" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.nuget.org/packages/Psalms.AspNetCore.Auth.Jwt/" target="_blank" rel="noopener noreferrer">NuGet ↗</a><a href="https://github.com/PsalmsLibrary/Psalms.AspNetCore.Auth.Jwt#readme" target="_blank" rel="noopener noreferrer">README ↗</a></div>
+        </header>
+
+        <div class="problem-solution-grid">
+          <section class="content-card"><p class="micro-label" data-pt="Dor recorrente" data-en="Recurring pain">Dor recorrente</p><h4 data-pt="JWT vai além de gerar uma string" data-en="JWT is more than generating a string">JWT vai além de gerar uma string</h4><p data-pt="Issuer, audience, assinatura, validade, geração segura, hash, persistência e rotação de refresh tokens precisam funcionar como um único fluxo." data-en="Issuer, audience, signing, lifetime, secure generation, hashing, persistence, and refresh-token rotation must work as one flow.">Issuer, audience, assinatura, validade, geração segura, hash, persistência e rotação de refresh tokens precisam funcionar como um único fluxo.</p></section>
+          <section class="content-card accent-card"><p class="micro-label" data-pt="Decisão arquitetural" data-en="Architectural decision">Decisão arquitetural</p><h4 data-pt="Persistência atrás de um contrato" data-en="Persistence behind a contract">Persistência atrás de um contrato</h4><p><code>IPsalmsRefreshTokenRepository</code> separa o fluxo central da tecnologia usada para guardar refresh tokens.</p></section>
+        </div>
+
+        <section class="package-subsection">
+          <div class="subsection-heading"><p class="micro-label" data-pt="Componentes" data-en="Components">Componentes</p><h4 data-pt="Responsabilidades explícitas" data-en="Explicit responsibilities">Responsabilidades explícitas</h4></div>
+          <div class="component-matrix">
+            <div><code>PsalmsJwtTokenService</code><p data-pt="Geração de tokens, validação e rotação." data-en="Token generation, validation, and rotation.">Geração de tokens, validação e rotação.</p></div>
+            <div><code>IPsalmsRefreshTokenRepository</code><p data-pt="Contrato de persistência." data-en="Persistence contract.">Contrato de persistência.</p></div>
+            <div><code>DistributedCacheRepository</code><p>Implementação sobre <code>IDistributedCache</code>.</p></div>
+            <div><code>EFRefreshTokenRepository</code><p data-pt="Implementação com Entity Framework Core." data-en="Entity Framework Core implementation.">Implementação com Entity Framework Core.</p></div>
+          </div>
+        </section>
+
+        <section class="package-subsection">
+          <div class="dual-flow">
+            <div><div class="subsection-heading"><p class="micro-label" data-pt="Fluxo 01" data-en="Flow 01">Fluxo 01</p><h4 data-pt="Autenticação" data-en="Authentication">Autenticação</h4></div><ol class="compact-flow">
+              <li><span>1</span><p data-pt="Credenciais chegam à aplicação." data-en="Credentials reach the application.">Credenciais chegam à aplicação.</p></li><li><span>2</span><p data-pt="A identidade é validada." data-en="The identity is validated.">A identidade é validada.</p></li><li><span>3</span><p>Claims → <code>IPsalmsJwtTokenService</code></p></li><li><span>4</span><p data-pt="O access token é assinado." data-en="The access token is signed.">O access token é assinado.</p></li><li><span>5</span><p data-pt="Um refresh token aleatório de 32 bytes é gerado." data-en="A random 32-byte refresh token is generated.">Um refresh token aleatório de 32 bytes é gerado.</p></li><li><span>6</span><p data-pt="O hash é persistido." data-en="The hash is persisted.">O hash é persistido.</p></li><li><span>7</span><p data-pt="O cliente recebe o par." data-en="The client receives the pair.">O cliente recebe o par.</p></li>
+            </ol></div>
+            <div><div class="subsection-heading"><p class="micro-label" data-pt="Fluxo 02" data-en="Flow 02">Fluxo 02</p><h4 data-pt="Renovação e rotação" data-en="Renewal and rotation">Renovação e rotação</h4></div><ol class="compact-flow">
+              <li><span>1</span><p data-pt="O cliente envia access e refresh tokens." data-en="The client sends access and refresh tokens.">O cliente envia access e refresh tokens.</p></li><li><span>2</span><p data-pt="Token e expiração são validados." data-en="Token and expiration are validated.">Token e expiração são validados.</p></li><li><span>3</span><p data-pt="O valor é comparado com o hash." data-en="The value is checked against the hash.">O valor é comparado com o hash.</p></li><li><span>4</span><p data-pt="O fluxo solicita a exclusão do token anterior." data-en="The flow requests deletion of the previous token.">O fluxo solicita a exclusão do token anterior.</p></li><li><span>5</span><p data-pt="Um novo access token é criado." data-en="A new access token is created.">Um novo access token é criado.</p></li><li><span>6</span><p data-pt="Um novo refresh token é persistido." data-en="A new refresh token is persisted.">Um novo refresh token é persistido.</p></li><li><span>7</span><p data-pt="O novo par retorna ao cliente." data-en="The new pair returns to the client.">O novo par retorna ao cliente.</p></li>
+            </ol></div>
+          </div>
+        </section>
+
+        <div class="feature-columns triple-columns">
+          <section class="content-card"><p class="micro-label">Distributed cache</p><h4>Redis · SQL Server cache</h4><p>Estratégia para processos distribuídos que compartilham uma implementação de <code>IDistributedCache</code>.</p></section>
+          <section class="content-card"><p class="micro-label">Entity Framework</p><h4 data-pt="Persistência consultável" data-en="Queryable persistence">Persistência consultável</h4><p>Usa <code>IPsalmsRefreshTokenEFContext</code> para salvar e remover tokens em banco.</p></section>
+          <section class="content-card"><p class="micro-label" data-pt="Repositório próprio" data-en="Custom repository">Repositório próprio</p><h4 data-pt="Outro provedor, mesmo fluxo" data-en="Another provider, same flow">Outro provedor, mesmo fluxo</h4><p>A aplicação implementa <code>IPsalmsRefreshTokenRepository</code> sem modificar o núcleo.</p></section>
+        </div>
+
+        <section class="security-panel">
+          <div><p class="micro-label" data-pt="Mecanismos de segurança" data-en="Security mechanisms">Mecanismos de segurança</p><h4 data-pt="Camadas que reduzem risco quando bem configuradas" data-en="Layers that reduce risk when configured correctly">Camadas que reduzem risco quando bem configuradas</h4></div>
+          <ul class="check-list security-list"><li>Refresh token: <code>RandomNumberGenerator</code></li><li>Hash: <code>PasswordHasher</code> do ASP.NET Core Identity</li><li data-pt="Validação configurável de issuer, audience, assinatura e lifetime" data-en="Configurable issuer, audience, signature, and lifetime validation">Validação configurável de issuer, audience, assinatura e lifetime</li><li data-pt="Rotação emite um novo par após validar o anterior" data-en="Rotation issues a new pair after validating the previous one">Rotação emite um novo par após validar o anterior</li></ul>
+        </section>
+
+        <div class="code-grid">
+          <section class="code-block"><div class="code-toolbar"><span>appsettings.json</span><button type="button" class="copy-button" data-copy-target="jwt-config" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="jwt-config">{
+  "JWT": {
+    "Key": "configure-via-secret-manager",
+    "Issuer": "your-app",
+    "Audience": "your-app-users",
+    "Expires": "1"
+  }
+}</code></pre><p class="code-note" data-pt="Exemplo ilustrativo: segredos reais devem vir de secret managers, variáveis de ambiente ou mecanismo equivalente — nunca do repositório." data-en="Illustrative example: real secrets should come from secret managers, environment variables, or an equivalent mechanism—never from the repository.">Exemplo ilustrativo: segredos reais devem vir de secret managers, variáveis de ambiente ou mecanismo equivalente — nunca do repositório.</p></section>
+          <section class="code-block"><div class="code-toolbar"><span>Program.cs</span><button type="button" class="copy-button" data-copy-target="jwt-register" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="jwt-register">builder.Services.AddPsalmsJwtAuthentication(
+    builder.Configuration
+);</code></pre></section>
+          <section class="code-block code-block-wide"><div class="code-toolbar"><span>AuthService.cs</span><button type="button" class="copy-button" data-copy-target="jwt-usage" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="jwt-usage">public class AuthService
+{
+    private readonly IPsalmsJwtTokenService _jwt;
+
+    public AuthService(IPsalmsJwtTokenService jwt)
+    {
+        _jwt = jwt;
+    }
+
+    public async Task&lt;AuthResponse&gt; Authenticate(
+        IEnumerable&lt;Claim&gt; claims)
+    {
+        return await _jwt.GetAuthResponseAsync(claims);
+    }
+}</code></pre></section>
+        </div>
+
+        <section class="getting-started"><div class="subsection-heading"><p class="micro-label" data-pt="Começar" data-en="Get started">Começar</p><h4 data-pt="Instalação" data-en="Installation">Instalação</h4></div><div class="code-block"><div class="code-toolbar"><span>Terminal</span><button type="button" class="copy-button" data-copy-target="jwt-install" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="jwt-install">dotnet add package Psalms.AspNetCore.Auth.Jwt</code></pre></div></section>
+        <section class="use-cases"><h4 data-pt="Onde faz sentido" data-en="Where it fits">Onde faz sentido</h4><div class="use-case-list"><span>APIs ASP.NET Core</span><span data-pt="Frontend separado" data-en="Separate frontend">Frontend separado</span><span>Access + refresh tokens</span><span data-pt="Microsserviços" data-en="Microservices">Microsserviços</span><span data-pt="Sistemas distribuídos" data-en="Distributed systems">Sistemas distribuídos</span><span data-pt="Persistência substituível" data-en="Replaceable persistence">Persistência substituível</span></div></section>
+      </article>
+
+      <article id="package-data" class="package-panel" role="tabpanel" tabindex="0" aria-labelledby="package-tab-data" hidden>
+        <header class="package-panel-header">
+          <div><p class="section-kicker" data-pt="Persistência, Repository e Unit of Work" data-en="Persistence, Repository, and Unit of Work">Persistência, Repository e Unit of Work</p><h3>Psalms.EFCore.DataManagement</h3><p>A implementação Entity Framework Core do projeto <strong>Psalms.DataManagement</strong>, criada para aplicações que optam pelos padrões Repository e Unit of Work.</p></div>
+          <div class="external-actions"><a href="https://github.com/PsalmsLibrary/Psalsm.EFCore.DataManager" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.nuget.org/packages/Psalms.EFCore.DataManagement/" target="_blank" rel="noopener noreferrer">NuGet ↗</a><a href="https://github.com/PsalmsLibrary/Psalsm.EFCore.DataManager#readme" target="_blank" rel="noopener noreferrer">README ↗</a></div>
+        </header>
+
+        <div class="problem-solution-grid">
+          <section class="content-card"><p class="micro-label" data-pt="Dor recorrente" data-en="Recurring pain">Dor recorrente</p><h4 data-pt="Acesso a dados inconsistente entre projetos" data-en="Inconsistent data access across projects">Acesso a dados inconsistente entre projetos</h4><p data-pt="CRUD, predicados, coleções relacionadas, SaveChanges e registro no container costumam reaparecer com contratos diferentes." data-en="CRUD, predicates, related collections, SaveChanges, and container registration often reappear with different contracts.">CRUD, predicados, coleções relacionadas, <code>SaveChanges</code> e registro no container costumam reaparecer com contratos diferentes.</p></section>
+          <section class="content-card accent-card"><p class="micro-label" data-pt="Decisão arquitetural" data-en="Architectural decision">Decisão arquitetural</p><h4 data-pt="Uma API comum sobre o DbContext" data-en="A common API over DbContext">Uma API comum sobre o DbContext</h4><p data-pt="O repositório concentra operações recorrentes; a Unit of Work coordena o contexto e confirma as mudanças." data-en="The repository centralizes recurring operations; the Unit of Work coordinates the context and commits changes.">O repositório concentra operações recorrentes; a Unit of Work coordena o contexto e confirma as mudanças.</p></section>
+        </div>
+
+        <section class="package-subsection">
+          <div class="subsection-heading"><p class="micro-label" data-pt="Arquitetura" data-en="Architecture">Arquitetura</p><h4 data-pt="Uma cadeia curta e explícita" data-en="A short, explicit chain">Uma cadeia curta e explícita</h4></div>
+          <div class="architecture-pipeline" aria-label="Fluxo da arquitetura do pacote DataManagement"><span>Application Service</span><i aria-hidden="true">↓</i><span>IPsalmsUnitOfWork&lt;TContext&gt;</span><i aria-hidden="true">↓</i><span>IPsalmsEfCoreRepository</span><i aria-hidden="true">↓</i><span>Entity Framework DbContext</span><i aria-hidden="true">↓</i><span>Database</span></div>
+          <div class="responsibility-grid">
+            <article><code>IPsalmsUnitOfWork&lt;TContext&gt;</code><p>Expõe <code>Repository</code>, executa <code>SaveChangesAsync</code> e coordena o descarte do contexto.</p></article>
+            <article><code>IPsalmsEfCoreRepository</code><p data-pt="Centraliza consultas e alterações genéricas para diferentes entidades." data-en="Centralizes generic queries and changes for different entities.">Centraliza consultas e alterações genéricas para diferentes entidades.</p></article>
+            <article><code>DbContext</code><p data-pt="Mantém tracking e conversa com o provider configurado." data-en="Maintains tracking and talks to the configured provider.">Mantém tracking e conversa com o provider configurado.</p></article>
+          </div>
+        </section>
+
+        <section class="package-subsection">
+          <div class="subsection-heading"><p class="micro-label" data-pt="API confirmada" data-en="Confirmed API">API confirmada</p><h4 data-pt="Operações públicas do pacote" data-en="Public package operations">Operações públicas do pacote</h4></div>
+          <div class="api-methods" aria-label="Métodos do repositório"><code>CreateAsync&lt;T&gt;(T entity)</code><code>DeleteAsync&lt;T&gt;(int id)</code><code>GetByIdAsync&lt;T&gt;(int id)</code><code>GetByAsync&lt;T&gt;(predicate)</code><code>ExistsAsync&lt;T&gt;(predicate)</code><code>GetAllAsync&lt;T&gt;()</code><code>GetCollectionFromEntityAsync&lt;...&gt;(...)</code><code>Repository</code><code>SaveChangesAsync()</code><code>DisposeAsync()</code></div>
+          <p class="source-note">A classe concreta <code>PsalmsEfCoreRepository</code> também contém <code>UpdateAsync&lt;T&gt;</code>, mas a versão 1.0.0 não expõe esse método em <code>IPsalmsEfCoreRepository</code>; por isso ele não aparece como parte do contrato principal acima.</p>
+        </section>
+
+        <div class="code-grid">
+          <section class="code-block"><div class="code-toolbar"><span>Program.cs</span><button type="button" class="copy-button" data-copy-target="data-register" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="data-register">services.AddDbContext&lt;AppDbContext&gt;(options =&gt;
+    options.UseSqlServer(
+        Configuration.GetConnectionString("Default")));
+
+services.AddScoped&lt;
+    IPsalmsUnitOfWork&lt;AppDbContext&gt;,
+    PsalmsUnitOfWork&lt;AppDbContext&gt;&gt;();</code></pre></section>
+          <section class="code-block"><div class="code-toolbar"><span>ProductService.cs</span><button type="button" class="copy-button" data-copy-target="data-usage" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="data-usage">public class ProductService
+{
+    private readonly IPsalmsUnitOfWork&lt;AppDbContext&gt; _uow;
+
+    public ProductService(
+        IPsalmsUnitOfWork&lt;AppDbContext&gt; uow)
+    {
+        _uow = uow;
+    }
+
+    public async Task AddProductAsync(Product product)
+    {
+        await _uow.Repository.CreateAsync(product);
+        await _uow.SaveChangesAsync();
+    }
+
+    public async Task&lt;Product?&gt; GetProductAsync(int id)
+    {
+        return await _uow.Repository
+            .GetByIdAsync&lt;Product&gt;(id);
+    }
+}</code></pre></section>
+          <section class="code-block code-block-wide"><div class="code-toolbar"><span data-pt="Teste com EF Core InMemory" data-en="Test with EF Core InMemory">Teste com EF Core InMemory</span><button type="button" class="copy-button" data-copy-target="data-test" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="data-test">services.AddDbContext&lt;AppDbContext&gt;(options =&gt;
+    options.UseInMemoryDatabase("TestDb"));</code></pre><p class="code-note" data-pt="Útil para testes sem banco externo, considerando as diferenças comportamentais do provider InMemory em relação a um banco relacional real." data-en="Useful for tests without an external database, while accounting for behavioral differences between the InMemory provider and a real relational database.">Útil para testes sem banco externo, considerando as diferenças comportamentais do provider InMemory em relação a um banco relacional real.</p></section>
+        </div>
+
+        <section class="getting-started"><div class="subsection-heading"><p class="micro-label" data-pt="Começar" data-en="Get started">Começar</p><h4 data-pt="Instalação" data-en="Installation">Instalação</h4></div><div class="code-block"><div class="code-toolbar"><span>Terminal</span><button type="button" class="copy-button" data-copy-target="data-install" data-pt="Copiar" data-en="Copy">Copiar</button></div><pre tabindex="0"><code id="data-install">dotnet add package Psalms.EFCore.DataManagement</code></pre></div></section>
+        <section class="use-cases"><h4 data-pt="Onde faz sentido" data-en="Where it fits">Onde faz sentido</h4><div class="use-case-list"><span data-pt="APIs com EF Core" data-en="EF Core APIs">APIs com EF Core</span><span>Repository + Unit of Work</span><span data-pt="CRUD padronizado" data-en="Standardized CRUD">CRUD padronizado</span><span data-pt="Serviços sobre o mesmo contexto" data-en="Services sharing one context">Serviços sobre o mesmo contexto</span><span data-pt="Redução de boilerplate" data-en="Less boilerplate">Redução de boilerplate</span><span>EF Core InMemory</span></div></section>
       </article>
     </div>
   </section>
 
-  <section id="operation" class="section container reveal">
-    <header class="section-header">
-      <p class="section-kicker" data-pt="Visão técnica" data-en="Technical overview">Visão técnica</p>
-      <h2 data-pt="Como a biblioteca é organizada" data-en="How the library is organized">Como a biblioteca é organizada</h2>
-      <p class="section-description" data-pt="O projeto trata recursos recorrentes como infraestrutura compartilhada, não como lógica presa a um único aplicativo." data-en="The project treats recurring features as shared infrastructure, not as logic tied to a single application.">O projeto trata recursos recorrentes como infraestrutura compartilhada, não como lógica presa a um único aplicativo.</p>
-    </header>
-
-    <div class="detail-grid">
-      <article class="detail-card reveal">
-        <span class="detail-number">01</span>
-        <h3>Multi-tenancy</h3>
-        <p data-pt="Organiza componentes ligados à identificação e separação de contexto entre tenants." data-en="Organizes components related to identifying and separating context between tenants.">Organiza componentes ligados à identificação e separação de contexto entre tenants.</p>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-number">02</span>
-        <h3 data-pt="Autenticação JWT" data-en="JWT authentication">Autenticação JWT</h3>
-        <p data-pt="Centraliza recursos de autenticação baseada em tokens para reduzir repetição e divergência entre projetos." data-en="Centralizes token-based authentication features to reduce repetition and divergence across projects.">Centraliza recursos de autenticação baseada em tokens para reduzir repetição e divergência entre projetos.</p>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-number">03</span>
-        <h3 data-pt="Componentização" data-en="Componentization">Componentização</h3>
-        <p data-pt="Separa funcionalidades recorrentes em unidades que podem ser integradas sem copiar a implementação inteira." data-en="Separates recurring features into units that can be integrated without copying the entire implementation.">Separa funcionalidades recorrentes em unidades que podem ser integradas sem copiar a implementação inteira.</p>
-      </article>
-      <article class="detail-card reveal">
-        <span class="detail-number">04</span>
-        <h3 data-pt="Reuso entre projetos" data-en="Reuse across projects">Reuso entre projetos</h3>
-        <p data-pt="Permite que diferentes aplicações compartilhem uma fundação técnica e evoluam a partir das mesmas decisões." data-en="Allows different applications to share a technical foundation and evolve from the same decisions.">Permite que diferentes aplicações compartilhem uma fundação técnica e evoluam a partir das mesmas decisões.</p>
-      </article>
-    </div>
-
-    <div class="architecture-note">
-      <strong data-pt="Infraestrutura, não aplicativo final" data-en="Infrastructure, not an end-user app">Infraestrutura, não aplicativo final</strong>
-      <p
-        data-pt="A Psalms não busca resolver um fluxo de negócio visível ao usuário final. Seu valor está em padronizar capacidades técnicas que outros sistemas consomem, mostrando uma preocupação de engenharia com arquitetura e manutenção de longo prazo."
-        data-en="Psalms is not meant to solve a business flow visible to an end user. Its value lies in standardizing technical capabilities consumed by other systems, demonstrating an engineering focus on architecture and long-term maintenance."
-      >A Psalms não busca resolver um fluxo de negócio visível ao usuário final. Seu valor está em padronizar capacidades técnicas que outros sistemas consomem, mostrando uma preocupação de engenharia com arquitetura e manutenção de longo prazo.</p>
+  <section id="integration" class="section container reveal">
+    <header class="section-header psalms-section-header"><p class="section-kicker" data-pt="Arquitetura integrada" data-en="Integrated architecture">Arquitetura integrada</p><h2 data-pt="Como os pacotes podem trabalhar juntos" data-en="How the packages can work together">Como os pacotes podem trabalhar juntos</h2><p class="section-description" data-pt="Um cenário possível para uma API ASP.NET Core. A integração é opcional: cada pacote continua independente e pode ser adotado sozinho." data-en="One possible ASP.NET Core API scenario. Integration is optional: each package remains independent and can be adopted on its own.">Um cenário possível para uma API ASP.NET Core. A integração é opcional: cada pacote continua independente e pode ser adotado sozinho.</p></header>
+    <div class="ecosystem-layout">
+      <div class="ecosystem-pipeline" aria-label="Fluxo integrado dos pacotes Psalms"><span>Client</span><i aria-hidden="true">↓</i><span>ASP.NET Core API</span><i aria-hidden="true">↓</i><span class="pipeline-jwt">Psalms.AspNetCore.Auth.Jwt</span><i aria-hidden="true">↓</i><span class="pipeline-email">Psalms.AspNetCore.EmailSender</span><i aria-hidden="true">↓</i><span>MediatR Command Handler</span><i aria-hidden="true">↓</i><span class="pipeline-data">Psalms.EFCore.DataManagement</span><i aria-hidden="true">↓</i><span>Entity Framework Core</span><i aria-hidden="true">↓</i><span>Database</span></div>
+      <ol class="integration-steps"><li><b>JWT</b><p data-pt="Autentica o usuário e gerencia access e refresh tokens." data-en="Authenticates the user and manages access and refresh tokens.">Autentica o usuário e gerencia access e refresh tokens.</p></li><li><b>EmailSender</b><p data-pt="Armazena o comando sensível e envia a confirmação." data-en="Stores the sensitive command and sends the confirmation.">Armazena o comando sensível e envia a confirmação.</p></li><li><b>MediatR</b><p data-pt="Encaminha o comando restaurado ao handler." data-en="Routes the restored command to its handler.">Encaminha o comando restaurado ao handler.</p></li><li><b>DataManagement</b><p data-pt="Repository e Unit of Work persistem a alteração." data-en="Repository and Unit of Work persist the change.">Repository e Unit of Work persistem a alteração.</p></li></ol>
     </div>
   </section>
 
   <section id="stack" class="section container reveal">
-    <header class="section-header">
-      <p class="section-kicker">Stack</p>
-      <h2 data-pt="Base técnica da biblioteca" data-en="Library technical foundation">Base técnica da biblioteca</h2>
-    </header>
-    <div class="stack-grid">
-      <article class="stack-card reveal">
-        <h3 data-pt="Plataforma" data-en="Platform">Plataforma</h3>
-        <span>.NET</span>
-      </article>
-      <article class="stack-card reveal">
-        <h3 data-pt="Identidade" data-en="Identity">Identidade</h3>
-        <span>JWT Auth</span>
-      </article>
-      <article class="stack-card reveal">
-        <h3 data-pt="Contexto" data-en="Context">Contexto</h3>
-        <span>Multi-tenancy</span>
-      </article>
-      <article class="stack-card reveal">
-        <h3 data-pt="Engenharia" data-en="Engineering">Engenharia</h3>
-        <span data-pt="Componentização" data-en="Componentization">Componentização</span>
-        <span data-pt="Reuso de código" data-en="Code reuse">Reuso de código</span>
-        <span data-pt="Infraestrutura compartilhada" data-en="Shared infrastructure">Infraestrutura compartilhada</span>
-      </article>
-    </div>
+    <header class="section-header psalms-section-header"><p class="section-kicker">Stack</p><h2 data-pt="Tecnologias confirmadas no ecossistema" data-en="Technologies confirmed in the ecosystem">Tecnologias confirmadas no ecossistema</h2></header>
+    <div class="technology-cloud" aria-label="Tecnologias do Psalms"><span>C#</span><span>.NET</span><span>ASP.NET Core</span><span>Entity Framework Core</span><span>MediatR</span><span>JWT Bearer</span><span>ASP.NET Core Identity</span><span>IDistributedCache</span><span>MailKit</span><span>MimeKit</span><span>Dependency Injection</span><span>NuGet</span><span>HTML templates</span><span data-pt="Testes automatizados" data-en="Automated tests">Testes automatizados</span></div>
   </section>
 
   <section id="status" class="section container reveal">
-    <div class="status-panel status-continuous">
-      <div>
-        <p class="section-kicker" data-pt="Status real" data-en="Actual status">Status real</p>
-        <h2 data-pt="Biblioteca em evolução" data-en="Evolving library">Biblioteca em evolução</h2>
-        <p data-pt="A Psalms é uma infraestrutura reutilizável que evolui conforme novos projetos exigem componentes compartilhados. Ela não é apresentada como um aplicativo finalizado para usuários finais." data-en="Psalms is reusable infrastructure that evolves as new projects require shared components. It is not presented as a finished application for end users.">A Psalms é uma infraestrutura reutilizável que evolui conforme novos projetos exigem componentes compartilhados. Ela não é apresentada como um aplicativo finalizado para usuários finais.</p>
-      </div>
-      <ul class="status-facts">
-        <li data-pt="Biblioteca própria para o ecossistema .NET" data-en="Custom library for the .NET ecosystem">Biblioteca própria para o ecossistema .NET</li>
-        <li data-pt="Evolução orientada pelo reuso" data-en="Evolution guided by reuse">Evolução orientada pelo reuso</li>
-        <li data-pt="Não é um aplicativo final" data-en="Not an end-user application">Não é um aplicativo final</li>
-      </ul>
-    </div>
+    <div class="status-panel status-continuous psalms-status"><div><p class="section-kicker" data-pt="Evolução contínua" data-en="Continuous evolution">Evolução contínua</p><h2 data-pt="Bibliotecas reais, com espaço para crescer" data-en="Real libraries, with room to grow">Bibliotecas reais, com espaço para crescer</h2><p data-pt="O Psalms já possui pacotes públicos e código aberto. Novas melhorias podem entrar sem transformar cada biblioteca em uma dependência obrigatória das demais." data-en="Psalms already has public packages and open-source code. New improvements can land without turning each library into a mandatory dependency of the others.">O Psalms já possui pacotes públicos e código aberto. Novas melhorias podem entrar sem transformar cada biblioteca em uma dependência obrigatória das demais.</p></div><div class="status-actions"><a class="btn" href="https://github.com/PsalmsLibrary/Psalms" target="_blank" rel="noopener noreferrer" data-pt="Conhecer o ecossistema" data-en="Explore the ecosystem">Conhecer o ecossistema</a><a class="btn-outline" href="#packages" data-pt="Revisar pacotes" data-en="Review packages">Revisar pacotes</a></div></div>
   </section>
 </main>
 
 <footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Psalms" data-en="© 2026 Gustavo Soares — Psalms Project">© 2026 Gustavo Soares — Projeto Psalms</footer>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/psalms.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

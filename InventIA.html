@@ -10,13 +10,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="styles/ToDo.css">
   <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
     <p class="logo">InventIA</p>
-    <nav class="nav" aria-label="Navegação do projeto">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
       <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
       <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
       <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
@@ -24,6 +25,9 @@
       <a href="#status">Status</a>
     </nav>
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -31,7 +35,7 @@
   <section class="hero project-hero">
     <div class="container hero-content">
       <div class="hero-text">
-        <p class="project-badge status-evolution" data-pt="Em evolução contínua" data-en="Under continuous evolution">Em evolução contínua</p>
+        <p class="project-badge status-production" data-pt="Em produção" data-en="In production">Em produção</p>
         <h1>InventIA</h1>
         <h2 data-pt="Automação Administrativa e de Inventário com IA" data-en="AI-powered Administrative and Inventory Automation">Automação Administrativa e de Inventário com IA</h2>
         <p
@@ -168,6 +172,7 @@
 </main>
 
 <footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto InventIA" data-en="© 2026 Gustavo Soares — InventIA Project">© 2026 Gustavo Soares — Projeto InventIA</footer>
+<script src="scripts/navigation.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

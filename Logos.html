@@ -10,13 +10,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="styles/ToDo.css">
   <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
     <p class="logo">Logos</p>
-    <nav class="nav" aria-label="Navegação do projeto">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
       <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
       <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
       <a href="#operation" data-pt="Como funciona" data-en="How it works">Como funciona</a>
@@ -24,6 +25,9 @@
       <a href="#status">Status</a>
     </nav>
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -175,6 +179,7 @@
 </main>
 
 <footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Logos" data-en="© 2026 Gustavo Soares — Logos Project">© 2026 Gustavo Soares — Projeto Logos</footer>
+<script src="scripts/navigation.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

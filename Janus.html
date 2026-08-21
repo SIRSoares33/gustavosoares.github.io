@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Janus é o gateway planejado do Logos Server para proteger, validar, normalizar e direcionar webhooks, formulários, callbacks e futuras integrações de IA.">
+  <title>Janus — Gateway do Logos Server</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/LogosServer.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body id="top">
+
+<header class="header">
+  <div class="container">
+    <p class="logo">Janus</p>
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
+      <a href="LogosServer.html#janus" data-pt="Voltar ao Logos" data-en="Back to Logos">Voltar ao Logos</a>
+      <a href="#responsibilities" data-pt="Responsabilidades" data-en="Responsibilities">Responsabilidades</a>
+      <a href="#architecture" data-pt="Arquitetura" data-en="Architecture">Arquitetura</a>
+      <a href="#security" data-pt="Segurança" data-en="Security">Segurança</a>
+      <a href="#ai" data-pt="Assistente de IA" data-en="AI assistant">Assistente de IA</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero janus-page-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge" data-pt="Planejado" data-en="Planned">Planejado</p>
+        <h1>Janus</h1>
+        <h2 data-pt="Gateway de entrada do Logos Server" data-en="Gateway to the Logos Server">Gateway de entrada do Logos Server</h2>
+        <p
+          data-pt="Uma API em ASP.NET Core planejada para proteger, validar, normalizar e direcionar as futuras entradas públicas do ecossistema antes que elas alcancem o Hermes, a Sophia ou outros serviços privados."
+          data-en="An ASP.NET Core API planned to protect, validate, normalize, and route the ecosystem's future public inputs before they reach Hermes, Sophia, or other private services."
+        >Uma API em ASP.NET Core planejada para proteger, validar, normalizar e direcionar as futuras entradas públicas do ecossistema antes que elas alcancem o Hermes, a Sophia ou outros serviços privados.</p>
+        <p
+          data-pt="A arquitetura ainda está sendo definida e será desenvolvida progressivamente. Nenhuma API ou rota apresentada nesta página está disponível publicamente hoje."
+          data-en="The architecture is still being defined and will be developed progressively. No API or route presented on this page is publicly available today."
+        >A arquitetura ainda está sendo definida e será desenvolvida progressivamente. Nenhuma API ou rota apresentada nesta página está disponível publicamente hoje.</p>
+
+        <div class="hero-buttons">
+          <a href="#architecture" class="btn" data-pt="Entender a arquitetura" data-en="Explore the architecture">Entender a arquitetura</a>
+          <a href="LogosServer.html" class="btn-outline" data-pt="Ver o Logos Server" data-en="View Logos Server">Ver o Logos Server</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="janus-portal">
+          <div class="portal-inputs"><span>WEBHOOKS</span><span>AI</span><span>OAUTH</span></div>
+          <div class="portal-lines"><i></i><i></i><i></i></div>
+          <div class="portal-core"><small>PLANNED GATEWAY</small><strong>JANUS</strong><span>ASP.NET Core</span></div>
+          <div class="portal-output"><span>STARLINK</span><i></i><div><b>HERMES</b><b>SOPHIA</b></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="responsibilities" class="section container janus-section">
+    <header class="section-header janus-section-header">
+      <p class="section-kicker" data-pt="Papel no ecossistema" data-en="Role in the ecosystem">Papel no ecossistema</p>
+      <div class="janus-title-line">
+        <h2 data-pt="Um porteiro entre a internet e os serviços privados" data-en="A gatekeeper between the internet and private services">Um porteiro entre a internet e os serviços privados</h2>
+        <span class="component-state state-planned janus-planned-badge" data-pt="Planejado" data-en="Planned">Planejado</span>
+      </div>
+      <p class="section-description"
+        data-pt="Em vez de expor diretamente o Hermes, bancos de dados ou interfaces administrativas, chamadas externas passarão primeiro pelo Janus. O gateway terá quatro responsabilidades centrais."
+        data-en="Instead of directly exposing Hermes, databases, or administrative interfaces, external calls will first pass through Janus. The gateway will have four central responsibilities."
+      >Em vez de expor diretamente o Hermes, bancos de dados ou interfaces administrativas, chamadas externas passarão primeiro pelo Janus. O gateway terá quatro responsabilidades centrais.</p>
+    </header>
+
+    <blockquote class="janus-quote janus-page-quote">
+      <p data-pt="Janus será o porteiro, Hermes continuará como o mensageiro e Sophia permanecerá como a memória do ecossistema." data-en="Janus will be the gatekeeper, Hermes will remain the messenger, and Sophia will continue as the ecosystem's memory.">Janus será o porteiro, Hermes continuará como o mensageiro e Sophia permanecerá como a memória do ecossistema.</p>
+    </blockquote>
+
+    <div class="janus-responsibility-grid">
+      <article class="janus-responsibility-card">
+        <span class="janus-card-index">01</span>
+        <h3 data-pt="Entrada segura" data-en="Secure entry">Entrada segura</h3>
+        <p data-pt="Centralizar webhooks, formulários, callbacks e chamadas públicas sem expor diretamente os serviços internos." data-en="Centralize webhooks, forms, callbacks, and public calls without directly exposing internal services.">Centralizar webhooks, formulários, callbacks e chamadas públicas sem expor diretamente os serviços internos.</p>
+      </article>
+      <article class="janus-responsibility-card">
+        <span class="janus-card-index">02</span>
+        <h3 data-pt="Validação" data-en="Validation">Validação</h3>
+        <p data-pt="Verificar assinaturas, origem, formato, tamanho e duplicidade de cada evento recebido." data-en="Check signatures, origin, format, size, and duplication for each received event.">Verificar assinaturas, origem, formato, tamanho e duplicidade de cada evento recebido.</p>
+      </article>
+      <article class="janus-responsibility-card">
+        <span class="janus-card-index">03</span>
+        <h3 data-pt="Roteamento" data-en="Routing">Roteamento</h3>
+        <p data-pt="Direcionar eventos autorizados ao Hermes, à Sophia ou aos futuros serviços do Logos." data-en="Route authorized events to Hermes, Sophia, or future Logos services.">Direcionar eventos autorizados ao Hermes, à Sophia ou aos futuros serviços do Logos.</p>
+      </article>
+      <article class="janus-responsibility-card">
+        <span class="janus-card-index">04</span>
+        <h3 data-pt="Inteligência artificial" data-en="Artificial intelligence">Inteligência artificial</h3>
+        <p data-pt="Proteger e disponibilizar a futura API do assistente inteligente do portfólio." data-en="Protect and provide the future API for the portfolio's intelligent assistant.">Proteger e disponibilizar a futura API do assistente inteligente do portfólio.</p>
+      </article>
+    </div>
+
+    <section id="architecture" class="janus-subsection" aria-labelledby="janus-architecture-title">
+      <header class="janus-subsection-header">
+        <p class="section-kicker" data-pt="Arquitetura futura" data-en="Future architecture">Arquitetura futura</p>
+        <h3 id="janus-architecture-title" data-pt="Uma entrada controlada para o ecossistema" data-en="A controlled entry point for the ecosystem">Uma entrada controlada para o ecossistema</h3>
+        <p data-pt="O Janus será executado em container Docker dentro do Logos e conectado à rede privada Starlink. Cloudflare será a camada externa prevista para encaminhar as chamadas ao gateway." data-en="Janus will run in a Docker container inside Logos and connect to the private Starlink network. Cloudflare is the planned external layer for forwarding calls to the gateway.">O Janus será executado em container Docker dentro do Logos e conectado à rede privada Starlink. Cloudflare será a camada externa prevista para encaminhar as chamadas ao gateway.</p>
+      </header>
+
+      <div class="janus-architecture" role="img" aria-label="Arquitetura futura planejada: portfólio e serviços externos passam pelo Cloudflare, chegam ao Janus em ASP.NET Core, entram na rede privada Starlink e então podem ser direcionados ao Hermes com n8n ou à Sophia com PostgreSQL.">
+        <div class="architecture-tier janus-external-tier"><span data-pt="Entradas públicas futuras" data-en="Future public inputs">Entradas públicas futuras</span><strong data-pt="Portfólio e serviços externos" data-en="Portfolio and external services">Portfólio e serviços externos</strong><small>Webhooks · Forms · OAuth · AI</small></div>
+        <span class="tier-arrow" aria-hidden="true">↓</span>
+        <div class="architecture-tier janus-cloudflare-tier"><span data-pt="Borda planejada" data-en="Planned edge">Borda planejada</span><strong>Cloudflare</strong></div>
+        <span class="tier-arrow" aria-hidden="true">↓</span>
+        <div class="architecture-tier janus-gateway-tier"><span data-pt="Gateway planejado" data-en="Planned gateway">Gateway planejado</span><strong>Janus — ASP.NET Core</strong><small data-pt="Recebe · protege · valida · normaliza · direciona" data-en="Receives · protects · validates · normalizes · routes">Recebe · protege · valida · normaliza · direciona</small></div>
+        <span class="tier-arrow" aria-hidden="true">↓</span>
+        <div class="architecture-tier network-tier"><span>Starlink</span><strong data-pt="Rede Docker privada" data-en="Private Docker network">Rede Docker privada</strong></div>
+        <div class="janus-service-branches">
+          <article class="architecture-service hermes-service"><span>Hermes</span><strong>n8n</strong><small data-pt="Processa e automatiza" data-en="Processes and automates">Processa e automatiza</small></article>
+          <article class="architecture-service sophia-service"><span>Sophia</span><strong>PostgreSQL</strong><small data-pt="Registra eventos e estados" data-en="Stores events and states">Registra eventos e estados</small></article>
+        </div>
+      </div>
+
+      <div class="exposure-shift">
+        <div><span data-pt="Situação atual" data-en="Current state">Situação atual</span><strong>Internet → Tailscale Funnel → Hermes</strong><small data-pt="Entrada necessária para webhooks e callbacks, sem divulgação da URL." data-en="Required entry for webhooks and callbacks, without disclosing the URL.">Entrada necessária para webhooks e callbacks, sem divulgação da URL.</small></div>
+        <span class="shift-arrow" aria-hidden="true">→</span>
+        <div class="future-path"><span data-pt="Desenho planejado" data-en="Planned design">Desenho planejado</span><strong>Internet → Janus → Hermes</strong><small data-pt="O Hermes recebe somente eventos validados; interfaces administrativas permanecem privadas." data-en="Hermes receives only validated events; administrative interfaces remain private.">O Hermes recebe somente eventos validados; interfaces administrativas permanecem privadas.</small></div>
+      </div>
+    </section>
+
+    <section id="flow" class="janus-subsection" aria-labelledby="janus-flow-title">
+      <header class="janus-subsection-header">
+        <p class="section-kicker" data-pt="Fluxo planejado" data-en="Planned flow">Fluxo planejado</p>
+        <h3 id="janus-flow-title" data-pt="Do webhook à automação autorizada" data-en="From webhook to authorized automation">Do webhook à automação autorizada</h3>
+      </header>
+      <ol class="janus-flow">
+        <li><span>01</span><p data-pt="Uma plataforma externa envia um webhook." data-en="An external platform sends a webhook.">Uma plataforma externa envia um webhook.</p></li>
+        <li><span>02</span><p data-pt="O Cloudflare direciona a chamada ao Logos." data-en="Cloudflare forwards the call to Logos.">O Cloudflare direciona a chamada ao Logos.</p></li>
+        <li><span>03</span><p data-pt="O Janus identifica a origem." data-en="Janus identifies the origin.">O Janus identifica a origem.</p></li>
+        <li><span>04</span><p data-pt="A assinatura do provedor é validada." data-en="The provider signature is validated.">A assinatura do provedor é validada.</p></li>
+        <li><span>05</span><p data-pt="A requisição recebe um correlation ID." data-en="The request receives a correlation ID.">A requisição recebe um correlation ID.</p></li>
+        <li><span>06</span><p data-pt="O evento é normalizado." data-en="The event is normalized.">O evento é normalizado.</p></li>
+        <li><span>07</span><p data-pt="Eventos duplicados são bloqueados." data-en="Duplicate events are blocked.">Eventos duplicados são bloqueados.</p></li>
+        <li><span>08</span><p data-pt="O evento pode ser registrado na Sophia." data-en="The event can be recorded in Sophia.">O evento pode ser registrado na Sophia.</p></li>
+        <li><span>09</span><p data-pt="O Hermes recebe somente o evento validado." data-en="Hermes receives only the validated event.">O Hermes recebe somente o evento validado.</p></li>
+        <li><span>10</span><p data-pt="A automação correspondente é executada." data-en="The corresponding automation runs.">A automação correspondente é executada.</p></li>
+      </ol>
+    </section>
+
+    <section id="roles" class="janus-subsection" aria-labelledby="janus-roles-title">
+      <header class="janus-subsection-header">
+        <p class="section-kicker" data-pt="Papéis complementares" data-en="Complementary roles">Papéis complementares</p>
+        <h3 id="janus-roles-title" data-pt="Cada componente com uma responsabilidade" data-en="Each component with one responsibility">Cada componente com uma responsabilidade</h3>
+      </header>
+      <div class="janus-role-grid">
+        <article><span>Janus</span><p data-pt="Recebe, protege, valida, normaliza e direciona." data-en="Receives, protects, validates, normalizes, and routes.">Recebe, protege, valida, normaliza e direciona.</p></article>
+        <article><span>Hermes</span><p data-pt="Processa, integra e executa automações no n8n." data-en="Processes, integrates, and runs automations in n8n.">Processa, integra e executa automações no n8n.</p></article>
+        <article><span>Sophia</span><p data-pt="Armazena eventos, estados e históricos no PostgreSQL." data-en="Stores events, states, and history in PostgreSQL.">Armazena eventos, estados e históricos no PostgreSQL.</p></article>
+        <article><span>Starlink</span><p data-pt="Conecta os componentes de forma privada." data-en="Connects the components privately.">Conecta os componentes de forma privada.</p></article>
+        <article><span>Logos</span><p data-pt="Hospeda e organiza todo o ecossistema." data-en="Hosts and organizes the entire ecosystem.">Hospeda e organiza todo o ecossistema.</p></article>
+      </div>
+      <div class="janus-complementary-note">
+        <strong>Hermes</strong>
+        <p data-pt="O Janus não será outro orquestrador. O Hermes continuará responsável por automações, APIs, processamento, publicação, mensagens, notificações, aprovações, agentes de IA e tarefas agendadas. Editor e interfaces administrativas continuarão em caminhos privados, como Tailscale ou rede local." data-en="Janus will not be another orchestrator. Hermes will remain responsible for automations, APIs, processing, publishing, messages, notifications, approvals, AI agents, and scheduled tasks. Its editor and administrative interfaces will remain on private paths such as Tailscale or the local network.">O Janus não será outro orquestrador. O Hermes continuará responsável por automações, APIs, processamento, publicação, mensagens, notificações, aprovações, agentes de IA e tarefas agendadas. Editor e interfaces administrativas continuarão em caminhos privados, como Tailscale ou rede local.</p>
+      </div>
+      <div class="janus-complementary-note sophia-note">
+        <strong>Sophia</strong>
+        <p data-pt="A Sophia poderá registrar identificador, provedor, tipo, data, status, tentativas, erro resumido, correlation ID, métricas e feedbacks. A retenção deverá evitar dados pessoais desnecessários e payloads sensíveis, apoiando idempotência, investigação, retentativas e acompanhamento operacional." data-en="Sophia may record identifiers, providers, types, dates, status, attempts, summarized errors, correlation IDs, metrics, and feedback. Retention must avoid unnecessary personal data and sensitive payloads while supporting idempotency, investigation, retries, and operational monitoring.">A Sophia poderá registrar identificador, provedor, tipo, data, status, tentativas, erro resumido, correlation ID, métricas e feedbacks. A retenção deverá evitar dados pessoais desnecessários e payloads sensíveis, apoiando idempotência, investigação, retentativas e acompanhamento operacional.</p>
+      </div>
+    </section>
+
+    <section id="security" class="janus-subsection" aria-labelledby="janus-security-title">
+      <header class="janus-subsection-header">
+        <p class="section-kicker" data-pt="Segurança planejada" data-en="Planned security">Segurança planejada</p>
+        <h3 id="janus-security-title" data-pt="Proteções previstas, ainda não implantadas" data-en="Planned protections, not yet deployed">Proteções previstas, ainda não implantadas</h3>
+        <p data-pt="Estes mecanismos compõem a direção arquitetural do Janus. Eles serão implementados e validados por etapas; não representam garantias atuais." data-en="These mechanisms define Janus's architectural direction. They will be implemented and validated in stages and do not represent current guarantees.">Estes mecanismos compõem a direção arquitetural do Janus. Eles serão implementados e validados por etapas; não representam garantias atuais.</p>
+      </header>
+      <ul class="janus-security-list">
+        <li data-pt="Assinatura por provedor" data-en="Provider signature validation">Assinatura por provedor</li>
+        <li>Rate limiting</li>
+        <li data-pt="Limite de requisição" data-en="Request-size limits">Limite de requisição</li>
+        <li data-pt="Proteção contra repetição" data-en="Replay protection">Proteção contra repetição</li>
+        <li data-pt="Idempotência" data-en="Idempotency">Idempotência</li>
+        <li data-pt="Validação de payloads" data-en="Payload validation">Validação de payloads</li>
+        <li data-pt="Identificação de origem" data-en="Origin identification">Identificação de origem</li>
+        <li>Correlation IDs</li>
+        <li data-pt="Logs estruturados" data-en="Structured logs">Logs estruturados</li>
+        <li>Health checks</li>
+        <li data-pt="Erros padronizados" data-en="Standardized errors">Erros padronizados</li>
+        <li data-pt="Autenticação interna" data-en="Internal authentication">Autenticação interna</li>
+        <li data-pt="CORS controlado" data-en="Controlled CORS">CORS controlado</li>
+        <li>Cloudflare Turnstile</li>
+        <li data-pt="Secrets seguros" data-en="Secure secrets">Secrets seguros</li>
+        <li data-pt="Políticas de retenção" data-en="Retention policies">Políticas de retenção</li>
+      </ul>
+    </section>
+
+    <section id="ai" class="janus-subsection janus-ai-section" aria-labelledby="janus-ai-title">
+      <div>
+        <header class="janus-subsection-header">
+          <p class="section-kicker" data-pt="Primeiro caso de uso" data-en="First use case">Primeiro caso de uso</p>
+          <h3 id="janus-ai-title" data-pt="Assistente de IA do portfólio" data-en="Portfolio AI assistant">Assistente de IA do portfólio</h3>
+          <p data-pt="Um dos primeiros usos planejados é proteger a comunicação entre visitantes do GitHub Pages e um serviço de inteligência artificial, sem expor a chave do provedor no navegador." data-en="One of the first planned uses is protecting communication between GitHub Pages visitors and an AI service without exposing the provider key in the browser.">Um dos primeiros usos planejados é proteger a comunicação entre visitantes do GitHub Pages e um serviço de inteligência artificial, sem expor a chave do provedor no navegador.</p>
+        </header>
+        <ul class="logos-list janus-ai-list">
+          <li data-pt="Receber e validar a pergunta." data-en="Receive and validate the question.">Receber e validar a pergunta.</li>
+          <li data-pt="Limitar uso abusivo e aplicar Turnstile." data-en="Limit abusive use and apply Turnstile.">Limitar uso abusivo e aplicar Turnstile.</li>
+          <li data-pt="Carregar somente o contexto profissional necessário." data-en="Load only the required professional context.">Carregar somente o contexto profissional necessário.</li>
+          <li data-pt="Chamar o provedor de IA com a chave protegida." data-en="Call the AI provider with a protected key.">Chamar o provedor de IA com a chave protegida.</li>
+          <li data-pt="Devolver uma resposta segura e limitada ao escopo." data-en="Return a safe response limited to the approved scope.">Devolver uma resposta segura e limitada ao escopo.</li>
+        </ul>
+      </div>
+      <div class="janus-ai-flow" role="img" aria-label="Fluxo planejado do assistente: visitante no GitHub Pages envia uma pergunta ao Janus, que consulta o serviço de inteligência artificial e devolve uma resposta sobre Gustavo e seus projetos.">
+        <span data-pt="Visitante no portfólio" data-en="Portfolio visitor">Visitante no portfólio</span><i aria-hidden="true">↓</i><span>Janus — ASP.NET Core</span><i aria-hidden="true">↓</i><span data-pt="Serviço de inteligência artificial" data-en="Artificial intelligence service">Serviço de inteligência artificial</span><i aria-hidden="true">↓</i><span data-pt="Resposta profissional contextualizada" data-en="Contextualized professional response">Resposta profissional contextualizada</span>
+      </div>
+      <div class="janus-ai-scope">
+        <strong data-pt="Escopo planejado das respostas" data-en="Planned response scope">Escopo planejado das respostas</strong>
+        <div><span>Gustavo Soares</span><span data-pt="Experiências" data-en="Experience">Experiências</span><span data-pt="Tecnologias" data-en="Technologies">Tecnologias</span><span data-pt="Currículo" data-en="Résumé">Currículo</span><span data-pt="Projetos" data-en="Projects">Projetos</span><span>Logos Server</span><span data-pt="Automações" data-en="Automations">Automações</span><span>.NET</span><span data-pt="Infraestrutura" data-en="Infrastructure">Infraestrutura</span><span data-pt="Contato" data-en="Contact">Contato</span></div>
+      </div>
+    </section>
+
+    <section id="contracts" class="janus-subsection janus-technical-examples" aria-labelledby="janus-routes-title">
+      <div>
+        <header class="janus-subsection-header">
+          <p class="section-kicker" data-pt="Exemplos conceituais" data-en="Conceptual examples">Exemplos conceituais</p>
+          <h3 id="janus-routes-title" data-pt="Possíveis contratos de entrada" data-en="Possible entry contracts">Possíveis contratos de entrada</h3>
+          <p data-pt="As rotas abaixo ilustram a organização futura. Elas não são endpoints ativos e não representam um endereço público disponível." data-en="The routes below illustrate the future organization. They are not active endpoints and do not represent an available public address.">As rotas abaixo ilustram a organização futura. Elas não são endpoints ativos e não representam um endereço público disponível.</p>
+        </header>
+        <div class="concept-code-block">
+          <span class="concept-label" data-pt="Planejado · não disponível" data-en="Planned · unavailable">Planejado · não disponível</span>
+          <pre tabindex="0"><code>POST /api/v1/portfolio/chat
+POST /api/v1/contact
+POST /webhooks/v1/github
+POST /webhooks/v1/meta
+POST /webhooks/v1/linkedin
+POST /webhooks/v1/youtube
+GET  /health</code></pre>
+        </div>
+      </div>
+      <div class="janus-input-catalog">
+        <h3 data-pt="Entradas previstas" data-en="Planned inputs">Entradas previstas</h3>
+        <div><span>Webhooks</span><span data-pt="Portfólio" data-en="Portfolio">Portfólio</span><span data-pt="Assistente de IA" data-en="AI assistant">Assistente de IA</span><span data-pt="Contato" data-en="Contact">Contato</span><span>OAuth</span><span>GitHub</span><span>Meta</span><span>LinkedIn</span><span>YouTube</span><span data-pt="Futuros serviços" data-en="Future services">Futuros serviços</span></div>
+      </div>
+    </section>
+
+    <section id="roadmap" class="janus-subsection" aria-labelledby="janus-roadmap-title">
+      <header class="janus-subsection-header">
+        <p class="section-kicker" data-pt="Roadmap planejado" data-en="Planned roadmap">Roadmap planejado</p>
+        <h3 id="janus-roadmap-title" data-pt="Evolução progressiva do Janus" data-en="Progressive evolution of Janus">Evolução progressiva do Janus</h3>
+        <p data-pt="Os marcadores representam intenção e sequência de trabalho — não conclusão." data-en="The markers represent intent and work sequence—not completion.">Os marcadores representam intenção e sequência de trabalho — não conclusão.</p>
+      </header>
+      <ol class="janus-roadmap">
+        <li><span>01</span><p data-pt="Construir a API em ASP.NET Core." data-en="Build the ASP.NET Core API.">Construir a API em ASP.NET Core.</p></li>
+        <li><span>02</span><p data-pt="Criar o container logos-janus." data-en="Create the logos-janus container.">Criar o container <code>logos-janus</code>.</p></li>
+        <li><span>03</span><p data-pt="Conectar o Janus à Starlink." data-en="Connect Janus to Starlink.">Conectar o Janus à Starlink.</p></li>
+        <li><span>04</span><p data-pt="Publicar a API por um túnel seguro." data-en="Publish the API through a secure tunnel.">Publicar a API por um túnel seguro.</p></li>
+        <li><span>05</span><p data-pt="Implementar validação por provedor." data-en="Implement provider-specific validation.">Implementar validação por provedor.</p></li>
+        <li><span>06</span><p data-pt="Criar persistência de eventos na Sophia." data-en="Create event persistence in Sophia.">Criar persistência de eventos na Sophia.</p></li>
+        <li><span>07</span><p data-pt="Integrar os webhooks ao Hermes." data-en="Integrate webhooks with Hermes.">Integrar os webhooks ao Hermes.</p></li>
+        <li><span>08</span><p data-pt="Implementar o assistente de IA do portfólio." data-en="Implement the portfolio AI assistant.">Implementar o assistente de IA do portfólio.</p></li>
+        <li><span>09</span><p data-pt="Restringir a exposição pública direta do Hermes." data-en="Restrict Hermes's direct public exposure.">Restringir a exposição pública direta do Hermes.</p></li>
+        <li><span>10</span><p data-pt="Adicionar observabilidade, tentativas e retenção." data-en="Add observability, retries, and retention.">Adicionar observabilidade, tentativas e retenção.</p></li>
+      </ol>
+    </section>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Janus" data-en="© 2026 Gustavo Soares — Janus Project">© 2026 Gustavo Soares — Projeto Janus</footer>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

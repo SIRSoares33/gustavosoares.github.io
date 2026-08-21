@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="styles/story.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <div class="container">
     <a class="logo" href="index.html" data-pt="Gustavo Soares" data-en="Gustavo Soares">Gustavo Soares</a>
 
-    <nav class="nav">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação principal">
       <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
       <a href="index.html#experience" data-pt="Experiência" data-en="Experience">Experiência</a>
       <a href="index.html#skills" data-pt="Skills" data-en="Skills">Skills</a>
@@ -26,6 +27,9 @@
     </nav>
 
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -165,7 +169,7 @@ data-en="My goal is to build a hybrid profile that combines development, infrast
 In parallel, I continue developing Logos, a .NET business management system with inventory, sales, POS, dashboards, and APIs.">
           Meu objetivo é consolidar um perfil híbrido, unindo desenvolvimento, infraestrutura, cloud, segurança, consultoria e IA. Atualmente aprofundo fundamentos de suporte, Windows, Microsoft 365, redes e Active Directory, além de me preparar para a AWS Certified Cloud Practitioner (CLF-C02), com o plano de seguir depois para a Solutions Architect – Associate.
 
-Em paralelo, continuo desenvolvendo a Logos, um sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs.
+Em paralelo, continuo desenvolvendo a Logos, um servidor on-premise que hospeda meus sistemas. Onde cuido de toda a estrutura de rede, virtualização, backup, monitoramento e segurança.
         </p>
         <div class="timeline-gallery">
           <img src="img/logos.png" alt="Logotipo do projeto Logos" class="timeline-photo">
@@ -177,6 +181,7 @@ Em paralelo, continuo desenvolvendo a Logos, um sistema de gestão comercial em 
 
 </section>
 
+<script src="scripts/navigation.js"></script>
 <script src="scripts/myHistory.js"></script>
 </body>
 </html>

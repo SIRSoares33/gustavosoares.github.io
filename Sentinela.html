@@ -11,13 +11,14 @@
   <link rel="stylesheet" href="styles/ToDo.css">
   <link rel="stylesheet" href="styles/Project.css">
   <link rel="stylesheet" href="styles/Sentinela.css">
+  <link rel="stylesheet" href="styles/responsive.css">
 </head>
 <body>
 
 <header class="header">
   <div class="container">
     <p class="logo">Sentinela</p>
-    <nav class="nav" aria-label="Navegação do projeto">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
       <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
       <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
       <a href="#architecture" data-pt="Arquitetura" data-en="Architecture">Arquitetura</a>
@@ -26,6 +27,9 @@
       <a href="#status">Status</a>
     </nav>
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -309,6 +313,7 @@
 </main>
 
 <footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Sentinela" data-en="© 2026 Gustavo Soares — Sentinela Project">© 2026 Gustavo Soares — Projeto Sentinela</footer>
+<script src="scripts/navigation.js"></script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

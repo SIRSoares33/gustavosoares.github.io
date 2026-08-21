@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/responsive.css?v=20260821">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -17,16 +18,20 @@
   <div class="container">
     <a class="logo" href="#top" aria-label="Ir para o início">Gustavo Soares</a>
 
-    <nav class="nav" aria-label="Navegação principal">
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação principal">
       <a href="#about" data-pt="Sobre" data-en="About">Sobre</a>
       <a href="#experience" data-pt="Experiência" data-en="Experience">Experiência</a>
       <a href="#skills" data-pt="Competências" data-en="Skills">Competências</a>
       <a href="#projects" data-pt="Projetos" data-en="Projects">Projetos</a>
+      <a href="agora.html" data-pt="Agora" data-en="Now">Agora</a>
       <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
       <a href="MyJourney.html" data-pt="Minha trajetória" data-en="My journey">Minha trajetória</a>
     </nav>
 
     <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -106,6 +111,10 @@
     <header class="section-header reveal">
       <p class="section-label" data-pt="Experiência" data-en="Experience">Experiência</p>
       <h2 data-pt="Experiência profissional" data-en="Professional experience">Experiência profissional</h2>
+      <p class="section-subtitle"
+        data-pt="Atuação prática conectando desenvolvimento, infraestrutura, suporte e automação."
+        data-en="Hands-on experience connecting development, infrastructure, support, and automation."
+      >Atuação prática conectando desenvolvimento, infraestrutura, suporte e automação.</p>
     </header>
 
     <div class="experience-listing">
@@ -121,31 +130,47 @@
           </div>
         </div>
 
+        <p class="experience-summary"
+          data-pt="Atuação multidisciplinar na sustentação e evolução de ambientes de TI, combinando suporte, infraestrutura, desenvolvimento e automação."
+          data-en="Multidisciplinary work sustaining and evolving IT environments across support, infrastructure, development, and automation."
+        >Atuação multidisciplinar na sustentação e evolução de ambientes de TI, combinando suporte, infraestrutura, desenvolvimento e automação.</p>
+
         <ul class="experience-list">
-          <li
-            data-pt="Atendimento a usuários, troubleshooting, manutenção, diagnóstico técnico e documentação de soluções."
-            data-en="User support, troubleshooting, maintenance, technical diagnostics, and solution documentation."
-          >Atendimento a usuários, troubleshooting, manutenção, diagnóstico técnico e documentação de soluções.</li>
-          <li
-            data-pt="Diagnóstico de equipamentos, inventário de hardware e apoio em rotinas de manutenção."
-            data-en="Equipment diagnostics, hardware inventory, and support with maintenance routines."
-          >Diagnóstico de equipamentos, inventário de hardware e apoio em rotinas de manutenção.</li>
-          <li
-            data-pt="Administração de ambientes Windows e Linux, IIS, virtualização, redes e rotinas de backup."
-            data-en="Administration of Windows and Linux environments, IIS, virtualization, networking, and backup routines."
-          >Administração de ambientes Windows e Linux, IIS, virtualização, redes e rotinas de backup.</li>
-          <li
-            data-pt="Administração básica de AWS e Google Workspace, além de hospedagem e DNS pela Locaweb."
-            data-en="Basic AWS and Google Workspace administration, plus hosting and DNS management through Locaweb."
-          >Administração de AWS e Google Workspace, além de hospedagem e DNS pela Locaweb.</li>
-          <li
-            data-pt="Participação no Projeto Jarvis, agente interno de IA integrado ao Google Drive para organizar documentos e apoiar processos."
-            data-en="Contribution to Project Jarvis, an internal AI agent connected to Google Drive to organize documents and support processes."
-          >Participação no Projeto Jarvis, agente interno de IA integrado ao Google Drive para organizar documentos e apoiar processos.</li>
-          <li
-            data-pt="Apoio à presença digital da empresa e de clientes em canais como Instagram, LinkedIn, Google Business e Google Ads."
-            data-en="Support for the company and its clients' digital presence across channels such as Instagram, LinkedIn, Google Business, and Google Ads."
-          >Apoio à presença digital da empresa e de clientes em canais como Instagram, LinkedIn, Google Business e Google Ads.</li>
+          <li>
+            <strong data-pt="Suporte e confiabilidade" data-en="Support and reliability">Suporte e confiabilidade</strong>
+            <span
+              data-pt="Resolução de incidentes envolvendo hardware, sistemas operacionais, firmware e BIOS, boot, redes, endpoints, antivírus e servidores, com troubleshooting, análise de causa raiz e implementação de correções."
+              data-en="Resolution of incidents involving hardware, operating systems, firmware and BIOS, boot, networks, endpoints, antivirus software, and servers, including troubleshooting, root-cause analysis, and corrective actions."
+            >Resolução de incidentes envolvendo hardware, sistemas operacionais, firmware e BIOS, boot, redes, endpoints, antivírus e servidores, com troubleshooting, análise de causa raiz e implementação de correções.</span>
+          </li>
+          <li>
+            <strong data-pt="Infraestrutura e containers" data-en="Infrastructure and containers">Infraestrutura e containers</strong>
+            <span
+              data-pt="Administração e otimização de redes, infraestrutura e workloads conteinerizados com Docker."
+              data-en="Administration and optimization of networks, infrastructure, and containerized workloads with Docker."
+            >Administração e otimização de redes, infraestrutura e workloads conteinerizados com Docker.</span>
+          </li>
+          <li>
+            <strong data-pt="Continuidade dos serviços" data-en="Service continuity">Continuidade dos serviços</strong>
+            <span
+              data-pt="Trabalho com arquiteturas híbridas de backup, replicação e failover entre servidores on-premises e a nuvem, visando disponibilidade e continuidade operacional."
+              data-en="Work with hybrid backup, replication, and failover architectures across on-premises servers and the cloud, supporting availability and operational continuity."
+            >Trabalho com arquiteturas híbridas de backup, replicação e failover entre servidores on-premises e a nuvem, visando disponibilidade e continuidade operacional.</span>
+          </li>
+          <li>
+            <strong data-pt="Desenvolvimento e automação" data-en="Development and automation">Desenvolvimento e automação</strong>
+            <span
+              data-pt="Desenvolvimento e integração de APIs, aplicações web, agentes de IA e workflows de automação com n8n."
+              data-en="Development and integration of APIs, web applications, AI agents, and n8n automation workflows."
+            >Desenvolvimento e integração de APIs, aplicações web, agentes de IA e workflows de automação com n8n.</span>
+          </li>
+          <li>
+            <strong data-pt="Automação de marketing" data-en="Marketing automation">Automação de marketing</strong>
+            <span
+              data-pt="Implementação de fluxos para geração de textos e artes por IA, publicação multicanal e integrações com Instagram, Facebook e LinkedIn, além da administração de domínios, Meta Business, Google Ads e campanhas digitais."
+              data-en="Implementation of workflows for AI-assisted copy and creative generation, multichannel publishing, and integrations with Instagram, Facebook, and LinkedIn, alongside domain, Meta Business, Google Ads, and digital-campaign administration."
+            >Implementação de fluxos para geração de textos e artes por IA, publicação multicanal e integrações com Instagram, Facebook e LinkedIn, além da administração de domínios, Meta Business, Google Ads e campanhas digitais.</span>
+          </li>
         </ul>
       </article>
 
@@ -161,23 +186,47 @@
           </div>
         </div>
 
+        <p class="experience-summary"
+          data-pt="Atuação ponta a ponta no desenvolvimento, implantação e sustentação de uma aplicação web e de sua infraestrutura on-premises."
+          data-en="End-to-end work developing, deploying, and operating a web application and its on-premises infrastructure."
+        >Atuação ponta a ponta no desenvolvimento, implantação e sustentação de uma aplicação web e de sua infraestrutura on-premises.</p>
+
         <ul class="experience-list">
-          <li
-            data-pt="Manutenção de aplicações legadas, com correção de bugs e melhorias contínuas."
-            data-en="Maintenance of legacy applications, including bug fixes and continuous improvements."
-          >Manutenção de aplicações legadas, com correção de bugs e melhorias contínuas.</li>
-          <li
-            data-pt="Desenvolvimento de novas funcionalidades e soluções personalizadas em .NET para clientes."
-            data-en="Development of new features and custom .NET solutions for clients."
-          >Desenvolvimento de novas funcionalidades e soluções personalizadas em .NET para clientes.</li>
-          <li
-            data-pt="Criação de APIs REST para integração entre sistemas."
-            data-en="Development of REST APIs for system integration."
-          >Criação de APIs REST para integração entre sistemas.</li>
-          <li
-            data-pt="Uso de Git e aplicação de práticas como Clean Code e Design Patterns."
-            data-en="Use of Git and practices such as Clean Code and Design Patterns."
-          >Uso de Git e aplicação de práticas como Clean Code e Design Patterns.</li>
+          <li>
+            <strong data-pt="Desenvolvimento web" data-en="Web development">Desenvolvimento web</strong>
+            <span
+              data-pt="Desenvolvimento e sustentação de aplicações utilizando ASP.NET no back-end e React no front-end."
+              data-en="Development and maintenance of applications using ASP.NET on the back end and React on the front end."
+            >Desenvolvimento e sustentação de aplicações utilizando ASP.NET no back-end e React no front-end.</span>
+          </li>
+          <li>
+            <strong data-pt="API, dados e implantação" data-en="API, data, and deployment">API, dados e implantação</strong>
+            <span
+              data-pt="Administração da API e do PostgreSQL, com implantação em Ubuntu Server on-premises utilizando Docker e Docker Compose."
+              data-en="Administration of the API and PostgreSQL, with deployment to an on-premises Ubuntu Server using Docker and Docker Compose."
+            >Administração da API e do PostgreSQL, com implantação em Ubuntu Server on-premises utilizando Docker e Docker Compose.</span>
+          </li>
+          <li>
+            <strong data-pt="Operação da infraestrutura" data-en="Infrastructure operations">Operação da infraestrutura</strong>
+            <span
+              data-pt="Monitoramento, rede, armazenamento, segurança e otimização do servidor para aumentar a estabilidade do ambiente."
+              data-en="Server monitoring, networking, storage, security, and optimization to improve environment stability."
+            >Monitoramento, rede, armazenamento, segurança e otimização do servidor para aumentar a estabilidade do ambiente.</span>
+          </li>
+          <li>
+            <strong data-pt="Backup automatizado" data-en="Automated backup">Backup automatizado</strong>
+            <span
+              data-pt="Criação de uma rotina automatizada de backup para o Amazon S3, com envio de relatórios por e-mail aos diretores."
+              data-en="Creation of an automated backup routine to Amazon S3, with email reports sent to company directors."
+            >Criação de uma rotina automatizada de backup para o Amazon S3, com envio de relatórios por e-mail aos diretores.</span>
+          </li>
+          <li>
+            <strong data-pt="Otimização de desempenho" data-en="Performance optimization">Otimização de desempenho</strong>
+            <span
+              data-pt="Reorganização do fluxo de consultas e gravações para processar os dados somente na etapa final, reduzindo chamadas desnecessárias e melhorando o desempenho da API."
+              data-en="Redesign of the query and write flow so data was processed only in the final stage, reducing unnecessary calls and improving API performance."
+            >Reorganização do fluxo de consultas e gravações para processar os dados somente na etapa final, reduzindo chamadas desnecessárias e melhorando o desempenho da API.</span>
+          </li>
         </ul>
       </article>
     </div>
@@ -285,7 +334,7 @@
         <h3 data-pt="Idiomas" data-en="Languages">Idiomas</h3>
         <div class="skills-grid">
           <span data-pt="Português • C2" data-en="Portuguese • C2">Português • C2</span>
-          <span data-pt="Inglês • B1, em desenvolvimento" data-en="English • B1, in development">Inglês • B1, em desenvolvimento</span>
+          <span data-pt="Inglês • C1, em desenvolvimento" data-en="English • C1, in development">Inglês • C1, em desenvolvimento</span>
         </div>
       </article>
     </div>
@@ -296,24 +345,26 @@
       <p class="section-label" data-pt="Projetos" data-en="Projects">Projetos</p>
       <h2 data-pt="Soluções que mostram diferentes frentes" data-en="Solutions across different areas">Soluções que mostram diferentes frentes</h2>
       <p class="section-subtitle"
-        data-pt="Sistema completo, biblioteca reutilizável, automação aplicada e API."
-        data-en="A complete system, a reusable library, applied automation, and an API."
-      >Sistema completo, biblioteca reutilizável, automação aplicada e API.</p>
+        data-pt="Infraestrutura pessoal, bibliotecas, automações e APIs."
+        data-en="Personal infrastructure, libraries, automations, and APIs."
+      >Infraestrutura pessoal, bibliotecas, automações e APIs.</p>
     </header>
 
     <div class="projects-grid reveal">
       <article class="project-card">
         <div class="project-heading">
-          <span class="project-icon"><i data-lucide="panels-top-left"></i></span>
-          <p class="project-type" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+          <span class="project-icon"><i data-lucide="server-cog"></i></span>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Infraestrutura • Em evolução" data-en="Infrastructure • Evolving">Infraestrutura • Em evolução</p>
+            <h3>Logos Server</h3>
+          </div>
         </div>
-        <h3>Logos</h3>
-        <p
-          data-pt="Sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs administrativas."
-          data-en="A .NET business management system with inventory, sales, POS, dashboards, and administration APIs."
-        >Sistema de gestão comercial em .NET com estoque, vendas, PDV, dashboards e APIs administrativas.</p>
-        <div class="project-tags"><span>.NET</span><span>Estoque</span><span>PDV</span><span>APIs</span></div>
-        <a class="project-link" href="Logos.html">
+        <p class="project-description"
+          data-pt="Meu servidor pessoal em constante evolução, criado para hospedar aplicações, automações, bancos, arquivos e futuros agentes de IA."
+          data-en="My evolving personal server, built to host applications, automations, databases, files, and future AI agents."
+        >Meu servidor pessoal em constante evolução, criado para hospedar aplicações, automações, bancos, arquivos e futuros agentes de IA.</p>
+        <ul class="project-tags"><li>Ubuntu Server</li><li>Docker</li><li>PostgreSQL</li><li>n8n</li><li>Tailscale</li></ul>
+        <a class="project-link" href="LogosServer.html">
           <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
           <i data-lucide="arrow-up-right"></i>
         </a>
@@ -322,14 +373,16 @@
       <article class="project-card">
         <div class="project-heading">
           <span class="project-icon"><i data-lucide="library"></i></span>
-          <p class="project-type" data-pt="Biblioteca reutilizável" data-en="Reusable library">Biblioteca reutilizável</p>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Desenvolvimento • Bibliotecas" data-en="Development • Libraries">Desenvolvimento • Bibliotecas</p>
+            <h3>Psalms</h3>
+          </div>
         </div>
-        <h3>Psalms</h3>
-        <p
-          data-pt="Biblioteca .NET para multi-tenancy, autenticação JWT e reuso de componentes entre projetos."
-          data-en="A .NET library for multi-tenancy, JWT authentication, and component reuse across projects."
-        >Biblioteca .NET para multi-tenancy, autenticação JWT e reuso de componentes entre projetos.</p>
-        <div class="project-tags"><span>.NET</span><span>Multi-tenancy</span><span>JWT</span><span>Microservices</span></div>
+        <p class="project-description"
+          data-pt="Ecossistema modular para workflows de email, autenticação JWT e persistência com Entity Framework Core."
+          data-en="A modular ecosystem for email workflows, JWT authentication, and Entity Framework Core persistence."
+        >Ecossistema modular para workflows de email, autenticação JWT e persistência com Entity Framework Core.</p>
+        <ul class="project-tags"><li>.NET</li><li>ASP.NET Core</li><li>NuGet</li><li>EF Core</li></ul>
         <a class="project-link" href="Psalms.html">
           <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
           <i data-lucide="arrow-up-right"></i>
@@ -339,14 +392,16 @@
       <article class="project-card">
         <div class="project-heading">
           <span class="project-icon"><i data-lucide="scan-search"></i></span>
-          <p class="project-type" data-pt="Em evolução contínua" data-en="Under continuous evolution">Em evolução contínua</p>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Automação • Em produção" data-en="Automation • In production">Automação • Em produção</p>
+            <h3>InventIA</h3>
+          </div>
         </div>
-        <h3>InventIA</h3>
-        <p
+        <p class="project-description"
           data-pt="Automação de inventário construída com Google Sheets e Apps Script para organizar informações e tornar o processo mais prático."
           data-en="An inventory automation solution built with Google Sheets and Apps Script to organize information and make the process more practical."
         >Automação de inventário construída com Google Sheets e Apps Script para organizar informações e tornar o processo mais prático.</p>
-        <div class="project-tags"><span>Google Sheets</span><span>Apps Script</span><span data-pt="Automação" data-en="Automation">Automação</span></div>
+        <ul class="project-tags"><li>Google Sheets</li><li>Apps Script</li><li data-pt="Automação" data-en="Automation">Automação</li></ul>
         <a class="project-link" href="InventIA.html">
           <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
           <i data-lucide="arrow-up-right"></i>
@@ -356,31 +411,41 @@
       <article class="project-card">
         <div class="project-heading">
           <span class="project-icon"><i data-lucide="list-checks"></i></span>
-          <p class="project-type">Backend API</p>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Backend • REST API • Projeto educacional" data-en="Backend • REST API • Educational project">Backend • REST API • Projeto educacional</p>
+            <h3>ToDo API</h3>
+          </div>
         </div>
-        <h3>ToDo API</h3>
-        <p
-          data-pt="API de tarefas em .NET construída para praticar organização de domínio, persistência, testes e execução em contêineres."
-          data-en="A .NET task API built to practice domain organization, persistence, testing, and containerized execution."
-        >API de tarefas em .NET construída para praticar organização de domínio, persistência, testes e execução em contêineres.</p>
-        <div class="project-tags"><span>ASP.NET Core</span><span>PostgreSQL</span><span>CQRS</span><span>xUnit</span></div>
-        <a class="project-link" href="ToDo.html">
-          <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
-          <i data-lucide="arrow-up-right"></i>
-        </a>
+        <p class="project-description"
+          data-pt="API de gerenciamento de usuários e tarefas desenvolvida com ASP.NET Core, arquitetura em camadas, JWT, MediatR, PostgreSQL e Docker."
+          data-en="A user and task management API built with ASP.NET Core, layered architecture, JWT, MediatR, PostgreSQL, and Docker."
+        >API de gerenciamento de usuários e tarefas desenvolvida com ASP.NET Core, arquitetura em camadas, JWT, MediatR, PostgreSQL e Docker.</p>
+        <ul class="project-tags"><li>Clean Architecture</li><li>JWT</li><li>MediatR</li><li>PostgreSQL</li><li>Docker Compose</li></ul>
+        <div class="project-actions">
+          <a class="project-link" href="ToDo.html">
+            <span data-pt="Ver projeto" data-en="View project">Ver projeto</span>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+          <a class="project-link project-link-secondary" href="https://github.com/SIRSoares33/ToDoApi" target="_blank" rel="noopener noreferrer">
+            <span>GitHub</span>
+            <i data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
       </article>
 
       <article class="project-card">
         <div class="project-heading">
           <span class="project-icon"><i data-lucide="workflow"></i></span>
-          <p class="project-type" data-pt="Automação em produção" data-en="Production automation">Automação em produção</p>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Automação • Em produção" data-en="Automation • In production">Automação • Em produção</p>
+            <h3>AutoPost IA</h3>
+          </div>
         </div>
-        <h3>AutoPost IA</h3>
-        <p
+        <p class="project-description"
           data-pt="Automação de posts em produção para meus clientes de marketing, com OpenAI e aprovação por WhatsApp ou email."
           data-en="A production post automation for my marketing clients, using OpenAI and approval through WhatsApp or email."
         >Automação de posts em produção para meus clientes de marketing, com OpenAI e aprovação por WhatsApp ou email.</p>
-        <div class="project-tags"><span>n8n</span><span>Docker</span><span>OpenAI</span><span>Meta API</span><span>LinkedIn API</span></div>
+        <ul class="project-tags"><li>n8n</li><li>Docker</li><li>OpenAI</li><li>Meta API</li><li>LinkedIn API</li></ul>
         <a class="project-link" href="AutoPost.html">
           <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
           <i data-lucide="arrow-up-right"></i>
@@ -390,14 +455,16 @@
       <article class="project-card">
         <div class="project-heading">
           <span class="project-icon"><i data-lucide="radar"></i></span>
-          <p class="project-type" data-pt="Em desenvolvimento" data-en="In development">Em desenvolvimento</p>
+          <div class="project-title-group">
+            <p class="project-type" data-pt="Infraestrutura • Em desenvolvimento" data-en="Infrastructure • In development">Infraestrutura • Em desenvolvimento</p>
+            <h3>Sentinela</h3>
+          </div>
         </div>
-        <h3>Sentinela</h3>
-        <p
+        <p class="project-description"
           data-pt="Monitoramento de infraestrutura com diagnóstico de incidentes por IA e aprovação manual de ações."
           data-en="Infrastructure monitoring with AI-assisted incident diagnostics and manual action approval."
         >Monitoramento de infraestrutura com diagnóstico de incidentes por IA e aprovação manual de ações.</p>
-        <div class="project-tags"><span>.NET</span><span>Docker</span><span>IA</span><span>Blazor</span></div>
+        <ul class="project-tags"><li>.NET</li><li>Docker</li><li data-pt="IA" data-en="AI">IA</li><li>Blazor</li></ul>
         <a class="project-link" href="Sentinela.html">
           <span data-pt="Ver detalhes" data-en="View details">Ver detalhes</span>
           <i data-lucide="arrow-up-right"></i>
@@ -419,9 +486,9 @@
     <div class="contact-grid reveal">
       <article class="contact-card">
         <h3>Email</h3>
-        <a href="mailto:sirgustavo4@gmail.com">
+        <a href="mailto:gustavo.soaress1970@gmail.com">
           <span class="contact-icon" aria-hidden="true"><i data-lucide="mail"></i></span>
-          sirgustavo4@gmail.com
+          gustavo.soaress1970@gmail.com
         </a>
       </article>
 
@@ -459,6 +526,7 @@
   >© 2026 Gustavo Soares — Todos os direitos reservados</span>
 </footer>
 
-<script src="scripts/script.js"></script>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/script.js?v=20260821"></script>
 </body>
 </html>

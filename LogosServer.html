@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Logos Server é a infraestrutura pessoal de Gustavo Soares para hospedar aplicações, automações, bancos de dados, arquivos e futuros agentes de IA usando Ubuntu Server, Docker, PostgreSQL, n8n, Tailscale e backups criptografados.">
+  <title>Logos Server — Homelab e Infraestrutura Pessoal</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/LogosServer.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <p class="logo">Logos Server</p>
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
+      <a href="index.html#projects" data-pt="Voltar ao portfólio" data-en="Back to portfolio">Voltar ao portfólio</a>
+      <a href="#overview" data-pt="Visão geral" data-en="Overview">Visão geral</a>
+      <a href="#architecture" data-pt="Arquitetura" data-en="Architecture">Arquitetura</a>
+      <a href="#janus">Janus</a>
+      <a href="#resilience" data-pt="Segurança e backup" data-en="Security and backup">Segurança e backup</a>
+      <a href="#stack">Stack</a>
+      <a href="#evolution" data-pt="Evolução" data-en="Evolution">Evolução</a>
+    </nav>
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="hero project-hero logos-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge status-evolution" data-pt="Em evolução" data-en="Evolving">Em evolução</p>
+        <h1>Logos Server</h1>
+        <h2 data-pt="Homelab • Infraestrutura pessoal" data-en="Homelab • Personal infrastructure">Homelab • Infraestrutura pessoal</h2>
+        <p
+          data-pt="Meu laboratório de infraestrutura e a base do meu ecossistema pessoal, criado para centralizar aplicações, automações, bancos de dados, arquivos e futuros agentes de IA com organização, persistência, acesso privado e recuperação planejada."
+          data-en="My infrastructure lab and the foundation of my personal ecosystem, built to centralize applications, automations, databases, files, and future AI agents with organization, persistence, private access, and planned recovery."
+        >Meu laboratório de infraestrutura e a base do meu ecossistema pessoal, criado para centralizar aplicações, automações, bancos de dados, arquivos e futuros agentes de IA com organização, persistência, acesso privado e recuperação planejada.</p>
+
+        <div class="hero-buttons">
+          <a href="#architecture" class="btn" data-pt="Conhecer a arquitetura" data-en="Explore the architecture">Conhecer a arquitetura</a>
+          <a href="#evolution" class="btn-outline" data-pt="Ver evolução" data-en="View evolution">Ver evolução</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual logos-visual">
+          <div class="logos-host">
+            <strong>LOGOS</strong>
+            <span>Ubuntu Server</span>
+          </div>
+          <div class="logos-service-grid">
+            <span>HERMES</span>
+            <span>SOPHIA</span>
+            <span>STARLINK</span>
+            <span>BACKUP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="overview" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Visão geral" data-en="Overview">Visão geral</p>
+      <h2 data-pt="Infraestrutura real e laboratório técnico" data-en="Real infrastructure and technical lab">Infraestrutura real e laboratório técnico</h2>
+    </header>
+
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3 data-pt="Uma base para o ecossistema pessoal" data-en="A foundation for a personal ecosystem">Uma base para o ecossistema pessoal</h3>
+        <p
+          data-pt="O Logos está sendo construído para hospedar e organizar meus serviços, APIs, automações, bancos, arquivos, ferramentas administrativas e projetos experimentais. O objetivo de longo prazo é concentrar tudo o que for meu em uma infraestrutura documentada, persistente, recuperável e expansível."
+          data-en="Logos is being built to host and organize my services, APIs, automations, databases, files, administrative tools, and experimental projects. The long-term goal is to centralize everything I own in documented, persistent, recoverable, and expandable infrastructure."
+        >O Logos está sendo construído para hospedar e organizar meus serviços, APIs, automações, bancos, arquivos, ferramentas administrativas e projetos experimentais. O objetivo de longo prazo é concentrar tudo o que for meu em uma infraestrutura documentada, persistente, recuperável e expansível.</p>
+      </article>
+
+      <article class="overview-card">
+        <h3 data-pt="Estratégia VM primeiro" data-en="VM-first strategy">Estratégia VM primeiro</h3>
+        <p
+          data-pt="A primeira fase utiliza Ubuntu Server em uma máquina virtual no VirtualBox. Assim, consigo validar rede, acesso remoto, containers, persistência e backup antes de uma futura migração para hardware dedicado ou bare metal, sem tratar decisões ainda experimentais como definitivas."
+          data-en="The first phase runs Ubuntu Server in a VirtualBox virtual machine. This lets me validate networking, remote access, containers, persistence, and backup before a future move to dedicated hardware or bare metal, without treating experimental decisions as final."
+        >A primeira fase utiliza Ubuntu Server em uma máquina virtual no VirtualBox. Assim, consigo validar rede, acesso remoto, containers, persistência e backup antes de uma futura migração para hardware dedicado ou bare metal, sem tratar decisões ainda experimentais como definitivas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="architecture" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Arquitetura atual" data-en="Current architecture">Arquitetura atual</p>
+      <h2 data-pt="Serviços conectados sem exposição desnecessária" data-en="Connected services without unnecessary exposure">Serviços conectados sem exposição desnecessária</h2>
+      <p class="section-description"
+        data-pt="A administração chega ao host pela LAN ou pelo Tailscale. Dentro do Docker, a rede Starlink conecta os serviços por DNS interno. O Hermes recebe webhooks e callbacks OAuth pela exposição HTTPS do Tailscale Funnel."
+        data-en="Administration reaches the host through the LAN or Tailscale. Inside Docker, the Starlink network connects services through internal DNS. Hermes receives webhooks and OAuth callbacks through Tailscale Funnel's HTTPS exposure."
+      >A administração chega ao host pela LAN ou pelo Tailscale. Dentro do Docker, a rede Starlink conecta os serviços por DNS interno. O Hermes recebe webhooks e callbacks OAuth pela exposição HTTPS do Tailscale Funnel.</p>
+    </header>
+
+    <div class="logos-architecture" role="img" aria-label="Administração por LAN ou Tailscale acessa o Logos com Ubuntu Server e Docker. A rede privada Starlink conecta Hermes à Sophia e Sophia's Window à Sophia. O Tailscale Funnel oferece uma rota HTTPS pública até o Hermes para webhooks e callbacks OAuth.">
+      <div class="architecture-tier access-tier">
+        <span data-pt="Administração privada" data-en="Private administration">Administração privada</span>
+        <strong>LAN • Tailscale</strong>
+      </div>
+      <span class="tier-arrow" aria-hidden="true">↓</span>
+      <div class="architecture-tier host-tier">
+        <span>Logos</span>
+        <strong>Ubuntu Server</strong>
+        <small>Docker Engine • Compose V2</small>
+      </div>
+      <span class="tier-arrow" aria-hidden="true">↓</span>
+      <div class="architecture-tier network-tier">
+        <span>Starlink</span>
+        <strong data-pt="Rede Docker privada" data-en="Private Docker network">Rede Docker privada</strong>
+      </div>
+      <div class="public-route">
+        <span data-pt="Entrada pública controlada" data-en="Controlled public entry">Entrada pública controlada</span>
+        <strong>Internet HTTPS → Tailscale Funnel → Hermes</strong>
+        <small>Webhooks • OAuth callbacks</small>
+      </div>
+      <div class="architecture-services">
+        <div class="architecture-service hermes-service">
+          <span>Hermes</span>
+          <strong>n8n</strong>
+          <small data-pt="Automação e integração" data-en="Automation and integration">Automação e integração</small>
+        </div>
+        <span class="service-connector" aria-hidden="true">↔</span>
+        <div class="architecture-service sophia-service">
+          <span>Sophia</span>
+          <strong>PostgreSQL</strong>
+          <small data-pt="Memória estruturada" data-en="Structured memory">Memória estruturada</small>
+        </div>
+        <div class="window-connection" aria-hidden="true">↑</div>
+        <div class="architecture-service window-service">
+          <span>Sophia's Window</span>
+          <strong>pgAdmin</strong>
+          <small data-pt="Administração privada" data-en="Private administration">Administração privada</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-grid logos-components">
+      <article class="detail-card reveal">
+        <span class="component-state state-active" data-pt="Implantado" data-en="Deployed">Implantado</span>
+        <h3>Logos</h3>
+        <p data-pt="O host Ubuntu Server que abriga o ecossistema. SSH e Tailscale iniciam com o sistema, e o Tailscale permanece independente do Docker para preservar o acesso remoto ao host. O Wake-on-LAN permite sua inicialização remota." data-en="The Ubuntu Server host for the ecosystem. SSH and Tailscale start with the system, while Tailscale remains independent from Docker to preserve remote access to the host. Wake-on-LAN enables remote startup.">O host Ubuntu Server que abriga o ecossistema. SSH e Tailscale iniciam com o sistema, e o Tailscale permanece independente do Docker para preservar o acesso remoto ao host. O Wake-on-LAN permite sua inicialização remota.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="component-state state-active" data-pt="Implantado" data-en="Deployed">Implantado</span>
+        <h3>Starlink</h3>
+        <p data-pt="Rede bridge compartilhada que permite comunicação privada entre projetos Compose separados usando o DNS interno do Docker." data-en="A shared bridge network that enables private communication between separate Compose projects using Docker's internal DNS.">Rede bridge compartilhada que permite comunicação privada entre projetos Compose separados usando o DNS interno do Docker.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="component-state state-active" data-pt="Implantado" data-en="Deployed">Implantado</span>
+        <h3>Sophia</h3>
+        <p data-pt="Instância PostgreSQL central e persistente. Cada aplicação recebe seu próprio banco e usuário técnico; administração e aplicações usam credenciais separadas." data-en="A central, persistent PostgreSQL instance. Each application receives its own database and technical user; administration and applications use separate credentials.">Instância PostgreSQL central e persistente. Cada aplicação recebe seu próprio banco e usuário técnico; administração e aplicações usam credenciais separadas.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="component-state state-active" data-pt="Implantado" data-en="Deployed">Implantado</span>
+        <h3>Sophia's Window</h3>
+        <p data-pt="Interface pgAdmin persistente para administração visual da Sophia, conectada internamente pela Starlink e mantida fora da exposição pública." data-en="A persistent pgAdmin interface for visual administration of Sophia, connected internally through Starlink and kept away from public exposure.">Interface pgAdmin persistente para administração visual da Sophia, conectada internamente pela Starlink e mantida fora da exposição pública.</p>
+      </article>
+
+      <article class="detail-card reveal">
+        <span class="component-state state-active" data-pt="Implantado" data-en="Deployed">Implantado</span>
+        <h3>Hermes</h3>
+        <p data-pt="Serviço n8n com volume persistente, banco e usuário próprios na Sophia e chave de criptografia preservada. Recebe webhooks e callbacks OAuth por HTTPS através do Tailscale Funnel." data-en="An n8n service with a persistent volume, its own database and user in Sophia, and a preserved encryption key. It receives webhooks and OAuth callbacks over HTTPS through Tailscale Funnel.">Serviço n8n com volume persistente, banco e usuário próprios na Sophia e chave de criptografia preservada. Recebe webhooks e callbacks OAuth por HTTPS através do Tailscale Funnel.</p>
+      </article>
+
+      <article class="detail-card component-planned reveal">
+        <span class="component-state state-planned" data-pt="Planejado" data-en="Planned">Planejado</span>
+        <h3>Janus</h3>
+        <p data-pt="Futura camada de gateway para separar a entrada pública necessária para webhooks das interfaces administrativas privadas." data-en="A future gateway layer to separate the public entry points required for webhooks from private administrative interfaces.">Futura camada de gateway para separar a entrada pública necessária para webhooks das interfaces administrativas privadas.</p>
+        <a class="component-project-link" href="Janus.html">
+          <span data-pt="Conhecer o Janus" data-en="Explore Janus">Conhecer o Janus</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+    </div>
+
+    <div class="architecture-note storage-note">
+      <strong data-pt="Armazenamento por responsabilidade" data-en="Storage by responsibility">Armazenamento por responsabilidade</strong>
+      <p data-pt="O SSD concentra sistema, Docker, aplicações e bancos ativos. O HD recebe arquivos pessoais e cópias locais de backup. Configurações, persistência, dados de negócio, dumps e itens recriáveis são tratados separadamente para permitir reconstruções seletivas." data-en="The SSD holds the system, Docker, applications, and active databases. The HDD stores personal files and local backup copies. Configuration, persistence, business data, dumps, and reproducible items are handled separately to enable selective rebuilds.">O SSD concentra sistema, Docker, aplicações e bancos ativos. O HD recebe arquivos pessoais e cópias locais de backup. Configurações, persistência, dados de negócio, dumps e itens recriáveis são tratados separadamente para permitir reconstruções seletivas.</p>
+    </div>
+
+    <div class="architecture-note organization-note">
+      <strong data-pt="Organização operacional" data-en="Operational organization">Organização operacional</strong>
+      <p data-pt="Definições de containers, volumes, secrets, scripts, storage e backups possuem responsabilidades separadas. Os serviços usam a política restart: unless-stopped, enquanto a documentação necessária para reconstrução é mantida externamente para não depender da integridade da VM." data-en="Container definitions, volumes, secrets, scripts, storage, and backups have separate responsibilities. Services use the restart: unless-stopped policy, while the documentation required for reconstruction is stored externally so it does not depend on the VM's integrity.">Definições de containers, volumes, secrets, scripts, storage e backups possuem responsabilidades separadas. Os serviços usam a política restart: unless-stopped, enquanto a documentação necessária para reconstrução é mantida externamente para não depender da integridade da VM.</p>
+    </div>
+  </section>
+
+  <section id="janus" class="section container janus-section reveal">
+    <header class="section-header janus-section-header">
+      <p class="section-kicker" data-pt="Projeto relacionado" data-en="Related project">Projeto relacionado</p>
+      <div class="janus-title-line">
+        <h2 data-pt="Janus: a futura porta de entrada do Logos" data-en="Janus: the future gateway to Logos">Janus: a futura porta de entrada do Logos</h2>
+        <span class="component-state state-planned janus-planned-badge" data-pt="Planejado" data-en="Planned">Planejado</span>
+      </div>
+      <p class="section-description"
+        data-pt="O Janus é o gateway planejado para controlar as futuras entradas públicas da infraestrutura sem transformar o Hermes ou as interfaces administrativas em pontos de acesso direto."
+        data-en="Janus is the planned gateway for controlling the infrastructure's future public entry points without turning Hermes or administrative interfaces into direct access points."
+      >O Janus é o gateway planejado para controlar as futuras entradas públicas da infraestrutura sem transformar o Hermes ou as interfaces administrativas em pontos de acesso direto.</p>
+    </header>
+
+    <div class="janus-intro">
+      <article class="janus-intro-copy">
+        <p class="janus-eyebrow">ASP.NET Core · API · Docker</p>
+        <h3 data-pt="O porteiro do ecossistema" data-en="The ecosystem's gatekeeper">O porteiro do ecossistema</h3>
+        <p data-pt="Chamadas externas deverão passar pelo Janus para serem protegidas, validadas, normalizadas e direcionadas aos serviços privados do Logos. O Hermes continuará responsável pelas automações e a Sophia pela persistência dos dados." data-en="External calls should pass through Janus to be protected, validated, normalized, and routed to Logos's private services. Hermes will remain responsible for automation and Sophia for data persistence.">Chamadas externas deverão passar pelo Janus para serem protegidas, validadas, normalizadas e direcionadas aos serviços privados do Logos. O Hermes continuará responsável pelas automações e a Sophia pela persistência dos dados.</p>
+        <blockquote class="janus-quote">
+          <p data-pt="Janus será o porteiro, Hermes continuará como o mensageiro e Sophia permanecerá como a memória do ecossistema." data-en="Janus will be the gatekeeper, Hermes will remain the messenger, and Sophia will continue as the ecosystem's memory.">Janus será o porteiro, Hermes continuará como o mensageiro e Sophia permanecerá como a memória do ecossistema.</p>
+        </blockquote>
+        <a class="btn janus-page-link" href="Janus.html" data-pt="Conhecer o projeto Janus" data-en="Explore the Janus project">Conhecer o projeto Janus</a>
+      </article>
+
+      <div class="janus-portal" aria-hidden="true">
+        <div class="portal-inputs"><span>WEBHOOKS</span><span>AI</span><span>OAUTH</span></div>
+        <div class="portal-lines"><i></i><i></i><i></i></div>
+        <div class="portal-core"><small>PLANNED GATEWAY</small><strong>JANUS</strong><span>ASP.NET Core</span></div>
+        <div class="portal-output"><span>STARLINK</span><i></i><div><b>HERMES</b><b>SOPHIA</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resilience" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker" data-pt="Operação e recuperação" data-en="Operations and recovery">Operação e recuperação</p>
+      <h2 data-pt="Acesso controlado e dados recuperáveis" data-en="Controlled access and recoverable data">Acesso controlado e dados recuperáveis</h2>
+      <p class="section-description" data-pt="A segurança é aplicada por redução de exposição, separação de credenciais, permissões adequadas e uma estratégia de backup que continua amadurecendo." data-en="Security is applied through reduced exposure, credential separation, appropriate permissions, and a backup strategy that continues to mature.">A segurança é aplicada por redução de exposição, separação de credenciais, permissões adequadas e uma estratégia de backup que continua amadurecendo.</p>
+    </header>
+
+    <div class="operations-grid">
+      <article class="operation-card reveal">
+        <span class="operation-mark" aria-hidden="true">01</span>
+        <h3 data-pt="Segurança operacional" data-en="Operational security">Segurança operacional</h3>
+        <ul class="logos-list">
+          <li data-pt="SSH acessível pela LAN ou pelo Tailscale, sem publicação direta na internet." data-en="SSH is available through the LAN or Tailscale, without direct internet exposure.">SSH acessível pela LAN ou pelo Tailscale, sem publicação direta na internet.</li>
+          <li data-pt="PostgreSQL, painéis administrativos e armazenamento permanecem privados." data-en="PostgreSQL, administrative panels, and storage remain private.">PostgreSQL, painéis administrativos e armazenamento permanecem privados.</li>
+          <li data-pt="Secrets possuem acesso restrito e as aplicações usam credenciais de banco isoladas." data-en="Secrets have restricted access and applications use isolated database credentials.">Secrets possuem acesso restrito e as aplicações usam credenciais de banco isoladas.</li>
+          <li data-pt="O Hermes está acessível pela internet através do Tailscale Funnel para receber webhooks e callbacks OAuth; a URL pública não é divulgada." data-en="Hermes is reachable from the internet through Tailscale Funnel to receive webhooks and OAuth callbacks; the public URL is not disclosed.">O Hermes está acessível pela internet através do Tailscale Funnel para receber webhooks e callbacks OAuth; a URL pública não é divulgada.</li>
+          <li data-pt="O Janus permanece planejado para separar as rotas públicas do Hermes da superfície administrativa." data-en="Janus remains planned to separate Hermes's public routes from its administrative surface.">O Janus permanece planejado para separar as rotas públicas do Hermes da superfície administrativa.</li>
+        </ul>
+      </article>
+
+      <article class="operation-card reveal">
+        <span class="operation-mark" aria-hidden="true">02</span>
+        <h3 data-pt="Backup criptografado" data-en="Encrypted backup">Backup criptografado</h3>
+        <ul class="logos-list">
+          <li data-pt="Dumps consistentes do PostgreSQL com preservação de roles e permissões." data-en="Consistent PostgreSQL dumps with roles and permissions preserved.">Dumps consistentes do PostgreSQL com preservação de roles e permissões.</li>
+          <li data-pt="O diretório ativo do PostgreSQL fica fora da cópia genérica; a recuperação do banco parte dos dumps consistentes." data-en="The active PostgreSQL directory stays out of the generic copy; database recovery starts from consistent dumps.">O diretório ativo do PostgreSQL fica fora da cópia genérica; a recuperação do banco parte dos dumps consistentes.</li>
+          <li data-pt="Snapshots criptografados e deduplicados pelo Restic." data-en="Encrypted, deduplicated snapshots with Restic.">Snapshots criptografados e deduplicados pelo Restic.</li>
+          <li data-pt="Transporte remoto por rclone para um repositório no Google Drive." data-en="Remote transport with rclone to a repository in Google Drive.">Transporte remoto por rclone para um repositório no Google Drive.</li>
+          <li data-pt="Configurações, volumes importantes, scripts, storage e secrets entram na seleção de recuperação." data-en="Configuration, important volumes, scripts, storage, and secrets are included in the recovery selection.">Configurações, volumes importantes, scripts, storage e secrets entram na seleção de recuperação.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="recovery-state">
+      <span class="component-state state-progress" data-pt="Em evolução" data-en="Evolving">Em evolução</span>
+      <p data-pt="O repositório remoto e os primeiros snapshots já foram iniciados. Automação completa, retenção, monitoramento e testes recorrentes de restauração continuam sendo desenvolvidos e validados." data-en="The remote repository and initial snapshots have been started. Full automation, retention, monitoring, and recurring restore tests are still being developed and validated.">O repositório remoto e os primeiros snapshots já foram iniciados. Automação completa, retenção, monitoramento e testes recorrentes de restauração continuam sendo desenvolvidos e validados.</p>
+    </div>
+  </section>
+
+  <section id="stack" class="section container reveal">
+    <header class="section-header">
+      <p class="section-kicker">Stack</p>
+      <h2 data-pt="Tecnologias organizadas por responsabilidade" data-en="Technologies organized by responsibility">Tecnologias organizadas por responsabilidade</h2>
+    </header>
+
+    <div class="stack-grid">
+      <article class="stack-card reveal">
+        <h3 data-pt="Fundação e acesso" data-en="Foundation and access">Fundação e acesso</h3>
+        <span>Ubuntu Server</span><span>Linux</span><span>VirtualBox</span><span>SSH</span><span>Netplan</span><span>Wake-on-LAN</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Containers e rede" data-en="Containers and networking">Containers e rede</h3>
+        <span>Docker Engine</span><span>Docker Compose V2</span><span>Starlink</span><span>Tailscale</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Dados e automação" data-en="Data and automation">Dados e automação</h3>
+        <span>PostgreSQL</span><span>pgAdmin</span><span>n8n</span><span>Webhooks</span>
+      </article>
+
+      <article class="stack-card reveal">
+        <h3 data-pt="Backup e recuperação" data-en="Backup and recovery">Backup e recuperação</h3>
+        <span>pg_dump</span><span>Restic</span><span>rclone</span><span>Google Drive</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="evolution" class="section container reveal">
+    <div class="status-panel status-continuous logos-status-panel">
+      <div>
+        <p class="section-kicker" data-pt="Projeto em constante evolução" data-en="Continuously evolving project">Projeto em constante evolução</p>
+        <h2 data-pt="Infraestrutura construída, testada e documentada por etapas" data-en="Infrastructure built, tested, and documented in stages">Infraestrutura construída, testada e documentada por etapas</h2>
+        <p data-pt="O Logos funciona como laboratório técnico e infraestrutura real. Seu valor está nos serviços implantados e também nas decisões, incidentes, correções e aprendizados registrados durante a construção." data-en="Logos works as both a technical lab and real infrastructure. Its value lies in the deployed services as well as the decisions, incidents, fixes, and lessons recorded during its construction.">O Logos funciona como laboratório técnico e infraestrutura real. Seu valor está nos serviços implantados e também nas decisões, incidentes, correções e aprendizados registrados durante a construção.</p>
+      </div>
+      <ul class="status-facts">
+        <li data-pt="Automatizar backups, retenção e testes regulares de restauração" data-en="Automate backups, retention, and regular restore tests">Automatizar backups, retenção e testes regulares de restauração</li>
+        <li data-pt="Adicionar monitoramento, rotação e centralização de logs" data-en="Add monitoring, log rotation, and centralized logging">Adicionar monitoramento, rotação e centralização de logs</li>
+        <li data-pt="Criar dashboard em Blazor e implementar o gateway Janus" data-en="Build a Blazor dashboard and implement the Janus gateway">Criar dashboard em Blazor e implementar o gateway Janus</li>
+        <li data-pt="Adicionar serviços, armazenamento e futuros agentes de IA" data-en="Add services, storage, and future AI agents">Adicionar serviços, armazenamento e futuros agentes de IA</li>
+        <li data-pt="Migrar para hardware dedicado quando houver necessidade" data-en="Move to dedicated hardware when needed">Migrar para hardware dedicado quando houver necessidade</li>
+      </ul>
+    </div>
+
+    <aside class="youtube-note">
+      <span class="youtube-mark" aria-hidden="true">▶</span>
+      <div>
+        <h3 data-pt="Construção documentada no YouTube" data-en="Build documented on YouTube">Construção documentada no YouTube</h3>
+        <p data-pt="Estou registrando no meu canal as decisões técnicas, problemas reais, correções, mudanças de arquitetura e a evolução do ambiente desde a base. O objetivo é documentar tanto o resultado quanto o processo de transformar um computador pessoal em uma infraestrutura organizada e reproduzível." data-en="I am documenting the technical decisions, real problems, fixes, architecture changes, and the environment's evolution from the ground up on my channel. The goal is to document both the outcome and the process of turning a personal computer into organized, reproducible infrastructure.">Estou registrando no meu canal as decisões técnicas, problemas reais, correções, mudanças de arquitetura e a evolução do ambiente desde a base. O objetivo é documentar tanto o resultado quanto o processo de transformar um computador pessoal em uma infraestrutura organizada e reproduzível.</p>
+        <a class="youtube-link" href="https://youtu.be/nkBucZx9bhw?si=p6jxwyPDV7Z4P7As" target="_blank" rel="noopener noreferrer">
+          <span data-pt="Acompanhar no YouTube" data-en="Follow on YouTube">Acompanhar no YouTube</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </aside>
+  </section>
+</main>
+
+<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto Logos Server" data-en="© 2026 Gustavo Soares — Logos Server Project">© 2026 Gustavo Soares — Projeto Logos Server</footer>
+<script src="scripts/navigation.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>

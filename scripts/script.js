@@ -32,12 +32,11 @@ if ("IntersectionObserver" in window) {
 
 let language = "pt";
 const languageButton = document.getElementById("langBtn");
-const translatedElements = document.querySelectorAll("[data-pt][data-en]");
 
 languageButton.addEventListener("click", () => {
   language = language === "pt" ? "en" : "pt";
 
-  translatedElements.forEach((element) => {
+  document.querySelectorAll("[data-pt][data-en]").forEach((element) => {
     element.textContent = element.dataset[language];
   });
 

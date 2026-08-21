@@ -1,217 +1,367 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ToDo API — Projeto de Portfólio</title>
-<link rel="icon" href="img/favicon.ico" sizes="any" />
-<link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-<link rel="stylesheet" href="styles/ToDo.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="API REST de gerenciamento de tarefas desenvolvida com ASP.NET Core, Clean Architecture, JWT, MediatR, PostgreSQL e Docker.">
+  <title>ToDo API | Gustavo Soares</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/ToDo.css">
+  <link rel="stylesheet" href="styles/Project.css">
+  <link rel="stylesheet" href="styles/ToDoProject.css?v=20260821">
+  <link rel="stylesheet" href="styles/responsive.css?v=20260821">
 </head>
-<body>
+<body class="todo-page">
 
 <header class="header">
   <div class="container">
-    <h1 class="logo">ToDo API</h1>
-
-    <nav class="nav">
-      <a href="index.html" data-pt="Voltar ao Portfólio" data-en="Back to Portfolio">Voltar ao Portfólio</a>
-      <a href="#overview" data-pt="Visão Geral" data-en="Overview">Visão Geral</a>
-      <a href="#features" data-pt="Funcionalidades" data-en="Features">Funcionalidades</a>
-      <a href="#stack" data-pt="Tecnologia" data-en="Technology">Tecnologia</a>
-      <a href="#vision" data-pt="Visão" data-en="Vision">Visão</a>
+    <a class="logo" href="#top" aria-label="Ir para o início da página">ToDo API</a>
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação do projeto">
+      <a href="index.html">Portfólio</a>
+      <a href="#projeto">O projeto</a>
+      <a href="#arquitetura">Arquitetura</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="#api">API</a>
+      <a href="#execucao">Execução</a>
+      <a href="#evolucao">Evolução</a>
     </nav>
-
-    <button id="langBtn" class="lang-btn">EN</button>   
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
-<main>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-content">
-
-    <div class="hero-text">
-      <h2>ToDo API</h2>
-
-      <h3 
-        data-pt="API REST para Gerenciamento de Tarefas" 
-        data-en="REST API for Task Management">
-        API REST para Gerenciamento de Tarefas
-      </h3>
-
-      <p 
-        data-pt="A ToDo API é uma aplicação backend desenvolvida em ASP.NET Core, com foco em boas práticas, segurança e arquitetura limpa, simulando um cenário real de produção."
-        data-en="ToDo API is a backend application built with ASP.NET Core, focused on best practices, security, and clean architecture, simulating a real-world production scenario.">
-        A ToDo API é uma aplicação backend desenvolvida em ASP.NET Core, 
-        com foco em boas práticas, segurança e arquitetura limpa, 
-        simulando um cenário real de produção.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="https://github.com/SIRSoares33/ToDoApi" class="btn"
-           data-pt="Ver no GitHub"
-           data-en="View on GitHub">
-          Ver no GitHub
-        </a>
-
-        <a href="#stack" class="btn-outline"
-           data-pt="Ver Stack"
-           data-en="View Tech Stack">
-          Ver Stack
-        </a>
+<main id="top">
+  <section class="hero project-hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="project-badge status-evolution">Backend · REST API · Projeto educacional</p>
+        <h1>ToDo API</h1>
+        <h2>Uma API de gerenciamento de tarefas construída para aplicar Clean Architecture, autenticação JWT e boas práticas do ecossistema .NET.</h2>
+        <p>Um projeto de estudo em evolução que reúne identidade, autorização, casos de uso, persistência, configuração e containers em uma única solução backend.</p>
+        <div class="hero-buttons">
+          <a class="btn" href="https://github.com/SIRSoares33/ToDoApi" target="_blank" rel="noopener noreferrer">Ver código no GitHub</a>
+          <a class="btn-outline" href="#projeto">Explorar o projeto</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <div class="project-visual todo-visual">
+          <span class="visual-core">.NET 10</span>
+          <div class="visual-grid">
+            <span>ASP.NET Core</span><span>MediatR</span><span>PostgreSQL</span><span>Docker</span>
+          </div>
+          <p class="visual-status"><span></span> Em evolução</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="hero-image">
-      <div class="image-box">
-        <span>API</span>
+  <section id="projeto" class="section container">
+    <header class="section-header">
+      <p class="section-kicker">Visão geral</p>
+      <h2>O projeto</h2>
+      <p class="section-description">O domínio é simples de propósito: assim, o estudo pode se concentrar nas decisões que sustentam uma API organizada.</p>
+    </header>
+    <div class="overview-grid">
+      <article class="overview-card">
+        <h3>Mais do que um CRUD</h3>
+        <p>ToDo API é uma API REST para gerenciamento de usuários e tarefas. A solução usa ASP.NET Core, autenticação JWT, autorização por roles, MediatR e Entity Framework Core em camadas inspiradas na Clean Architecture.</p>
+      </article>
+      <article class="overview-card">
+        <h3>Finalidade educacional</h3>
+        <p>O objetivo é transformar conceitos estudados separadamente em uma aplicação coerente, exercitando dependências, contratos, regras, persistência e execução de forma semelhante às preocupações de um projeto real.</p>
+      </article>
+    </div>
+    <aside class="audit-callout" aria-labelledby="audit-title">
+      <div>
+        <p class="callout-label">Estado auditado do código</p>
+        <h3 id="audit-title">Autenticação e usuários estão ativos; tarefas aguardam integração à API compilada.</h3>
+      </div>
+      <p>Os commands, queries, handlers, serviços, repositório e regras de propriedade das tarefas existem. Entretanto, <code>TasksController.cs</code> está em <code>ToDo.Api/</code>, enquanto o projeto compilado fica em <code>Todo.Api/</code>. Em sistemas com diferenciação entre maiúsculas e minúsculas, esse controller não entra no assembly atual. Por isso, as rotas de tarefas são apresentadas nesta página como implementação pendente de integração, e não como endpoints disponíveis.</p>
+    </aside>
+  </section>
+
+  <section class="section container">
+    <header class="section-header">
+      <p class="section-kicker">Motivação</p>
+      <h2>Por que construí este projeto?</h2>
+    </header>
+    <div class="motivation-layout">
+      <div class="motivation-copy">
+        <p>Desenvolvi o ToDo API para transformar conceitos estudados separadamente em uma aplicação backend completa e organizada. A ideia não era apenas criar endpoints de tarefas, mas entender como autenticação, autorização, regras de negócio, persistência, casos de uso, configuração e infraestrutura se conectam em um projeto ASP.NET Core.</p>
+        <p>Escolhi um domínio conhecido para direcionar a atenção ao que realmente queria exercitar: separação de responsabilidades, proteção de endpoints, identificação do usuário autenticado, comunicação entre camadas, testabilidade e execução reproduzível.</p>
+        <p>O projeto também funciona como espaço de revisão. As limitações encontradas fazem parte do aprendizado e ajudam a transformar decisões implícitas em próximos passos concretos.</p>
+      </div>
+      <ul class="focus-list" aria-label="Focos arquiteturais do projeto">
+        <li>Organização das dependências</li><li>Autenticação e autorização</li><li>Casos de uso isolados</li><li>Persistência com EF Core</li><li>Configuração externa</li><li>Manutenibilidade e testes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section container">
+    <header class="section-header">
+      <p class="section-kicker">Objetivos</p>
+      <h2>O que eu quis consolidar</h2>
+      <p class="section-description">A arquitetura busca criar uma base compreensível para evolução, sem afirmar que o projeto está pronto para produção.</p>
+    </header>
+    <div class="learning-grid">
+      <article class="learning-card"><span>01</span><h3>API e contratos</h3><p>ASP.NET Core, REST, controllers enxutos, DTOs, códigos HTTP e Swagger/OpenAPI.</p></article>
+      <article class="learning-card"><span>02</span><h3>Arquitetura</h3><p>Separação de responsabilidades, Dependency Injection, MediatR, commands, queries e handlers.</p></article>
+      <article class="learning-card"><span>03</span><h3>Identidade</h3><p>JWT, claims, identificação do usuário autenticado e autorização baseada nas roles Admin e User.</p></article>
+      <article class="learning-card"><span>04</span><h3>Dados e ambiente</h3><p>Entity Framework Core, PostgreSQL, migrations, variáveis de ambiente, Docker e Docker Compose.</p></article>
+    </div>
+  </section>
+
+  <section class="section container">
+    <header class="section-header">
+      <p class="section-kicker">Stack confirmada</p>
+      <h2>Tecnologias utilizadas</h2>
+    </header>
+    <div class="stack-grid todo-stack-grid">
+      <article class="stack-card"><h3>Plataforma</h3><span>C#</span><span>.NET 10</span><span>ASP.NET Core Web API</span><span>Dependency Injection</span></article>
+      <article class="stack-card"><h3>Aplicação</h3><span>MediatR</span><span>FluentValidation</span><span>AutoMapper</span><span>DTOs</span></article>
+      <article class="stack-card"><h3>Dados e segurança</h3><span>EF Core</span><span>PostgreSQL</span><span>JWT</span><span>Claims</span><span>Roles</span></article>
+      <article class="stack-card"><h3>Execução e qualidade</h3><span>Docker</span><span>Docker Compose</span><span>Swagger</span><span>xUnit</span><span>Moq</span><span>FluentAssertions</span></article>
+    </div>
+  </section>
+
+  <section id="arquitetura" class="section container">
+    <header class="section-header">
+      <p class="section-kicker">Organização interna</p>
+      <h2>Arquitetura</h2>
+      <p class="section-description">A solução contém cinco projetos de execução. O domínio permanece independente dos detalhes de HTTP, banco, Swagger e Docker.</p>
+    </header>
+    <div class="architecture-layout">
+      <div class="architecture-map" aria-label="Mapa das dependências entre projetos">
+        <article class="architecture-node node-api"><small>Entrada</small><strong>Todo.Api</strong><span>referencia CrossCutting</span></article>
+        <span class="architecture-arrow" aria-hidden="true">↓</span>
+        <article class="architecture-node node-cross"><small>Composição</small><strong>ToDo.CrossCutting</strong><span>referencia Application, Domain e Infrastructure</span></article>
+        <span class="architecture-arrow" aria-hidden="true">↓</span>
+        <div class="architecture-pair">
+          <article class="architecture-node node-application"><small>Casos de uso</small><strong>ToDo.Application</strong><span>referencia Domain</span></article>
+          <article class="architecture-node node-infrastructure"><small>Detalhes externos</small><strong>ToDo.Infrastructure</strong><span>referencia Application e Domain</span></article>
+        </div>
+        <span class="architecture-arrow" aria-hidden="true">↓</span>
+        <article class="architecture-node node-domain"><small>Núcleo</small><strong>ToDo.Domain</strong><span>não referencia outros projetos da solução</span></article>
+      </div>
+      <div class="architecture-context">
+        <h3>Estrutura real</h3>
+        <pre><code>ToDo.slnx
+├── Todo.Api/
+├── ToDo.Application/
+├── ToDo.Domain/
+├── ToDo.Infrastructure/
+├── CrossCutting/
+└── ToDo.Tests/
+    ├── ToDo.Api.Tests/
+    ├── ToDo.Application.Tests/
+    ├── ToDo.Domain.Tests/
+    └── ToDo.Infrastructure.Tests/</code></pre>
+        <p>O projeto <code>CrossCutting</code> atua como composição: registra Application e Infrastructure e executa migrations/seeding na inicialização.</p>
       </div>
     </div>
-
-  </div>
-</section>
-
-<!-- OVERVIEW -->
-<section id="overview" class="section container reveal">
-  <header class="section-header">
-    <h3 data-pt="Visão Geral" data-en="Overview">Visão Geral</h3>
-  </header>
-
-  <p class="text-block"
-     data-pt="Este projeto foi desenvolvido com objetivo educacional e de portfólio, visando consolidar conhecimentos em desenvolvimento de APIs REST com ASP.NET Core, aplicando Clean Architecture, separação de responsabilidades e padrões modernos de projeto."
-     data-en="This project was developed for educational and portfolio purposes, aiming to consolidate knowledge in REST API development with ASP.NET Core, applying Clean Architecture, separation of concerns, and modern design patterns.">
-    Este projeto foi desenvolvido com objetivo educacional e de portfólio, 
-    visando consolidar conhecimentos em desenvolvimento de APIs REST com ASP.NET Core, 
-    aplicando Clean Architecture, separação de responsabilidades e padrões modernos de projeto.
-  </p>
-</section>
-
-<!-- FEATURES -->
-<section id="features" class="section container reveal">
-  <header class="section-header">
-    <h3 data-pt="Funcionalidades Principais" data-en="Key Features">Funcionalidades Principais</h3>
-  </header>
-
-  <div class="features-grid">
-
-    <div class="feature-card reveal">
-      <h4 data-pt="🔐 Autenticação JWT" data-en="🔐 JWT Authentication">🔐 Autenticação JWT</h4>
-      <p data-pt="Autenticação segura utilizando JWT, com geração de tokens e validação baseada em claims."
-         data-en="Secure authentication using JWT, with token generation and claim-based validation.">
-        Autenticação segura utilizando JWT, com geração de tokens e validação baseada em claims.
-      </p>
+    <div class="layer-grid">
+      <article class="layer-card"><p>01 · Entrada</p><h3>Todo.Api</h3><ul><li>Controllers e respostas HTTP</li><li>Autenticação e autorização</li><li>Middlewares e Swagger</li><li>Inicialização da aplicação</li></ul></article>
+      <article class="layer-card"><p>02 · Casos de uso</p><h3>ToDo.Application</h3><ul><li>Commands, queries e handlers</li><li>DTOs, interfaces e AutoMapper</li><li>Validações com FluentValidation</li><li>Orquestração por MediatR</li></ul></article>
+      <article class="layer-card"><p>03 · Núcleo</p><h3>ToDo.Domain</h3><ul><li>Entidades User e Todo</li><li>Value Objects e regras</li><li>Roles Admin e User</li><li>DomainException</li></ul></article>
+      <article class="layer-card"><p>04 · Detalhes</p><h3>ToDo.Infrastructure</h3><ul><li>AppDbContext e Npgsql</li><li>Repositórios e serviços</li><li>Configurações de entidades</li><li>Migrations e autenticação JWT</li></ul></article>
+      <article class="layer-card"><p>05 · Composição</p><h3>CrossCutting</h3><ul><li>Registro do MediatR</li><li>Validators e AutoMapper</li><li>Injeção das implementações</li><li>Migrations e seed inicial</li></ul></article>
     </div>
+  </section>
 
-    <div class="feature-card reveal">
-      <h4 data-pt="👥 Controle de Usuários" data-en="👥 User Management">👥 Controle de Usuários</h4>
-      <p data-pt="Gerenciamento de usuários com permissões e controle de acesso baseado em roles."
-         data-en="User management with permissions and role-based access control.">
-        Gerenciamento de usuários com permissões e controle de acesso baseado em roles.
-      </p>
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Do HTTP ao banco</p><h2>Como uma requisição percorre a aplicação</h2></header>
+    <div class="request-flow" aria-label="Fluxo de uma requisição de login">
+      <span>Cliente</span><b aria-hidden="true">→</b><span>AuthController</span><b aria-hidden="true">→</b><span>LoginCommand</span><b aria-hidden="true">→</b><span>MediatR</span><b aria-hidden="true">→</b><span>LoginHandler</span><b aria-hidden="true">→</b><span>IAuthService</span><b aria-hidden="true">→</b><span>UserRepository</span><b aria-hidden="true">→</b><span>PostgreSQL</span>
     </div>
-
-    <div class="feature-card reveal">
-      <h4 data-pt="✅ Gerenciamento de Tarefas" data-en="✅ Task Management">✅ Gerenciamento de Tarefas</h4>
-      <p data-pt="Criação, edição, listagem e exclusão de tarefas vinculadas ao usuário autenticado."
-         data-en="Creation, update, listing, and deletion of tasks linked to the authenticated user.">
-        Criação, edição, listagem e exclusão de tarefas vinculadas ao usuário autenticado.
-      </p>
+    <div class="flow-explanation">
+      <ol><li>A API recebe e interpreta a requisição HTTP.</li><li>O controller cria um command ou query com o contrato necessário.</li><li>O MediatR encontra o handler correspondente.</li><li>O handler delega a regra ao serviço de aplicação.</li><li>A implementação de Infrastructure consulta ou persiste dados.</li><li>O resultado retorna ao controller, que define a resposta HTTP.</li></ol>
+      <aside><h3>Por que MediatR?</h3><p>Ele funciona como intermediário entre HTTP e casos de uso. Isso mantém controllers menores, explicita cada intenção e facilita testar handlers isoladamente. O projeto não implementa pipeline behaviors neste momento.</p></aside>
     </div>
+    <details class="todo-details">
+      <summary>Ver o fluxo de tarefas implementado no código</summary>
+      <div class="details-content"><p>O fluxo de criação já possui classes reais, mas sua entrada HTTP depende da correção do controller:</p><pre><code>TasksController
+  → AddToDoCommand
+  → AddToDoHandler
+  → ITodoService
+  → ITodoRepository
+  → AppDbContext
+  → PostgreSQL</code></pre></div>
+    </details>
+  </section>
 
-    <div class="feature-card reveal">
-      <h4 data-pt="🛡️ Autorização por Roles" data-en="🛡️ Role-based Authorization">🛡️ Autorização por Roles</h4>
-      <p data-pt="Proteção de endpoints com autorização baseada em perfis como Admin e User."
-         data-en="Endpoint protection using role-based authorization such as Admin and User.">
-        Proteção de endpoints com autorização baseada em perfis como Admin e User.
-      </p>
+  <section id="seguranca" class="section container">
+    <header class="section-header"><p class="section-kicker">Identidade e acesso</p><h2>Autenticação e autorização</h2><p class="section-description">Autenticação confirma quem faz a requisição; autorização verifica se essa identidade pode executar a operação.</p></header>
+    <div class="auth-flow">
+      <article><span>1</span><h3>Cadastro ou login</h3><p>Credenciais entram por <code>AuthController</code> e são validadas.</p></article>
+      <article><span>2</span><h3>Token</h3><p>O serviço gera um JWT após verificar a senha armazenada com hash.</p></article>
+      <article><span>3</span><h3>Claims</h3><p>O token contém <code>NameIdentifier</code>, <code>Email</code>, <code>Name</code> e <code>Role</code>.</p></article>
+      <article><span>4</span><h3>Autorização</h3><p>O middleware valida o token e os atributos <code>[Authorize]</code> aplicam as restrições.</p></article>
     </div>
-
-    <div class="feature-card reveal">
-      <h4 data-pt="📦 Clean Architecture" data-en="📦 Clean Architecture">📦 Clean Architecture</h4>
-      <p data-pt="Separação clara de camadas para facilitar manutenção, testes e escalabilidade."
-         data-en="Clear layer separation to improve maintainability, testing, and scalability.">
-        Separação clara de camadas para facilitar manutenção, testes e escalabilidade.
-      </p>
+    <div class="code-and-copy">
+      <div><h3>Header de uma rota protegida</h3><pre><code>Authorization: Bearer {token}</code></pre></div>
+      <div><h3>Roles confirmadas</h3><div class="role-list"><span>Admin</span><span>User</span></div><p><code>NameIdentifier</code> conecta a identidade às operações do próprio usuário. <code>Role</code> diferencia ações administrativas das ações autenticadas comuns. Não há refresh token no estado atual.</p></div>
     </div>
-
-    <div class="feature-card reveal">
-      <h4 data-pt="🔌 API REST" data-en="🔌 REST API">🔌 API REST</h4>
-      <p data-pt="Endpoints RESTful seguindo boas práticas de design e padronização."
-         data-en="RESTful endpoints following best practices and standardization.">
-        Endpoints RESTful seguindo boas práticas de design e padronização.
-      </p>
+    <div class="todo-table-wrap">
+      <table class="todo-table">
+        <caption>Controle de acesso confirmado no código</caption>
+        <thead><tr><th>Operação</th><th>User</th><th>Admin</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Operação">Atualizar ou excluir a própria conta</td><td data-label="User">Sim</td><td data-label="Admin">Sim</td></tr>
+          <tr><td data-label="Operação">Listar usuários</td><td data-label="User">Não</td><td data-label="Admin">Sim</td></tr>
+          <tr><td data-label="Operação">Cadastrar outro administrador</td><td data-label="User">Não</td><td data-label="Admin">Sim</td></tr>
+          <tr><td data-label="Operação">Atualizar ou excluir outro usuário</td><td data-label="User">Não</td><td data-label="Admin">Sim</td></tr>
+          <tr><td data-label="Operação">Gerenciar as próprias tarefas</td><td data-label="User">Regra implementada*</td><td data-label="Admin">Regra implementada*</td></tr>
+        </tbody>
+      </table>
+      <p class="table-note">* O serviço restringe cada consulta pelo identificador da claim, mas a entrada HTTP de tarefas ainda precisa ser incluída no projeto compilado.</p>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section id="api" class="section container">
+    <header class="section-header"><p class="section-kicker">Contratos HTTP</p><h2>Principais endpoints</h2><p class="section-description">Rotas e códigos de sucesso foram conferidos diretamente nos controllers.</p></header>
+    <details class="todo-details" open>
+      <summary>Autenticação · endpoints ativos</summary>
+      <div class="details-content"><div class="todo-table-wrap"><table class="todo-table endpoint-table"><thead><tr><th>Método</th><th>Rota</th><th>Objetivo</th><th>Acesso</th><th>Sucesso</th></tr></thead><tbody>
+        <tr><td data-label="Método"><span class="method post">POST</span></td><td data-label="Rota"><code>/api/Auth/login</code></td><td data-label="Objetivo">Autenticar e emitir JWT</td><td data-label="Acesso">Público</td><td data-label="Sucesso">200</td></tr>
+        <tr><td data-label="Método"><span class="method post">POST</span></td><td data-label="Rota"><code>/api/Auth/register</code></td><td data-label="Objetivo">Cadastrar usuário com role User</td><td data-label="Acesso">Público</td><td data-label="Sucesso">201</td></tr>
+        <tr><td data-label="Método"><span class="method post">POST</span></td><td data-label="Rota"><code>/api/Auth/register/admin</code></td><td data-label="Objetivo">Cadastrar administrador</td><td data-label="Acesso">Admin</td><td data-label="Sucesso">201</td></tr>
+      </tbody></table></div></div>
+    </details>
+    <details class="todo-details">
+      <summary>Usuários · endpoints ativos</summary>
+      <div class="details-content"><div class="todo-table-wrap"><table class="todo-table endpoint-table"><thead><tr><th>Método</th><th>Rota</th><th>Objetivo</th><th>Acesso</th><th>Sucesso</th></tr></thead><tbody>
+        <tr><td data-label="Método"><span class="method get">GET</span></td><td data-label="Rota"><code>/api/Users</code></td><td data-label="Objetivo">Listar usuários</td><td data-label="Acesso">Admin</td><td data-label="Sucesso">200</td></tr>
+        <tr><td data-label="Método"><span class="method put">PUT</span></td><td data-label="Rota"><code>/api/Users/{id}</code></td><td data-label="Objetivo">Atualizar outro usuário</td><td data-label="Acesso">Admin</td><td data-label="Sucesso">204</td></tr>
+        <tr><td data-label="Método"><span class="method put">PUT</span></td><td data-label="Rota"><code>/api/Users</code></td><td data-label="Objetivo">Atualizar a própria conta</td><td data-label="Acesso">Autenticado</td><td data-label="Sucesso">204</td></tr>
+        <tr><td data-label="Método"><span class="method delete">DELETE</span></td><td data-label="Rota"><code>/api/Users/{id}</code></td><td data-label="Objetivo">Excluir outro usuário</td><td data-label="Acesso">Admin</td><td data-label="Sucesso">204</td></tr>
+        <tr><td data-label="Método"><span class="method delete">DELETE</span></td><td data-label="Rota"><code>/api/Users</code></td><td data-label="Objetivo">Excluir a própria conta</td><td data-label="Acesso">Autenticado</td><td data-label="Sucesso">204</td></tr>
+      </tbody></table></div></div>
+    </details>
+    <details class="todo-details todo-details-warning">
+      <summary>Tarefas · controller implementado, integração pendente</summary>
+      <div class="details-content">
+        <p>O arquivo define as rotas abaixo com <code>[Authorize]</code>, mas está fora do diretório do projeto compilado. Elas representam a intenção já codificada, não a superfície HTTP disponível no build atual.</p>
+        <div class="todo-table-wrap"><table class="todo-table endpoint-table"><thead><tr><th>Método</th><th>Rota codificada</th><th>Objetivo</th><th>Sucesso</th></tr></thead><tbody>
+          <tr><td data-label="Método"><span class="method post">POST</span></td><td data-label="Rota"><code>/api/Tasks</code></td><td data-label="Objetivo">Criar tarefa do usuário</td><td data-label="Sucesso">201</td></tr>
+          <tr><td data-label="Método"><span class="method get">GET</span></td><td data-label="Rota"><code>/api/Tasks</code></td><td data-label="Objetivo">Listar tarefas do usuário</td><td data-label="Sucesso">200</td></tr>
+          <tr><td data-label="Método"><span class="method get">GET</span></td><td data-label="Rota"><code>/api/Tasks/{id}</code></td><td data-label="Objetivo">Consultar uma tarefa própria</td><td data-label="Sucesso">200</td></tr>
+          <tr><td data-label="Método"><span class="method put">PUT</span></td><td data-label="Rota"><code>/api/Tasks/{id}</code></td><td data-label="Objetivo">Atualizar uma tarefa própria</td><td data-label="Sucesso">204</td></tr>
+          <tr><td data-label="Método"><span class="method delete">DELETE</span></td><td data-label="Rota"><code>/api/Tasks/{id}</code></td><td data-label="Objetivo">Excluir uma tarefa própria</td><td data-label="Sucesso">204</td></tr>
+          <tr><td data-label="Método"><span class="method delete">DELETE</span></td><td data-label="Rota"><code>/api/Tasks</code></td><td data-label="Objetivo">Excluir todas as tarefas próprias</td><td data-label="Sucesso">204</td></tr>
+        </tbody></table></div>
+      </div>
+    </details>
+  </section>
 
-<!-- STACK -->
-<section id="stack" class="section container reveal">
-  <header class="section-header">
-    <h3 data-pt="Stack Tecnológica" data-en="Tech Stack">Stack Tecnológica</h3>
-  </header>
-
-  <div class="stack-grid">
-
-    <div class="stack-card reveal">
-      <h4>Backend</h4>
-      <span>.NET</span>
-      <span>ASP.NET Core</span>
-      <span>Web API</span>
-      <span>EF Core</span>
-      <span>PostgreSQL</span>
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Dados e contratos</p><h2>Persistência, DTOs e validações</h2></header>
+    <div class="detail-grid data-grid">
+      <article class="detail-card"><span class="detail-number">PERSISTÊNCIA</span><h3>EF Core + PostgreSQL</h3><p><code>AppDbContext</code> expõe <code>Users</code> e <code>Todos</code>. Npgsql conecta a aplicação ao PostgreSQL, migrations versionam o esquema e repositórios assíncronos isolam as consultas.</p></article>
+      <article class="detail-card"><span class="detail-number">CONTRATOS</span><h3>DTOs + AutoMapper</h3><p>DTOs controlam entradas e saídas sem expor diretamente as entidades. Isso reduz overposting e permite que contratos HTTP e domínio evoluam com responsabilidades distintas.</p></article>
+      <article class="detail-card"><span class="detail-number">VALIDAÇÃO</span><h3>FluentValidation + Value Objects</h3><p>Validators verificam os DTOs; Value Objects reforçam regras no domínio. Título é obrigatório e limitado a 100 caracteres, descrição a 500, email precisa ser válido e senha exige ao menos oito caracteres e diversidade de tipos.</p></article>
+      <article class="detail-card"><span class="detail-number">ERROS</span><h3>Middleware centralizado</h3><p><code>ExceptionMiddleware</code> converte exceções conhecidas em 400, 401, 404 ou 422 e mantém 500 como fallback. A resposta atual usa <code>{ status, error }</code>; ainda não há <code>ProblemDetails</code>.</p></article>
     </div>
+    <aside class="ownership-note"><h3>Propriedade das tarefas</h3><p><code>TodoService</code> obtém o ID pelo <code>NameIdentifier</code>. Criação, consulta, atualização e exclusão filtram por <code>UserId</code>, impedindo que uma conta manipule tarefas de outra no nível de serviço e repositório. Essa proteção ficará acessível por HTTP após a integração do controller.</p></aside>
+  </section>
 
-    <div class="stack-card reveal">
-      <h4 data-pt="Arquitetura" data-en="Architecture">Arquitetura</h4>
-      <span>Clean Architecture</span>
-      <span>SOLID</span>
-      <span>CQRS</span>
-      <span>MediatR</span>
+  <section id="execucao" class="section container">
+    <header class="section-header"><p class="section-kicker">Ambiente</p><h2>Docker, configuração e Swagger</h2><p class="section-description">O repositório fornece um caminho reproduzível para executar API e banco, mas ainda possui ajustes de robustez mapeados.</p></header>
+    <div class="docker-diagram" aria-label="Serviços do Docker Compose">
+      <div><small>Orquestração</small><strong>Docker Compose</strong></div><span aria-hidden="true">→</span><div><small>Aplicação</small><strong>ToDo API</strong><em>porta 8080</em></div><span aria-hidden="true">+</span><div><small>Dados</small><strong>PostgreSQL 15</strong><em>volume pgdata</em></div>
     </div>
+    <div class="execution-grid">
+      <details class="todo-details" open><summary>Variáveis de ambiente</summary><div class="details-content"><pre><code>DB_HOST=db
+DB_PORT=5432
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=change-me
+JWT_KEY=change-me-with-a-long-random-value</code></pre><p>No Compose atual, <code>JWT_KEY</code> do arquivo <code>.env</code> é mapeada para a chave ASP.NET <code>JWT:Key</code>. O arquivo real deve permanecer fora do Git e nunca conter segredos publicados.</p></div></details>
+      <details class="todo-details"><summary>Execução local</summary><div class="details-content"><pre><code>git clone https://github.com/SIRSoares33/ToDoApi.git
+cd ToDoApi
+dotnet restore ToDo.slnx
 
-    <div class="stack-card reveal">
-      <h4 data-pt="Segurança" data-en="Security">Segurança</h4>
-      <span>JWT</span>
-      <span>Authorization</span>
-      <span>Claims</span>
+export DatabaseConnection="Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=change-me"
+export JWT__Key="change-me-with-a-long-random-value"
+
+dotnet run --project Todo.Api/Todo.Api.csproj</code></pre><p>Na configuração local do ASP.NET Core, o duplo underscore de <code>JWT__Key</code> representa a hierarquia <code>JWT:Key</code>.</p></div></details>
+      <details class="todo-details"><summary>Execução com Docker</summary><div class="details-content"><pre><code>docker compose up --build</code></pre><p>O Compose publica a API em <code>http://localhost:8080</code> e o PostgreSQL em <code>5432</code>. A rede padrão do Compose conecta os serviços e o volume <code>pgdata</code> persiste o banco.</p></div></details>
+      <details class="todo-details"><summary>Explorando a API</summary><div class="details-content"><pre><code>http://localhost:8080/swagger</code></pre><p>O Swagger atual permite visualizar e executar os contratos ativos. Entretanto, <code>AddSwaggerGen()</code> ainda não registra um esquema de segurança Bearer; por isso, o fluxo de autenticação via botão <em>Authorize</em> precisa ser configurado antes de testar rotas protegidas diretamente pela interface.</p></div></details>
     </div>
+    <aside class="configuration-warning"><h3>Limitações confirmadas do Compose</h3><p><code>depends_on</code> define ordem de inicialização, mas não aguarda o banco ficar pronto porque não há health check. O serviço PostgreSQL também recebe apenas <code>POSTGRES_PASSWORD</code>; portanto, usar outro <code>DB_NAME</code> exige criar o banco ou adicionar <code>POSTGRES_DB</code> ao Compose.</p></aside>
+  </section>
 
-    <div class="stack-card reveal">
-      <h4 data-pt="Infraestrutura" data-en="Infrastructure">Infraestrutura</h4>
-      <span>Docker</span>
-      <span>Docker Compose</span>
-      <span>Swagger</span>
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Biblioteca reutilizada</p><h2>Psalms aplicado em um projeto prático</h2></header>
+    <div class="psalms-panel">
+      <div><span class="package-name">Psalms.AspNetCore.Auth.Jwt 4.0.0</span><h3>Autenticação JWT sem repetir toda a infraestrutura</h3><p>O pacote é referenciado por <code>ToDo.Infrastructure</code>, registrado por <code>AddPsalmsJwtAuthentication(configuration)</code> e utilizado por <code>PsalmsJwtTokenService</code> para emitir tokens.</p></div>
+      <p>O ToDo API serviu como cenário de aplicação para validar a biblioteca em conjunto com claims, roles e Dependency Injection. O projeto continua responsável pela verificação de credenciais e pelas regras de acesso.</p>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Qualidade</p><h2>Testes e automação</h2><p class="section-description">A base de testes já existe e cobre as quatro áreas da solução; ela não é apenas um item planejado.</p></header>
+    <div class="test-summary"><div><strong>154</strong><span>testes aprovados</span></div><div><strong>49</strong><span>Domain</span></div><div><strong>49</strong><span>Application</span></div><div><strong>48</strong><span>Infrastructure</span></div><div><strong>8</strong><span>API</span></div></div>
+    <div class="detail-grid quality-grid">
+      <article class="detail-card"><span class="detail-number">TESTES</span><h3>xUnit, Moq e FluentAssertions</h3><p>Há testes de entidades, Value Objects, validators, handlers, controllers, claims, serviços e repositórios. Os testes de Infrastructure usam SQLite para exercitar o EF Core.</p></article>
+      <article class="detail-card"><span class="detail-number">CI</span><h3>GitHub Actions</h3><p>O repositório possui workflow de restore, build e test com .NET 10, build de imagem Docker e análise CodeQL. Um workflow duplicado ainda aponta para .NET 8 e precisa ser consolidado.</p></article>
+    </div>
+    <aside class="dependency-alert"><h3>Auditoria de dependências</h3><p>O restore local concluiu com avisos de vulnerabilidades conhecidas em dependências transitivas e diretas, incluindo AutoMapper, Microsoft.OpenApi, SQLitePCLRaw e System.Security.Cryptography.Xml. Atualizar e revalidar esses pacotes é parte da evolução necessária.</p></aside>
+  </section>
 
-<!-- VISION -->
-<section id="vision" class="section container reveal">
-  <header class="section-header">
-    <h3 data-pt="Visão de Futuro" data-en="Future Vision">Visão de Futuro</h3>
-  </header>
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Escolhas conscientes</p><h2>Decisões que orientaram o projeto</h2></header>
+    <div class="decision-grid">
+      <article><h3>Camadas</h3><p>Separar regras e casos de uso dos detalhes externos para tornar dependências e responsabilidades mais visíveis.</p></article>
+      <article><h3>MediatR</h3><p>Representar intenções com commands e queries, reduzindo o acoplamento direto dos controllers.</p></article>
+      <article><h3>DTOs</h3><p>Controlar os contratos HTTP sem expor diretamente as entidades do domínio.</p></article>
+      <article><h3>JWT e roles</h3><p>Exercitar autenticação stateless e diferenciar operações administrativas das ações da própria conta.</p></article>
+      <article><h3>PostgreSQL</h3><p>Usar persistência relacional com migrations em um cenário próximo ao encontrado em aplicações backend.</p></article>
+      <article><h3>Docker Compose</h3><p>Padronizar a inicialização da API e do banco e manter configuração sensível fora do código.</p></article>
+    </div>
+    <details class="todo-details practices-details"><summary>Boas práticas confirmadas no código</summary><div class="details-content practice-tags"><span>Separation of Concerns</span><span>Dependency Injection</span><span>Controllers enxutos</span><span>DTOs</span><span>Commands e queries</span><span>Código assíncrono</span><span>Autenticação</span><span>Autorização</span><span>Claims</span><span>Configuração externa</span><span>Persistência isolada</span><span>OpenAPI</span><span>Testes automatizados</span><span>CI</span></div></details>
+  </section>
 
-  <p class="text-block"
-     data-pt="A ToDo API foi pensada como uma base sólida para evolução contínua, permitindo a adição de testes automatizados, observabilidade, melhorias de performance e novos casos de uso, sempre mantendo qualidade de código e boas práticas de arquitetura."
-     data-en="ToDo API was designed as a solid foundation for continuous evolution, enabling automated tests, observability, performance improvements, and new use cases, while maintaining code quality and architectural best practices.">
-    A ToDo API foi pensada como uma base sólida para evolução contínua, 
-    permitindo a adição de testes automatizados, observabilidade, melhorias de performance 
-    e novos casos de uso, sempre mantendo qualidade de código e boas práticas de arquitetura.
-  </p>
-</section>
+  <section id="evolucao" class="section container">
+    <div class="status-panel status-continuous recruiter-panel">
+      <div><p class="section-kicker">Capacidade demonstrada</p><h2>O que este projeto demonstra</h2><p>O ToDo API demonstra minha capacidade de construir uma aplicação backend além dos endpoints básicos, organizando autenticação, autorização, casos de uso, persistência e infraestrutura em uma arquitetura compreensível e preparada para evolução.</p></div>
+      <ul class="status-facts"><li>Desenvolvimento backend com C# e ASP.NET Core</li><li>Modelagem de APIs REST e contratos</li><li>JWT, claims e autorização por roles</li><li>EF Core, PostgreSQL e migrations</li><li>MediatR, testes e organização arquitetural</li><li>Docker e configuração de ambiente</li></ul>
+    </div>
+  </section>
 
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Reflexão</p><h2>Principais aprendizados</h2></header>
+    <div class="learning-copy">
+      <p>Aprendi que uma API organizada exige mais do que endpoints funcionando. Autenticação e autorização resolvem problemas diferentes, e as claims são o elo entre a identidade do usuário e as regras da aplicação.</p>
+      <p>Separar camadas tornou as dependências mais visíveis. MediatR ajudou a isolar casos de uso, enquanto os DTOs protegeram os contratos externos. Ao mesmo tempo, o projeto mostrou que abstrações só agregam valor quando continuam proporcionais ao problema.</p>
+      <p>Docker reduziu diferenças entre ambientes, mas também evidenciou que subir containers não basta: prontidão do banco, variáveis consistentes, segredos e observabilidade precisam ser tratados explicitamente.</p>
+      <p>O aprendizado mais importante foi revisar o próprio código com honestidade. Encontrar uma rota implementada fora do projeto compilado reforçou a importância de validar a aplicação como ela realmente é executada.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <header class="section-header"><p class="section-kicker">Roadmap técnico</p><h2>Próximos passos</h2><p class="section-description">Evoluções realistas identificadas a partir do estado atual, sem prazo ou promessa de produção.</p></header>
+    <ol class="roadmap-list">
+      <li><strong>Integrar o controller de tarefas</strong><span>Mover <code>TasksController.cs</code> para o projeto <code>Todo.Api</code> e adicionar testes dos endpoints compilados.</span></li>
+      <li><strong>Fortalecer o ambiente Docker</strong><span>Configurar <code>POSTGRES_DB</code>/<code>POSTGRES_USER</code>, health check e espera real pela prontidão do banco.</span></li>
+      <li><strong>Completar a experiência do Swagger</strong><span>Registrar o esquema Bearer e documentar respostas e requisitos de autorização.</span></li>
+      <li><strong>Padronizar segurança e erros</strong><span>Revisar o provisionamento do administrador inicial, atualizar pacotes sinalizados e adotar <code>ProblemDetails</code>.</span></li>
+      <li><strong>Ampliar a validação integrada</strong><span>Adicionar testes de integração com PostgreSQL real, por exemplo usando Testcontainers, sem substituir a suíte atual.</span></li>
+      <li><strong>Evoluir a operação</strong><span>Consolidar workflows, incluir logs estruturados, health checks, paginação, filtros, versionamento e rate limiting conforme a necessidade.</span></li>
+    </ol>
+  </section>
+
+  <section class="section container project-links-section">
+    <div class="project-links-panel">
+      <div><p class="section-kicker">Continuar explorando</p><h2>Código, contexto e projetos relacionados</h2><p>O repositório contém a implementação, os testes, os arquivos Docker e os workflows auditados para esta apresentação.</p></div>
+      <div class="project-link-actions"><a class="btn" href="https://github.com/SIRSoares33/ToDoApi" target="_blank" rel="noopener noreferrer">Repositório no GitHub</a><a class="btn-outline" href="Psalms.html">Conhecer o Psalms</a><a class="btn-outline" href="index.html#projects">Voltar aos projetos</a></div>
+    </div>
+  </section>
 </main>
 
-<footer class="footer" data-pt="© 2026 Gustavo Soares — Projeto ToDo API" data-en="© 2026 Gustavo Soares — ToDo API Project">
-  © 2026 Gustavo Soares — Projeto ToDo API
-</footer>
-
+<footer class="footer">© 2026 Gustavo Soares — Projeto ToDo API</footer>
+<script src="scripts/navigation.js"></script>
 </body>
-
-<script src="scripts/script.js"></script>
 </html>
