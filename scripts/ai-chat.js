@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const API_URL = "https://nexus.gustavosoares.dev.br/";
+  const API_URL = "https://nexus.gustavosoares.dev.br/ai";
   const CLIENT_ID = "e99bb38f-e686-470c-803d-300f937d864a";
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
