@@ -11,11 +11,11 @@
       id: "welcome",
       role: "assistant",
       content:
-        "Olá! Sou o assistente virtual do Gustavo. Pergunte sobre seus projetos, experiências e tecnologias."
+        "Olá! Sou Bag, assistente virtual do Gustavo. Ainda estou em desenvolvimento, logo estarei mais inteligente. Enquanto isso, aproveite o portfólio e veja os projetos que ele desenvolveu."
     }
   ];
 
-  const suggestedQuestions = [
+const suggestedQuestions = [
     "Conheça o Logos Server",
     "Quais tecnologias o Gustavo utiliza?",
     "Veja os projetos .NET",
@@ -42,14 +42,14 @@
     mount() {
       this.root = document.createElement("section");
       this.root.className = "ai-chat";
-      this.root.setAttribute("aria-label", "Assistente de inteligência artificial");
+      this.root.setAttribute("aria-label", "Bag");
       this.root.innerHTML = `
         <button class="ai-chat__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
 
         <button
           class="ai-chat__launcher"
           type="button"
-          aria-label="Abrir assistente de inteligência artificial"
+          aria-label="Abrir Bag"
           aria-expanded="false"
           aria-controls="portfolio-ai-chat"
         >
@@ -70,8 +70,8 @@
               <i data-lucide="sparkles"></i>
             </span>
             <div class="ai-chat__identity">
-              <h2>Assistente do Gustavo</h2>
-              <p>Pergunte sobre minha experiência e meus projetos</p>
+              <h2>Bag</h2>
+              <p>Pergunte sobre minha experiência</p>
               <span class="ai-chat__status ai-chat__status--online">Online</span>
             </div>
             <div class="ai-chat__header-actions">
@@ -98,7 +98,7 @@
                 class="ai-chat__input"
                 rows="1"
                 maxlength="${MAX_MESSAGE_LENGTH}"
-                placeholder="Pergunte sobre meus projetos..."
+                placeholder="Em desenvolvimento..."
                 aria-label="Mensagem para o assistente"
                 aria-describedby="ai-chat-hint"
               ></textarea>
