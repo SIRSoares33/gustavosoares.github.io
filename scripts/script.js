@@ -32,6 +32,18 @@ if ("IntersectionObserver" in window) {
 
 let language = "pt";
 const languageButton = document.getElementById("langBtn");
+const openBagChatButton = document.getElementById("openBagChat");
+
+if (openBagChatButton) {
+  openBagChatButton.addEventListener("click", () => {
+    if (window.portfolioAiChat && typeof window.portfolioAiChat.open === "function") {
+      window.portfolioAiChat.open();
+      return;
+    }
+
+    document.querySelector(".ai-chat__launcher")?.click();
+  });
+}
 
 languageButton.addEventListener("click", () => {
   language = language === "pt" ? "en" : "pt";

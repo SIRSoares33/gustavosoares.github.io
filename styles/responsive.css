@@ -2,10 +2,37 @@
 
 html {
   overflow-x: hidden;
+  scrollbar-width: none;
 }
 
 body {
+  -ms-overflow-style: none;
   overflow-wrap: anywhere;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  border: 1px solid rgba(139, 139, 255, 0.25);
+  border-radius: 10px;
+  background: #0b0b0e;
+  box-shadow: 0 8px 24px rgba(87, 87, 210, 0.2);
+  object-fit: cover;
 }
 
 .nav-toggle {

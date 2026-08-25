@@ -184,6 +184,12 @@
   height: 21px;
 }
 
+.ai-chat__avatar img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
 .ai-chat__identity {
   min-width: 0;
   flex: 1;
@@ -329,6 +335,12 @@
   height: 14px;
 }
 
+.ai-chat__message-avatar img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
 .ai-chat__bubble {
   min-width: 0;
   max-width: min(84%, 304px);
@@ -372,6 +384,14 @@
 
 .ai-chat__markdown p {
   margin: 0 0 0.72em;
+}
+
+.ai-chat__message--greeting .ai-chat__markdown > p:first-child {
+  color: var(--ai-chat-text);
+  font-size: 0.92rem;
+  font-weight: 720;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
 .ai-chat__markdown h1,

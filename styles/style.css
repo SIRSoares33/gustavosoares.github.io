@@ -75,7 +75,10 @@ button:focus-visible {
 }
 
 .logo {
+  display: inline-flex;
   flex: none;
+  align-items: center;
+  gap: 10px;
   color: var(--text);
   font-size: 1.05rem;
   font-weight: 750;
@@ -267,6 +270,198 @@ button:focus-visible {
 
 .photo-carousel img.active {
   opacity: 1;
+}
+
+/* Bag AI introduction */
+.bag-intro {
+  padding-block: 20px 46px;
+}
+
+.bag-panel {
+  position: relative;
+  display: grid;
+  min-height: 390px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  align-items: center;
+  gap: 56px;
+  overflow: hidden;
+  padding: clamp(34px, 6vw, 64px);
+  border: 1px solid rgba(139, 139, 255, 0.24);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 82% 45%, rgba(139, 139, 255, 0.18), transparent 20rem),
+    radial-gradient(circle at 0% 100%, rgba(92, 92, 210, 0.1), transparent 22rem),
+    linear-gradient(145deg, rgba(23, 23, 31, 0.98), rgba(12, 12, 16, 0.98));
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.3);
+}
+
+.bag-panel::before {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(139, 139, 255, 0.16) 1px, transparent 1px);
+  background-size: 28px 28px;
+  content: "";
+  mask-image: linear-gradient(90deg, transparent 15%, black 80%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.bag-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.bag-copy h2 {
+  margin-top: 8px;
+  font-size: clamp(2.25rem, 5vw, 3.65rem);
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.bag-copy > p:not(.section-label) {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.bag-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.bag-topics li {
+  padding: 6px 11px;
+  border: 1px solid rgba(139, 139, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(139, 139, 255, 0.07);
+  color: #bcbccc;
+  font-size: 0.76rem;
+}
+
+.bag-cta {
+  gap: 9px;
+  margin-top: 28px;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.bag-cta svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 180ms ease;
+}
+
+.bag-cta:hover svg {
+  transform: translateX(2px);
+}
+
+.bag-visual {
+  position: relative;
+  min-height: 270px;
+}
+
+.bag-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(139, 139, 255, 0.22);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bag-orbit::after {
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(139, 139, 255, 0.85);
+  content: "";
+}
+
+.bag-orbit-outer {
+  width: 250px;
+  height: 250px;
+  animation: bag-orbit-spin 14s linear infinite;
+}
+
+.bag-orbit-inner {
+  width: 180px;
+  height: 180px;
+  animation: bag-orbit-spin 10s linear infinite reverse;
+}
+
+.bag-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border: 1px solid rgba(185, 185, 255, 0.42);
+  border-radius: 30px;
+  background: linear-gradient(145deg, rgba(139, 139, 255, 0.3), rgba(60, 60, 126, 0.13));
+  box-shadow: 0 0 0 12px rgba(139, 139, 255, 0.04), 0 22px 65px rgba(65, 65, 184, 0.32);
+  color: #e0e0ff;
+  transform: translate(-50%, -50%) rotate(-4deg);
+}
+
+.bag-core-glow {
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  background: rgba(139, 139, 255, 0.18);
+  filter: blur(14px);
+}
+
+.bag-core img {
+  position: relative;
+  z-index: 1;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+}
+
+.bag-message {
+  position: absolute;
+  z-index: 2;
+  max-width: 180px;
+  padding: 10px 13px;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.bag-message-question {
+  top: 22px;
+  right: 2px;
+  background: rgba(255, 255, 255, 0.055);
+  color: #d5d5dd;
+}
+
+.bag-message-answer {
+  bottom: 24px;
+  left: -6px;
+  border-color: rgba(139, 139, 255, 0.32);
+  background: linear-gradient(135deg, rgba(139, 139, 255, 0.28), rgba(111, 111, 255, 0.15));
+  color: #e5e5ff;
+}
+
+@keyframes bag-orbit-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* Shared sections */
@@ -766,6 +961,11 @@ button:focus-visible {
     gap: 40px;
   }
 
+  .bag-panel {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 30px;
+  }
+
   .skills-groups,
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -798,6 +998,37 @@ button:focus-visible {
 
   .photo-carousel {
     width: 210px;
+  }
+
+  .bag-intro {
+    padding-block: 10px 28px;
+  }
+
+  .bag-panel {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 24px;
+  }
+
+  .bag-visual {
+    min-height: 230px;
+  }
+
+  .bag-orbit-outer {
+    width: 214px;
+    height: 214px;
+  }
+
+  .bag-orbit-inner {
+    width: 152px;
+    height: 152px;
+  }
+
+  .bag-core {
+    width: 96px;
+    height: 96px;
+    border-radius: 26px;
   }
 
   .section {
@@ -841,6 +1072,15 @@ button:focus-visible {
 
   .hero-buttons a {
     width: 100%;
+  }
+
+  .bag-cta {
+    width: 100%;
+  }
+
+  .bag-message {
+    max-width: 150px;
+    font-size: 0.7rem;
   }
 
   .experience-header {

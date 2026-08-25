@@ -5,15 +5,52 @@
   const CLIENT_ID = "e99bb38f-e686-470c-803d-300f937d864a";
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
+  const GREETING_MESSAGE_ID = "bag-greeting";
 
-  const initialMessages = [
-    {
-      id: "welcome",
-      role: "assistant",
-      content:
-        "Olá! Sou Bag, assistente virtual do Gustavo. Ainda estou em desenvolvimento, logo estarei mais inteligente. Enquanto isso, aproveite o portfólio e veja os projetos que ele desenvolveu."
+  const bagConversationCopy = {
+    "pt-BR": {
+      introduction:
+        "Sou o Bag, assistente virtual do Gustavo. Posso responder sobre seus projetos, experiências, tecnologias e trajetória profissional.",
+      greetings: [
+        "Como posso te ajudar?",
+        "O que tá pegando?",
+        "Alguma dúvida?",
+        "O que você quer descobrir hoje?",
+        "Quer conhecer algum projeto?",
+        "Bora falar de tecnologia?",
+        "Curioso para saber mais sobre o Gustavo?",
+        "Posso te mostrar alguma coisa?",
+        "Quer saber como algum projeto funciona?",
+        "Manda a dúvida!",
+        "Por onde começamos?",
+        "Em que posso ajudar hoje?",
+        "Quer conhecer a trajetória do Gustavo?",
+        "Procurando alguma informação?",
+        "O que vamos explorar hoje?"
+      ]
+    },
+    en: {
+      introduction:
+        "I’m Bag, Gustavo’s virtual assistant. I can answer questions about his projects, experience, technologies, and professional journey.",
+      greetings: [
+        "How can I help you?",
+        "What’s up?",
+        "Any questions?",
+        "What would you like to discover today?",
+        "Want to explore a project?",
+        "Shall we talk about technology?",
+        "Curious to learn more about Gustavo?",
+        "Can I show you something?",
+        "Want to know how a project works?",
+        "Ask me anything!",
+        "Where should we start?",
+        "How can I help today?",
+        "Want to learn about Gustavo’s journey?",
+        "Looking for something?",
+        "What should we explore today?"
+      ]
     }
-  ];
+  };
 
   const suggestedQuestions = [
     "Conheça o Logos Server",
@@ -23,6 +60,37 @@
   ];
 
   const SAFE_LINK_PROTOCOLS = new Set(["http:", "https:", "mailto:", "tel:"]);
+
+  function getCurrentBagLanguage() {
+    return document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "pt-BR";
+  }
+
+  function selectGreetingIndex(previousIndex) {
+    const greetingCount = bagConversationCopy["pt-BR"].greetings.length;
+    const hasPreviousGreeting =
+      Number.isInteger(previousIndex) && previousIndex >= 0 && previousIndex < greetingCount;
+    const availableGreetingCount = hasPreviousGreeting ? greetingCount - 1 : greetingCount;
+    let selectedIndex = Math.floor(Math.random() * availableGreetingCount);
+
+    if (hasPreviousGreeting && selectedIndex >= previousIndex) {
+      selectedIndex += 1;
+    }
+
+    return selectedIndex;
+  }
+
+  function createGreetingMessage(greetingIndex, language) {
+    const copy = bagConversationCopy[language] || bagConversationCopy["pt-BR"];
+
+    return {
+      id: GREETING_MESSAGE_ID,
+      role: "assistant",
+      kind: "greeting",
+      greetingIndex,
+      language,
+      content: `**${copy.greetings[greetingIndex]}**\n\n${copy.introduction}`
+    };
+  }
 
   function getSafeLinkUrl(value) {
     try {
@@ -337,12 +405,14 @@
       this.options = options;
       this.messages = Array.isArray(options.messages)
         ? [...options.messages]
-        : [...initialMessages];
+        : [];
       this.isLoading = Boolean(options.isLoading);
       this.error = options.error || null;
       this.isOpen = false;
       this.messageSequence = 0;
       this.lastFailedContent = null;
+      this.currentGreetingIndex = null;
+      this.currentLanguage = getCurrentBagLanguage();
       this.mount();
       this.bindEvents();
       this.renderMessages();
@@ -353,7 +423,7 @@
     mount() {
       this.root = document.createElement("section");
       this.root.className = "ai-chat";
-      this.root.setAttribute("aria-label", "Bag");
+      this.root.setAttribute("aria-label", "Bag, assistente de inteligência artificial");
       this.root.innerHTML = `
         <button class="ai-chat__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
 
@@ -365,7 +435,7 @@
           aria-controls="portfolio-ai-chat"
         >
           <i data-lucide="message-circle" aria-hidden="true"></i>
-          <span class="ai-chat__tooltip" role="tooltip">Conversar com a IA</span>
+          <span class="ai-chat__tooltip" role="tooltip">Conversar com a Bag</span>
         </button>
 
         <section
@@ -378,11 +448,11 @@
         >
           <header class="ai-chat__header">
             <span class="ai-chat__avatar" aria-hidden="true">
-              <i data-lucide="sparkles"></i>
+              <img src="img/logoBag.png" alt="">
             </span>
             <div class="ai-chat__identity">
               <h2 id="ai-chat-title">Bag</h2>
-              <p>Pergunte sobre minha experiência</p>
+              <p>IA do portfólio do Gustavo</p>
               <span class="ai-chat__status ai-chat__status--online">Online</span>
             </div>
             <div class="ai-chat__header-actions">
@@ -411,7 +481,7 @@
                 maxlength="${MAX_MESSAGE_LENGTH}"
                 autocapitalize="sentences"
                 enterkeyhint="send"
-                placeholder="Em desenvolvimento..."
+                placeholder="Pergunte algo sobre o Gustavo..."
                 aria-label="Mensagem para o assistente"
                 aria-describedby="ai-chat-hint"
               ></textarea>
@@ -483,10 +553,18 @@
           this.trapFocus(event);
         }
       });
+
+      this.languageObserver = new MutationObserver(() => this.handleLanguageChange());
+      this.languageObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["lang"]
+      });
     }
 
     open() {
       if (this.isOpen) return;
+
+      this.ensureGreeting();
 
       this.isOpen = true;
       this.root.classList.add("is-open");
@@ -497,6 +575,39 @@
       document.body.classList.add("ai-chat-open");
 
       this.focusInitialControl();
+      this.scrollToLatest();
+    }
+
+    ensureGreeting() {
+      if (this.messages.length === 0) {
+        this.startNewConversation();
+      }
+    }
+
+    startNewConversation() {
+      this.currentLanguage = getCurrentBagLanguage();
+      this.currentGreetingIndex = selectGreetingIndex(this.currentGreetingIndex);
+      this.messages = [
+        createGreetingMessage(this.currentGreetingIndex, this.currentLanguage)
+      ];
+      this.renderMessages();
+    }
+
+    handleLanguageChange() {
+      const nextLanguage = getCurrentBagLanguage();
+
+      if (nextLanguage === this.currentLanguage) return;
+
+      this.currentLanguage = nextLanguage;
+
+      const conversationHasStarted = this.messages.some(
+        (message) => message.kind !== "greeting"
+      );
+
+      if (this.currentGreetingIndex === null || conversationHasStarted) return;
+
+      this.messages = [createGreetingMessage(this.currentGreetingIndex, nextLanguage)];
+      this.renderMessages();
       this.scrollToLatest();
     }
 
@@ -594,6 +705,7 @@
         role: ["assistant", "user", "system"].includes(message.role)
           ? message.role
           : "assistant",
+        kind: message.kind === "greeting" ? "greeting" : undefined,
         content: String(message.content || ""),
         createdAt: message.createdAt
       };
@@ -611,11 +723,15 @@
       item.className = `ai-chat__message ai-chat__message--${isUser ? "user" : "assistant"}`;
       item.dataset.messageId = message.id;
 
+      if (message.kind === "greeting") {
+        item.classList.add("ai-chat__message--greeting");
+      }
+
       if (!isUser) {
         const avatar = document.createElement("span");
         avatar.className = "ai-chat__message-avatar";
         avatar.setAttribute("aria-hidden", "true");
-        avatar.innerHTML = '<i data-lucide="sparkles"></i>';
+        avatar.innerHTML = '<img src="img/logoBag.png" alt="">';
         item.appendChild(avatar);
       }
 
@@ -736,13 +852,12 @@
     }
 
     clear() {
-      this.messages = [...initialMessages];
       this.error = null;
       this.isLoading = false;
       this.lastFailedContent = null;
       this.input.value = "";
       this.setStatus("Online", "online");
-      this.renderMessages();
+      this.startNewConversation();
       this.renderFutureStates();
       this.resizeInput();
       this.updateCharacterCount();
