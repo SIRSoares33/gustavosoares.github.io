@@ -3,6 +3,7 @@
 
   const API_URL = "https://nexus.gustavosoares.dev.br/ai";
   const CLIENT_ID = "e99bb38f-e686-470c-803d-300f937d864a";
+  const KEY = "0x4AAAAAAEc9saVM98PGJU1I";
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
   const GREETING_MESSAGE_ID = "bag-greeting";
@@ -660,7 +661,8 @@
         const response = await fetch(API_URL, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "ClientToken": KEY
           },
           body: JSON.stringify({
             ClientId: CLIENT_ID,
