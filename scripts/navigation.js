@@ -4,7 +4,7 @@ const navigationToggle = document.querySelector(".nav-toggle");
 const primaryNavigation = document.querySelector(".nav");
 
 if (navigationToggle && primaryNavigation) {
-  const mobileBreakpoint = window.matchMedia("(max-width: 840px)");
+  const mobileBreakpoint = window.matchMedia("(max-width: 980px)");
 
   const updateNavigationLabel = () => {
     const isOpen = navigationToggle.getAttribute("aria-expanded") === "true";

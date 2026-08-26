@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artigos de Gustavo Soares sobre desenvolvimento, arquitetura, infraestrutura, tecnologia e inteligência artificial.">
+  <title>Artigos | Gustavo Soares</title>
+  <link rel="icon" href="img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/logoPortfolioGS.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles/style.css?v=20260825-2">
+  <link rel="stylesheet" href="styles/articles.css?v=20260826-3">
+  <link rel="stylesheet" href="styles/responsive.css?v=20260826">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <a class="logo" href="index.html" aria-label="Ir para a página inicial">
+      <img class="logo-mark" src="img/logoPortfolioGS.png" alt="">
+      <span>Gustavo Soares</span>
+    </a>
+
+    <nav id="primaryNavigation" class="nav" aria-label="Navegação principal">
+      <a href="index.html#about" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="index.html#experience" data-pt="Experiência" data-en="Experience">Experiência</a>
+      <a href="index.html#skills" data-pt="Competências" data-en="Skills">Competências</a>
+      <a href="index.html#projects" data-pt="Projetos" data-en="Projects">Projetos</a>
+      <a href="agora.html" data-pt="Agora" data-en="Now">Agora</a>
+      <a href="articles.html" aria-current="page" data-pt="Artigos" data-en="Articles">Artigos</a>
+      <a href="index.html#contact" data-pt="Contato" data-en="Contact">Contato</a>
+      <a href="MyJourney.html" data-pt="Minha trajetória" data-en="My journey">Minha trajetória</a>
+    </nav>
+
+    <button id="langBtn" class="lang-btn" type="button" aria-label="Mudar idioma para inglês">EN</button>
+    <button class="nav-toggle" type="button" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Abrir menu de navegação">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="articles-hero" aria-labelledby="articlesTitle">
+    <div class="container">
+      <p class="section-label reveal" data-pt="Conhecimento compartilhado" data-en="Shared knowledge">Conhecimento compartilhado</p>
+      <h1 id="articlesTitle" class="reveal" data-pt="Artigos" data-en="Articles">Artigos</h1>
+      <p class="articles-intro reveal"
+        data-pt="Este espaço reúne textos sobre desenvolvimento, arquitetura, infraestrutura, tecnologia, inteligência artificial e aprendizados profissionais."
+        data-en="This space brings together writing about development, architecture, infrastructure, technology, artificial intelligence, and professional lessons."
+      >Este espaço reúne textos sobre desenvolvimento, arquitetura, infraestrutura, tecnologia, inteligência artificial e aprendizados profissionais.</p>
+    </div>
+  </section>
+
+  <section class="section container articles-listing" aria-labelledby="articlesListTitle">
+    <header class="section-header reveal">
+      <p class="section-label" data-pt="Publicações" data-en="Publications">Publicações</p>
+      <h2 id="articlesListTitle" data-pt="Lista de artigos" data-en="Article list">Lista de artigos</h2>
+    </header>
+
+    <div class="articles-grid">
+      <!-- Adicione novos cards de artigos aqui. -->
+      <article class="article-card reveal">
+        <div class="article-card-content">
+          <p class="article-category">.NET e Backend</p>
+          <h3>Por que usar .NET para aplicações backend modernas?</h3>
+          <p class="article-summary">Entenda por que o .NET se destaca como uma plataforma madura, performática e preparada para a construção de aplicações backend modernas.</p>
+          <div class="article-meta">
+            <time datetime="2026-08-26">26 de agosto de 2026</time>
+            <span>4 minutos de leitura</span>
+          </div>
+          <ul class="article-tags" aria-label="Tags do artigo">
+            <li>.NET</li>
+            <li>ASP.NET Core</li>
+            <li>Backend</li>
+            <li>APIs</li>
+            <li>Entity Framework Core</li>
+            <li>Cloud</li>
+          </ul>
+          <a class="article-card-link" href="por-que-usar-dotnet-para-backend-moderno.html">Ler artigo</a>
+        </div>
+      </article>
+
+      <article class="article-card reveal">
+        <div class="article-card-content">
+          <p class="article-category">Arquitetura de Software</p>
+          <h3>TI deixou de ser suporte: o que isso significa na prática para quem constrói sistemas</h3>
+          <p class="article-summary">O crescimento profissional em tecnologia acontece quando deixamos de pensar somente em código e começamos a compreender arquitetura, falhas, segurança, observabilidade e sistemas completos.</p>
+          <div class="article-meta">
+            <time datetime="2026-08-26">26 de agosto de 2026</time>
+            <span>7 minutos de leitura</span>
+          </div>
+          <ul class="article-tags" aria-label="Tags do artigo">
+            <li>Arquitetura</li>
+            <li>Clean Architecture</li>
+            <li>CQRS</li>
+            <li>Mensageria</li>
+            <li>Cache</li>
+            <li>Segurança</li>
+            <li>Observabilidade</li>
+          </ul>
+          <a class="article-card-link" href="ti-deixou-de-ser-suporte-pensando-em-sistemas.html">Ler artigo</a>
+        </div>
+      </article>
+
+      <article class="article-card reveal">
+        <div class="article-card-content">
+          <p class="article-category">Desenvolvimento de Software</p>
+          <h3>Construir software vai muito além de escrever código (e como eu que amo codar lidei com isso)</h3>
+          <p class="article-summary">Construir software não é apenas escrever código que funciona. É compreender problemas, tomar decisões, modelar regras, testar, refatorar e assumir responsabilidade pelo sistema construído.</p>
+          <div class="article-meta">
+            <time datetime="2026-08-26">26 de agosto de 2026</time>
+            <span>5 minutos de leitura</span>
+          </div>
+          <ul class="article-tags" aria-label="Tags do artigo">
+            <li>Desenvolvimento</li>
+            <li>Arquitetura</li>
+            <li>Testes</li>
+            <li>Boas Práticas</li>
+            <li>Clean Code</li>
+          </ul>
+          <a class="article-card-link" href="construir-software-vai-alem-de-escrever-codigo.html">Ler artigo</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer reveal">
+  <span
+    data-pt="© 2026 Gustavo Soares — Todos os direitos reservados"
+    data-en="© 2026 Gustavo Soares — All rights reserved"
+  >© 2026 Gustavo Soares — Todos os direitos reservados</span>
+</footer>
+
+<script src="scripts/navigation.js?v=20260826"></script>
+<script src="scripts/script.js?v=20260825"></script>
+</body>
+</html>
