@@ -757,6 +757,8 @@
           return;
         }
 
+
+
         if (!response.ok) {
           throw new Error(`A API respondeu com o status ${response.status}.`);
         }
@@ -773,7 +775,7 @@
         this.setStatus("Online", "online");
       } catch (error) {
         const timedOut = error && error.name === "AbortError";
-        let errorMessage = "O serviço de IA está temporariamente indisponível.";
+        let errorMessage = "Servidores desligados. Estou descansando, mas você pode tentar novamente mais tarde, não devo demorar muito para voltar...";
 
         if (!janusRequestStarted) {
           errorMessage = "Não foi possível validar a solicitação.";
