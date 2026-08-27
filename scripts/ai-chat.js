@@ -7,6 +7,22 @@
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
   const GREETING_MESSAGE_ID = "bag-greeting";
+  
+let widgetId = null;
+
+window.addEventListener("load", () => {
+  if (!window.turnstile) {
+    console.error("Turnstile não foi carregado.");
+    return;
+  }
+
+  widgetId = turnstile.render("#turnstile-container", {
+    sitekey: KEY,
+    action: "portfolio_chat",
+    execution: "execute",
+    appearance: "interaction-only"
+  });
+});
 
   const bagConversationCopy = {
     "pt-BR": {
@@ -650,7 +666,34 @@
       await this.requestAiResponse(content);
     }
 
+    async requestTurnstileResponse() 
+    {
+      return new Promise((resolve, reject) => {
+        if (!window.turnstile || widgetId === null) {
+          reject(new Error("Turnstile não está disponível."));
+          return;
+        }
+
+        turnstile.execute(widgetId, {
+          callback: (token) => {
+            resolve(token);
+          },
+
+          "error-callback": () => {
+            reject(new Error("Falha na validação Turnstile."));
+          },
+
+          "expired-callback": () => {
+            reject(new Error("Token Turnstile expirou."));
+          }
+        });
+      });
+    }
+
     async requestAiResponse(content) {
+
+      const token = await this.requestTurnstileResponse();
+
       const controller = new AbortController();
       const timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
       this.lastFailedContent = null;
@@ -662,7 +705,7 @@
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "ClientToken": KEY
+            "ClientToken": token
           },
           body: JSON.stringify({
             ClientId: CLIENT_ID,
