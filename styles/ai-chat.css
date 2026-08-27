@@ -671,6 +671,18 @@
   background: rgba(18, 18, 22, 0.9);
 }
 
+.ai-chat__quota {
+  margin: 0 2px 7px;
+  color: var(--ai-chat-subtle);
+  font-size: 0.68rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.35;
+}
+
+.ai-chat__quota.is-exhausted {
+  color: #f2c768;
+}
+
 .ai-chat__composer-row {
   display: flex;
   align-items: flex-end;

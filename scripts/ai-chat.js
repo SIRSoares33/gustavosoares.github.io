@@ -7,6 +7,8 @@
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
   const GREETING_MESSAGE_ID = "bag-greeting";
+  const DAILY_MESSAGE_LIMIT = 5;
+  const DAILY_USAGE_STORAGE_KEY = "portfolio_ai_daily_usage";
 
   let turnstileWidgetId = null;
 
@@ -80,6 +82,15 @@
   ];
 
   const SAFE_LINK_PROTOCOLS = new Set(["http:", "https:", "mailto:", "tel:"]);
+
+  function getCurrentLocalDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
 
   function getCurrentBagLanguage() {
     return document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "pt-BR";
@@ -433,10 +444,14 @@
       this.lastFailedContent = null;
       this.currentGreetingIndex = null;
       this.currentLanguage = getCurrentBagLanguage();
+      const dailyUsage = this.loadDailyUsage();
+      this.dailyUsageDate = dailyUsage.date;
+      this.remainingMessages = dailyUsage.remaining;
       this.mount();
       this.bindEvents();
       this.renderMessages();
       this.renderFutureStates();
+      this.updateQuotaDisplay();
       this.refreshIcons();
     }
 
@@ -492,6 +507,7 @@
           </div>
 
           <form class="ai-chat__composer" novalidate>
+            <p class="ai-chat__quota" role="status" aria-live="polite"></p>
             <div class="ai-chat__composer-row">
               <label class="sr-only" for="ai-chat-message">Mensagem para o assistente</label>
               <textarea
@@ -530,6 +546,7 @@
       this.suggestions = this.root.querySelector(".ai-chat__suggestions");
       this.futureStates = this.root.querySelector(".ai-chat__future-states");
       this.form = this.root.querySelector(".ai-chat__composer");
+      this.quotaDisplay = this.root.querySelector(".ai-chat__quota");
       this.input = this.root.querySelector(".ai-chat__input");
       this.sendButton = this.root.querySelector(".ai-chat__send");
       this.characterCount = this.root.querySelector(".ai-chat__character-count");
@@ -645,9 +662,10 @@
     }
 
     async submit() {
+      this.updateQuotaDisplay();
       const content = this.input.value.trim();
 
-      if (!content || this.isLoading) return;
+      if (!content || this.isLoading || this.remainingMessages === 0) return;
 
       if (content.length > MAX_MESSAGE_LENGTH) {
         this.setError(`A mensagem deve ter no máximo ${MAX_MESSAGE_LENGTH} caracteres.`);
@@ -722,6 +740,7 @@
 
           if (errorResponse?.error === "daily_quota_exceeded") {
             fallbackMessage = "Você atingiu o limite diário de mensagens.";
+            this.markDailyQuotaAsExhausted();
           } else if (errorResponse?.error === "rate_limit_exceeded") {
             fallbackMessage = "Você fez muitas requisições. Aguarde um pouco.";
           }
@@ -749,6 +768,7 @@
         }
 
         this.addMessage({ role: "assistant", content: responseText });
+        this.decrementRemainingMessages();
         this.lastFailedContent = null;
         this.setStatus("Online", "online");
       } catch (error) {
@@ -931,6 +951,96 @@
       this.renderFutureStates();
     }
 
+    loadDailyUsage() {
+      const currentDate = getCurrentLocalDate();
+      let remaining = DAILY_MESSAGE_LIMIT;
+
+      try {
+        const savedUsage = JSON.parse(
+          window.localStorage.getItem(DAILY_USAGE_STORAGE_KEY)
+        );
+        const savedRemaining = Number(savedUsage?.remaining);
+
+        if (
+          savedUsage?.date === currentDate &&
+          Number.isInteger(savedRemaining)
+        ) {
+          remaining = Math.min(
+            DAILY_MESSAGE_LIMIT,
+            Math.max(0, savedRemaining)
+          );
+        }
+      } catch {
+        // A cota local é apenas visual; o chat continua funcionando sem storage.
+      }
+
+      return { date: currentDate, remaining };
+    }
+
+    persistDailyUsage() {
+      try {
+        window.localStorage.setItem(
+          DAILY_USAGE_STORAGE_KEY,
+          JSON.stringify({
+            date: this.dailyUsageDate,
+            remaining: this.remainingMessages
+          })
+        );
+      } catch {
+        // O Janus continua sendo a autoridade quando o storage não está disponível.
+      }
+    }
+
+    ensureDailyUsageIsCurrent() {
+      const currentDate = getCurrentLocalDate();
+
+      if (this.dailyUsageDate === currentDate) return false;
+
+      this.dailyUsageDate = currentDate;
+      this.remainingMessages = DAILY_MESSAGE_LIMIT;
+      this.persistDailyUsage();
+      return true;
+    }
+
+    renderQuotaDisplay() {
+      if (!this.quotaDisplay) return;
+
+      let label = `${this.remainingMessages} mensagens disponíveis hoje`;
+
+      if (this.remainingMessages === 0) {
+        label = "Limite diário atingido";
+      } else if (this.remainingMessages === 1) {
+        label = "Resta 1 mensagem hoje";
+      } else if (this.remainingMessages < DAILY_MESSAGE_LIMIT) {
+        label = `Restam ${this.remainingMessages} mensagens hoje`;
+      }
+
+      this.quotaDisplay.textContent = label;
+      this.quotaDisplay.classList.toggle(
+        "is-exhausted",
+        this.remainingMessages === 0
+      );
+    }
+
+    updateQuotaDisplay() {
+      this.ensureDailyUsageIsCurrent();
+      this.renderQuotaDisplay();
+      this.persistDailyUsage();
+      this.updateSendButton();
+    }
+
+    decrementRemainingMessages() {
+      this.ensureDailyUsageIsCurrent();
+      this.remainingMessages = Math.max(0, this.remainingMessages - 1);
+      this.updateQuotaDisplay();
+    }
+
+    markDailyQuotaAsExhausted() {
+      this.dailyUsageDate = getCurrentLocalDate();
+      this.remainingMessages = 0;
+      this.updateQuotaDisplay();
+    }
+
     clear() {
       this.error = null;
       this.isLoading = false;
@@ -946,7 +1056,15 @@
     }
 
     retryLastMessage() {
-      if (!this.lastFailedContent || this.isLoading) return;
+      this.updateQuotaDisplay();
+
+      if (
+        !this.lastFailedContent ||
+        this.isLoading ||
+        this.remainingMessages === 0
+      ) {
+        return;
+      }
 
       const content = this.lastFailedContent;
       this.setError(null);
@@ -1001,9 +1119,16 @@
     }
 
     updateSendButton() {
+      if (this.ensureDailyUsageIsCurrent()) {
+        this.renderQuotaDisplay();
+      }
+
       const messageLength = this.input.value.trim().length;
       this.sendButton.disabled =
-        this.isLoading || messageLength === 0 || messageLength > MAX_MESSAGE_LENGTH;
+        this.isLoading ||
+        this.remainingMessages === 0 ||
+        messageLength === 0 ||
+        messageLength > MAX_MESSAGE_LENGTH;
     }
 
     updateCharacterCount() {
