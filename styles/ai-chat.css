@@ -683,6 +683,7 @@
   max-height: 112px;
   resize: none;
   overflow-y: auto;
+  scrollbar-width: none;
   padding: 11px 12px;
   border: 1px solid var(--ai-chat-border-strong);
   border-radius: 11px;
@@ -692,6 +693,10 @@
   font-size: 0.84rem;
   line-height: 1.5;
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.ai-chat__input::-webkit-scrollbar {
+  display: none;
 }
 
 .ai-chat__input::placeholder {
