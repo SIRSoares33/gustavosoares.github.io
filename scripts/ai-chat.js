@@ -7,22 +7,25 @@
   const MAX_MESSAGE_LENGTH = 100;
   const REQUEST_TIMEOUT = 45000;
   const GREETING_MESSAGE_ID = "bag-greeting";
-  
-let widgetId = null;
 
-window.addEventListener("load", () => {
-  if (!window.turnstile) {
-    console.error("Turnstile não foi carregado.");
-    return;
+  let turnstileWidgetId = null;
+
+  function initializeTurnstile() {
+    if (turnstileWidgetId !== null) return;
+
+    if (!window.turnstile || !document.querySelector("#turnstile-container")) {
+      return;
+    }
+
+    turnstileWidgetId = window.turnstile.render("#turnstile-container", {
+      sitekey: KEY,
+      action: "portfolio_chat",
+      execution: "execute",
+      appearance: "interaction-only"
+    });
   }
 
-  widgetId = turnstile.render("#turnstile-container", {
-    sitekey: KEY,
-    action: "portfolio_chat",
-    execution: "execute",
-    appearance: "interaction-only"
-  });
-});
+  window.addEventListener("load", initializeTurnstile, { once: true });
 
   const bagConversationCopy = {
     "pt-BR": {
@@ -666,18 +669,15 @@ window.addEventListener("load", () => {
       await this.requestAiResponse(content);
     }
 
-    async requestTurnstileResponse() 
-    {
+    async requestTurnstileResponse() {
       return new Promise((resolve, reject) => {
-        if (!window.turnstile || widgetId === null) {
+        if (!window.turnstile || turnstileWidgetId === null) {
           reject(new Error("Turnstile não está disponível."));
           return;
         }
 
-        turnstile.execute(widgetId, {
-          callback: (token) => {
-            resolve(token);
-          },
+        window.turnstile.execute(turnstileWidgetId, {
+          callback: (token) => resolve(token),
 
           "error-callback": () => {
             reject(new Error("Falha na validação Turnstile."));
@@ -691,21 +691,23 @@ window.addEventListener("load", () => {
     }
 
     async requestAiResponse(content) {
-
-      const token = await this.requestTurnstileResponse();
-
-      const controller = new AbortController();
-      const timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+      let timeoutId = null;
+      let janusRequestStarted = false;
       this.lastFailedContent = null;
       this.setStatus("Respondendo…", "loading");
       this.setLoading(true);
 
       try {
+        const turnstileToken = await this.requestTurnstileResponse();
+        const controller = new AbortController();
+        timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT);
+
+        janusRequestStarted = true;
         const response = await fetch(API_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "ClientToken": token
+            "ClientToken": turnstileToken
           },
           body: JSON.stringify({
             ClientId: CLIENT_ID,
@@ -714,11 +716,33 @@ window.addEventListener("load", () => {
           signal: controller.signal
         });
 
-        const responseText = (await response.text()).trim();
+        if (response.status === 429) {
+          const errorResponse = await response.json().catch(() => null);
+          let fallbackMessage = "O limite de uso do chat foi atingido.";
+
+          if (errorResponse?.error === "daily_quota_exceeded") {
+            fallbackMessage = "Você atingiu o limite diário de mensagens.";
+          } else if (errorResponse?.error === "rate_limit_exceeded") {
+            fallbackMessage = "Você fez muitas requisições. Aguarde um pouco.";
+          }
+
+          this.setStatus("Limite atingido", "error");
+          this.setError(errorResponse?.message ?? fallbackMessage);
+          return;
+        }
+
+        if (response.status === 403) {
+          this.lastFailedContent = content;
+          this.setStatus("Indisponível", "error");
+          this.setError("Não foi possível validar a solicitação.");
+          return;
+        }
 
         if (!response.ok) {
           throw new Error(`A API respondeu com o status ${response.status}.`);
         }
+
+        const responseText = (await response.text()).trim();
 
         if (!responseText) {
           throw new Error("A API retornou uma resposta vazia.");
@@ -729,15 +753,26 @@ window.addEventListener("load", () => {
         this.setStatus("Online", "online");
       } catch (error) {
         const timedOut = error && error.name === "AbortError";
+        let errorMessage = "O serviço de IA está temporariamente indisponível.";
+
+        if (!janusRequestStarted) {
+          errorMessage = "Não foi possível validar a solicitação.";
+        } else if (timedOut) {
+          errorMessage = "A resposta demorou demais. Tente novamente.";
+        }
+
         this.lastFailedContent = content;
         this.setStatus("Indisponível", "error");
-        this.setError(
-          timedOut
-            ? "A resposta demorou demais. Tente novamente."
-            : "Não foi possível falar com a IA agora. Tente novamente em instantes."
-        );
+        this.setError(errorMessage);
       } finally {
-        window.clearTimeout(timeoutId);
+        if (timeoutId !== null) {
+          window.clearTimeout(timeoutId);
+        }
+
+        if (window.turnstile && turnstileWidgetId !== null) {
+          window.turnstile.reset(turnstileWidgetId);
+        }
+
         this.setLoading(false);
         this.focusInputOnDesktop();
       }
